@@ -47,6 +47,7 @@ body {
   font-family: var(--font_primary);
   font-style: normal;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 /* Site navigation block */
@@ -424,6 +425,9 @@ body {
 .vs-play p {
   font-weight: 700;
   font-size: clamp(24px, 1.5rem + (1vw - 3.75px) * 1.1268, 36px);
+}
+.vs-play:hover {
+  cursor: pointer;
 }
 
 .vs-date {
@@ -925,6 +929,7 @@ body {
     overflow-x: initial;
   }
 }
+/* BANDEAU */
 .bandeau {
   display: none;
 }
@@ -934,7 +939,7 @@ body {
     display: grid;
     grid-template-columns: min(90vw, 1320px);
     justify-content: center;
-    background-color: #D4405E;
+    background-color: #d4405e;
     color: white;
     padding-block: 11px;
   }

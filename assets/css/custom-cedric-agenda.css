@@ -1,0 +1,20 @@
+.event-listing-month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.event-listing-month .event-listing-col-month {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+.event-listing-month .event-listing-col-events {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+}
+/*# sourceMappingURL=custom-cedric-agenda.css.map */

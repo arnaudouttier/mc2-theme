@@ -38,6 +38,10 @@
     font-weight: 700;
     font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 1.1268)), 36px);
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .vs-date {

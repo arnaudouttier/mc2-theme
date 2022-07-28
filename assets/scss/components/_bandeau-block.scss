@@ -1,56 +1,56 @@
-// BANDEAU
+/* BANDEAU */
 
-.bandeau{
+.bandeau {
   display: none;
 }
 
-@media(min-width:1440px){
-  
-  .bandeau{
+@media (min-width: 1440px) {
+  .bandeau {
     display: grid;
-    grid-template-columns: min(90vw , 1320px);
-    justify-content: center;  
-    background-color: #D4405E;
+    grid-template-columns: min(90vw, 1320px);
+    justify-content: center;
+    background-color: #d4405e;
     color: #ffff;
     padding-block: 11px;
-  
-    .bandeau-inner{
+
+    .bandeau-inner {
       display: flex;
       justify-content: space-between;
       column-gap: 30px;
       font-size: 16px;
       line-height: 24px;
-    
-    
-      .bandeau-left{
+
+      .bandeau-left {
         display: flex;
-        column-gap: clamp(10px, calc(0.625rem + ((1vw - 12px) * 13.75)), 43px);// 10px(1200px vw) to 43px(1440px vw)
+        column-gap: clamp(
+          10px,
+          calc(0.625rem + ((1vw - 12px) * 13.75)),
+          43px
+        ); // 10px(1200px vw) to 43px(1440px vw)
         row-gap: 10px;
         flex-wrap: wrap;
-  
-        h4{
+
+        h4 {
           font-weight: 700;
         }
-  
-        p{
+
+        p {
           font-weight: 400;
           margin-right: 16px;
         }
       }
-  
-      .bandeau-right{
+
+      .bandeau-right {
         display: flex;
         align-items: center;
         column-gap: 13px;
-  
-        button{
+
+        button {
           font-weight: 400;
           text-decoration: underline;
           padding-bottom: 4px;
         }
       }
     }
-  
   }
 }
-
