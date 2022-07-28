@@ -983,7 +983,7 @@ body {
 .contact-social .contact-social-list {
   display: flex!important;
   align-items: center!important;
-  column-gap: 27px;
+  column-gap: 27px!important;
 }
 
 :is(.footer-grid) .contact-social-list img {
