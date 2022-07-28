@@ -43,6 +43,13 @@ body {
   font-style: normal;
   background-color: #fff;
   overflow-x: hidden;
+
+  /* Admin Bar */
+  .admin-bar {
+    #navigation-container.sticky {
+      top: 32px;
+    }
+  }
 }
 
 /* Skip-link */

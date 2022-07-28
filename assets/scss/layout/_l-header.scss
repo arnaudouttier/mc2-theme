@@ -10,7 +10,11 @@
   /* Site header de la homepage */
 
   &.homepage {
-    min-height: 720px;
+    z-index: 1;
+    min-height: 100px;
+    height: 100vh;
+    padding-top: 1em;
+    padding-bottom: 0;
     display: grid;
     grid-template-columns: min(90vw, 1320px);
     justify-content: center;
