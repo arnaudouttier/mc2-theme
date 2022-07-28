@@ -981,8 +981,8 @@ body {
   margin-bottom: 16px;
 }
 .contact-social .contact-social-list {
-  display: flex;
-  align-items: center;
+  display: flex!important;
+  align-items: center!important;
   column-gap: 27px;
 }
 
