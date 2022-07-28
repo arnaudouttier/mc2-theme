@@ -1,0 +1,243 @@
+/* Spectacles */
+
+#main {
+  &.spectacles {
+    display: grid;
+    grid-template-columns: min(90vw, 1320px);
+    justify-content: center;
+    color: #000000;
+    overflow: hidden;
+    padding-top: 66px;
+    padding-bottom: 52px;
+  }
+
+  .grid-cl-left {
+    .contact-social {
+      display: none;
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+
+  .grid-cl-middle {
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 34px;
+      margin-bottom: 35px;
+    }
+
+    .grid-cl-middle-content {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 35px;
+    }
+
+    .info-techniques-block {
+      h4 {
+        display: none;
+      }
+
+      .distributions {
+        .block-list-title {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  .grid-cl-right {
+    .contact-social {
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+}
+
+.gallery {
+  &.spectacles {
+    display: grid;
+    grid-template-columns: min(90vw, 1320px);
+    justify-content: center;
+    background-color: #071f5b;
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 294px;
+
+    .gallery-header {
+      padding-block: 40px;
+      border-top: 1px solid #ffffff;
+
+      h3 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #main {
+    &.spectacles {
+      padding-top: 0;
+      padding-bottom: 70px;
+
+      .grid-cl-left {
+        .contact-social {
+          display: block;
+          border-bottom: 0;
+        }
+      }
+
+      .grid-cl-middle {
+        .grid-cl-middle-content {
+          margin-bottom: 68px;
+
+          .info-techniques-block {
+            h4 {
+              display: block;
+            }
+          }
+        }
+
+        .block-list {
+          .block-list-item {
+            padding-block: 53px;
+            border-top: 1px solid #d9d9d9;
+            border-bottom: 1px solid #d9d9d9;
+            display: flex;
+
+            & + .block-list-item {
+              border-top: 0;
+            }
+
+            .block-list-title {
+              flex: 1;
+            }
+
+            .block-list-content {
+              flex: 3;
+              display: flex;
+              border: 0;
+            }
+
+            &.programme {
+              display: flex;
+
+              .block-list-content {
+                display: block;
+
+                h6 {
+                  margin-bottom: 18px;
+                }
+
+                p {
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 22px;
+                }
+              }
+            }
+
+            &.distributions {
+              .block-list-content {
+                column-gap: 223px;
+
+                & > :last-child {
+                  display: none;
+                }
+              }
+            }
+
+            &.generique {
+              .block-list-content-items {
+                width: 100%;
+
+                li {
+                  display: flex;
+                  column-gap: 125px;
+                  margin-bottom: 0;
+
+                  h6 {
+                    flex-basis: 233px;
+                  }
+                }
+              }
+            }
+
+            &.mentions {
+              padding-bottom: 0;
+              border-bottom: 0;
+
+              .block-list-content-items {
+                flex-direction: column;
+                width: 100%;
+
+                li {
+                  display: flex;
+                  column-gap: 10px;
+                  padding-bottom: 20px;
+                  margin-bottom: 20px;
+                  border-bottom: 1px solid #d9d9d9;
+
+                  &:last-child {
+                    .block-list-image {
+                      display: none;
+                    }
+                  }
+
+                  .block-list-image {
+                    margin-bottom: 0;
+                  }
+
+                  h5 {
+                    display: block;
+                    padding: 0;
+                  }
+
+                  p {
+                    &.bl-content-mobile {
+                      display: none;
+                    }
+
+                    &.bl-content-desktop {
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .grid-cl-right {
+        .contact-social {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .gallery {
+    &.spectacles {
+      padding-bottom: 56px;
+    }
+
+    .gallery-inner {
+      display: flex;
+      column-gap: 60px;
+    }
+
+    .gallery-header {
+      max-width: 240px;
+    }
+  }
+}

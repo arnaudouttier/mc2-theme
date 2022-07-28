@@ -1,0 +1,41 @@
+/* gallery list block */
+
+.gallery-list {
+  display: flex;
+  column-gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  .gallery-item {
+    flex-shrink: 0;
+    flex-basis: 350px;
+
+    .gallery-image {
+      position: relative;
+
+      .gallery-image-icon {
+        color: #ffffff;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .gallery-item-content {
+      margin-top: 11px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 28px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-list {
+    overflow-x: initial;
+  }
+}

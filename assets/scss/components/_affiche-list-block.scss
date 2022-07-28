@@ -1,0 +1,133 @@
+/*** Affiche list Block ***/
+
+.affiche {
+  display: grid;
+  grid-template-columns: min(90vw, 1320px);
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding-top: clamp(
+    42px,
+    calc(2.625rem + ((1vw - 3.75px) * 5.446)),
+    100px
+  ); // 375vw to 1440vw
+  padding-bottom: clamp(
+    59px,
+    calc(3.6875rem + ((1vw - 3.75px) * 5.7277)),
+    120px
+  );
+
+  /* affiche header */
+
+  .affiche-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(
+      42px,
+      calc(2.625rem + ((1vw - 3.75px) * 5.446)),
+      100px
+    ); // 375vw to 1440vw
+
+    h3 {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    .affiche-header-buttons {
+      display: none;
+    }
+  }
+
+  /* affiche-list */
+
+  .affiche-list {
+    display: flex;
+    column-gap: clamp(20px, calc(1.25rem + ((1vw - 3.75px) * 1.8779)), 40px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* affiche-item */
+
+  .affiche-item {
+    position: relative;
+    background: #ffffff;
+    color: #fff;
+    padding: 20px;
+    max-width: 300px;
+    flex-shrink: 0;
+    // scroll-snap-align: center;
+
+    .affiche-title,
+    .affiche-date {
+      position: absolute;
+    }
+
+    // affiche  item title
+
+    .affiche-title {
+      max-width: 227px;
+      left: 30px;
+      top: 30px;
+
+      h4 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 10px;
+      }
+
+      .affiche-category {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+
+      .affiche-resume {
+        max-width: 146px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+      }
+    }
+
+    // affiche item date
+
+    .affiche-date {
+      display: flex;
+      align-items: center;
+      right: 15px;
+      bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      h4 {
+        font-size: 60px;
+        line-height: 56px;
+      }
+
+      h5 {
+        transform: rotate(90deg) translate(-5px, 50%);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .affiche {
+    /* affiche-items */
+
+    .affiche-items {
+      overflow-x: initial;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+/* SLIDER */
+
+.slider {
+  display: grid;
+  grid-template-columns: min(90vw, 1320px);
+  place-content: center;
+  min-height: 812px;
+  background-image: url(../images/slider/slider.png);
+  background-size: cover;
+}
+
+.slider-inner {
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  column-gap: 34px;
+  align-items: center;
+
+  h4 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: -25px;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+}
+
+.slider-main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .slider-main-item {
+    margin-bottom: 40px;
+
+    label {
+      font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 2.6291)), 52px);
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    // h3 {
+    //   font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 2.6291)), 52px);
+    //   position: relative;
+    //   display: inline-block;
+    //   cursor: pointer;
+    //   transition: background-color 0.3s ease;
+    //   margin-bottom: 20px;
+    // }
+
+    a {
+      font-size: clamp(16px, calc(1rem + ((1vw - 3.75px) * 0.7512)), 24px);
+      line-height: 34px;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-main {
+    flex-direction: row;
+    column-gap: 40px;
+
+    .slider-main-item {
+      margin-bottom: 0;
+      position: relative;
+
+      ul {
+        min-width: 350px;
+        opacity: 0;
+        position: absolute;
+        bottom: -150%;
+
+        a {
+          font-weight: 700;
+        }
+      }
+
+      input:checked {
+        & ~ ul {
+          opacity: 1;
+          transition: opacity 0.4s ease;
+        }
+      }
+
+      label {
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:first-child {
+        width: min-content;
+      }
+    }
+  }
+}

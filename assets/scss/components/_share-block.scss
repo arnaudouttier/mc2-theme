@@ -1,0 +1,21 @@
+/* Main -> share block */
+.share-block {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-block: 20px;
+
+  .share-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(217, 217, 217, 0.301);
+    display: flex;
+    place-content: center;
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+}

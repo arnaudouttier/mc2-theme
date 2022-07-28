@@ -1,0 +1,19 @@
+// Contact-social block
+
+.contact-social {
+  padding-block: 20px;
+
+  h4 {
+    margin-bottom: 16px;
+  }
+
+  .contact-social-list {
+    display: flex;
+    align-items: center;
+    column-gap: 27px;
+  }
+}
+
+:is(.footer-grid) .contact-social-list img {
+  filter: invert(1);
+}

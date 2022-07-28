@@ -1,0 +1,67 @@
+/* Main -> grid */
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "grid-cl-middle"
+    "grid-cl-left"
+    "grid-cl-right";
+
+  .grid-cl-middle {
+    padding-top: 35px;
+    border-top: 1px solid #d9d9d9;
+  }
+
+  .grid-cl-left,
+  .grid-cl-right {
+    padding-top: clamp(
+      20px,
+      calc(1.25rem + ((1vw - 3.75px) * 0.939)),
+      30px
+    ); // 375vw to 1440vw
+    border-top: 1px solid #d9d9d9;
+  }
+
+  .grid-cl-left {
+    grid-area: grid-cl-left;
+  }
+
+  .grid-cl-middle {
+    grid-area: grid-cl-middle;
+  }
+
+  .grid-cl-right {
+    grid-area: grid-cl-right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "grid-cl-left grid-cl-middle  grid-cl-right";
+    column-gap: 60px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    grid-template-columns: 240px 720px 240px;
+
+    .grid-cl-middle {
+      padding-top: 30px;
+    }
+  }
+
+  :is(#main.spectacles) .grid {
+    .grid-cl-left {
+      padding-top: 20px;
+    }
+  }
+
+  :is(#main.edito) .grid {
+    .grid-cl-left {
+      padding-top: 40px;
+    }
+  }
+}

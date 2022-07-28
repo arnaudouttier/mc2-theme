@@ -1,0 +1,13 @@
+/* Home Page */
+
+#main {
+  &.homepage {
+    .affiche {
+      padding-bottom: clamp(
+        47px,
+        calc(2.9375rem + ((1vw - 3.75px) * 1.9718)),
+        68px
+      ); // 375vw to 1440vw
+    }
+  }
+}

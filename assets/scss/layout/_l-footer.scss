@@ -1,0 +1,111 @@
+/* Footer Layout */
+
+#site-footer {
+  display: grid;
+  grid-template-columns: min(90vw, 1320px);
+  justify-content: center;
+
+  /* Grid column */
+
+  .grid-columns-left {
+    grid-area: grid-column-left;
+  }
+
+  .grid-columns-middle {
+    grid-area: grid-column-middle;
+  }
+
+  .grid-columns-right {
+    grid-area: grid-column-right;
+  }
+
+  /* Footer logo */
+
+  .footer-logo {
+    grid-area: footer-logo;
+  }
+
+  /* footer address */
+
+  .address {
+    grid-area: address;
+  }
+
+  /* contact email phone */
+
+  .contact-phone-email {
+    grid-area: contact-phone-email;
+  }
+
+  /* newsletter */
+
+  .newsletter {
+    grid-area: newsletter;
+  }
+
+  // contact-social
+
+  .contact-social {
+    grid-area: contact-social;
+  }
+
+  .programmation {
+    grid-area: programmation;
+  }
+
+  .btn-programme {
+    grid-area: btn-programme;
+  }
+
+  .mc2 {
+    grid-area: mc2;
+  }
+
+  /* production */
+
+  .production {
+    grid-area: production;
+  }
+
+  /* public */
+
+  .public {
+    grid-area: public;
+  }
+
+  /* pratiue */
+
+  .pratique {
+    grid-area: pratique;
+  }
+
+  .user {
+    grid-area: user;
+  }
+
+  /* cgv */
+
+  .cgv {
+    grid-area: cgv;
+  }
+
+  .mention-legales {
+    grid-area: mention-legales;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "footer-logo grid-column-left grid-column-middle grid-column-right"
+      "cgv cgv mention-legales mention-legales";
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer-grid {
+    grid-template-columns: 225px 360px 360px 300px;
+  }
+}

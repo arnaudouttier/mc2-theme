@@ -1,0 +1,88 @@
+/* Buttons */
+
+.btn {
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* btn-primary */
+
+.btn-primary {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 13px 9px;
+
+  &.btn-yellow {
+    color: #000000;
+    background-color: #f7fe70;
+  }
+
+  &.btn-blue {
+    color: #ffff;
+    background-color: #071f5b;
+  }
+}
+
+:is(#site-header) .btn-primary {
+  padding: 12px 9px;
+}
+
+:is(#site-footer) .btn-primary {
+  padding: 13px 30px;
+  font-size: 14px;
+}
+
+@media (min-width: 1440px) {
+  :is(#site-header) .btn-primary {
+    padding: 13px 40px;
+  }
+}
+
+/* btn-news-show-all articles */
+.btn-news-show-all {
+  width: 100%;
+  font-size: 12px;
+}
+
+/* To top btn */
+.btn-to-top {
+  color: #ffffff;
+  opacity: 0.3;
+  font-weight: 600;
+  font-size: 12px;
+  column-gap: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Select button */
+.btn-select {
+  border: 1px solid #000000;
+  position: relative;
+
+  &::after {
+    content: url("../images/icons/icon-btn-select.svg");
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  select {
+    appearance: none;
+    margin-right: 100px;
+    padding: 16px 18px;
+    width: 100%;
+    appearance: none;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}

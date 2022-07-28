@@ -1,0 +1,303 @@
+/* Site Header -> Cover details block */
+
+/* Cover details pour la Home Page */
+:is(#site-header.homepage) .cover-details {
+  .cover-title {
+    margin-bottom: 58px;
+
+    .cover-category {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .cover-name {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0em;
+    }
+
+    .cover-link {
+      display: none;
+    }
+  }
+
+  .cover-date-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cover-elipse {
+      width: 45px;
+      height: 45px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .cover-date {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        position: relative;
+        font-weight: 700;
+        font-size: clamp(
+          50px,
+          calc(3.125rem + ((1vw - 3.75px) * 2.8169)),
+          80px
+        );
+        line-height: 76px;
+      }
+
+      h5 {
+        font-weight: 700;
+        font-size: clamp(16px, calc(1rem + ((1vw - 3.75px) * 0.939)), 26px);
+        line-height: 22px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transform: rotate(90deg) translate(-5px, 50%);
+      }
+    }
+  }
+}
+
+/* Cover details pour les pages edito et spectacles */
+:is(#site-header.spectacles, #site-header.edito) .cover-details {
+  color: #ffffff;
+
+  .cover-title,
+  .cover-date-category,
+  .cover-piece-date-prix {
+    margin-inline: 20px;
+  }
+
+  .cover-title {
+    grid-area: cover-title;
+    font-size: 52px;
+    color: #f7fe70;
+    margin-bottom: 37px;
+    font-weight: 700;
+    line-height: 64px;
+    max-width: 329px;
+  }
+
+  .cover-date-category {
+    grid-area: cover-date-category;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+
+    h2 {
+      transform: rotate(-90deg);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 34px;
+    }
+
+    .cover-date {
+      text-align: center;
+      padding-right: 28px;
+
+      .cover-ellipse {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: #ffffff;
+        border-radius: 50px;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .cover-thumbnail {
+    grid-area: cover-thumbnail;
+    margin-bottom: 45px;
+  }
+
+  .cover-piece-date-prix {
+    grid-area: cover-piece-date-prix;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 34px;
+
+    ul {
+      margin-bottom: 21px;
+    }
+
+    li {
+      padding-block: 16px;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid #ffffff;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .btn-reservation {
+      grid-area: btn-reservation;
+      width: 100%;
+      padding: 18px 10px !important;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      transform: translate(0, 50%);
+    }
+  }
+}
+
+@media (min-width: 572px) {
+  /* Cover details pour les pages edito et spectacles */
+  :is(#site-header.spectacles, #site-header.edito) .cover-details {
+    .cover-title {
+      max-width: 80%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Cover details pour la Home Page */
+  :is(#site-header.homepage) .cover-details {
+    display: flex;
+    justify-content: space-between;
+
+    .cover-title {
+      .cover-category {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .cover-name {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 78px;
+        margin-bottom: 20px;
+      }
+
+      .cover-link {
+        display: inline-block;
+        font-weight: 700;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 100%;
+          height: 1px;
+          background-color: #ffffff;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .cover-date-month {
+      .cover-elipse {
+        display: none;
+      }
+
+      .cover-date {
+        h3 {
+          font-weight: 700;
+          line-height: 80px;
+          text-align: right;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  /* Cover details pour les pages edito et spectacles */
+  :is(#site-header.spectacles, #site-header.edito) .cover-details {
+    display: grid;
+    grid-template-columns: 240px 1080px;
+    column-gap: 60px;
+    grid-template-areas:
+      "cover-title cover-title"
+      "cover-date-category cover-thumbnail"
+      "cover-piece-date-prix cover-thumbnail"
+      "btn-reservation cover-thumbnail";
+    padding-left: 60px;
+    overflow: hidden;
+
+    .cover-title,
+    .cover-date-category,
+    .cover-piece-date-prix {
+      margin-inline: 0;
+    }
+
+    .cover-title {
+      max-width: initial;
+      margin-bottom: 68px;
+    }
+
+    .cover-date-category {
+      .cover-date {
+        padding: 0;
+      }
+    }
+
+    .cover-piece-date-prix {
+      ul {
+        margin-bottom: 21px;
+      }
+
+      .btn-reservation {
+        transform: initial;
+        width: 100%;
+      }
+    }
+  }
+
+  /* Cover thumbnail pour les pages edito */
+  :is(#site-header.edito) .cover-details {
+    .cover-thumbnail {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media (min-width: 1443px) {
+  /* Cover details pour les pages edito et spectacles */
+  :is(#site-header.spectacles, #site-header.edito) .cover-details {
+    width: 1320px;
+    margin-inline: auto;
+    padding-left: 0;
+  }
+}

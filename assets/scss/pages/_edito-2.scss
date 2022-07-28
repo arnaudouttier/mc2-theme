@@ -1,0 +1,61 @@
+/* Main -> Page edito 2 */
+
+#main {
+  &.edito {
+    overflow: hidden;
+
+    .grid-cl-middle {
+      .grid-cl-middle-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 26px;
+      }
+
+      q {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 44px;
+        color: #071f5b;
+        margin-bottom: 60px;
+        display: block;
+      }
+
+      .grid-cl-middle-paragraphe {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: clamp(
+          46px,
+          calc(2.875rem + ((1vw - 3.75px) * 1.3146)),
+          60px
+        ); // 375vw to 1440vw
+      }
+    }
+
+    .programmation-block {
+      margin-bottom: 90px;
+    }
+  }
+}
+
+.affiche {
+  &.edito {
+    background-color: #071f5b;
+    color: #ffffff;
+  }
+}
+
+@media (min-width: 1440px) {
+  .affiche {
+    &.edito {
+      .affiche-header {
+        .affiche-header-buttons {
+          display: flex;
+          align-items: center;
+          column-gap: 40px;
+        }
+      }
+    }
+  }
+}

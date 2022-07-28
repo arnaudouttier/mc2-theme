@@ -1,0 +1,15 @@
+/* Main edito */
+
+#main {
+  &.edito {
+    display: grid;
+    grid-template-columns: min(90vw, 1320px);
+    justify-content: center;
+    padding-bottom: 75px;
+    color: #000000;
+
+    .share-block {
+      padding-top: 0;
+    }
+  }
+}
