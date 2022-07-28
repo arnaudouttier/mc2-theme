@@ -50,6 +50,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Skip-link */
+.skip-link {
+  display: none;
+}
+
 /* Site navigation block */
 .site-navigation {
   display: flex;
@@ -1456,8 +1461,14 @@ body {
   /* Site header de la homepage */
 }
 #site-header.homepage {
-  background-image: url("../images/header/header-cover-desktop.png");
-  background-size: cover;
+  z-index: 1;
+  min-height: 100px !important;
+  height: 100vh;
+  padding-top: 1em !important;
+  padding-bottom: 0;
+}
+#site-header.sub-menu-open {
+  background-color: #071f5b;
 }
 
 @media (min-width: 1024px) {

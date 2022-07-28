@@ -6,9 +6,9 @@
 
 
 /* Do not show the outline on the skip link target. */
-.skip-link {
+/* .skip-link {
   display: none;
-}
+} */
 
 #site-header.sub-menu-open {
   background-color: #071f5b;

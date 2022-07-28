@@ -3,185 +3,182 @@
 * A refacto :)
 */
 
-body {
-    overflow-x: hidden;
-}
+// body {
+//     overflow-x: hidden;
+// }
 
 /* Do not show the outline on the skip link target. */
-.skip-link {
-    display: none;
-}
+// .skip-link {
+//     display: none;
+// }
 
-#site-header {
+// #site-header {
 
-    &.sub-menu-open {
-        background-color: #071f5b;
-    }
+//     &.sub-menu-open {
+//         background-color: #071f5b;
+//     }
 
-    &.homepage {
-        z-index: 1;
-        min-height: 100px!important;
-        height: 100vh;
-        padding-top: 1em!important;
-        padding-bottom: 0;
-    }
+//     &.homepage {
+//         z-index: 1;
+//         min-height: 100px!important;
+//         height: 100vh;
+//         padding-top: 1em!important;
+//         padding-bottom: 0;
+//     }
 
-}
+// }
 
 #navigation-container {
-    z-index: 1;
-    position: relative;
+  z-index: 1;
+  position: relative;
 
-    &.sticky {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #071f5b;
-        z-index: 10;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #071f5b;
+    z-index: 10;
 
-        .site-navigation {
-            width: 100%;
-            max-width: 1320px; // Valeur à vérifier
-            margin: 0 auto;
-        }
+    .site-navigation {
+      width: 100%;
+      max-width: 1320px; // Valeur à vérifier
+      margin: 0 auto;
     }
+  }
 }
 
 // Si admin-bar => on décale de 32px pour les personnes connectées
 body.admin-bar {
-    #navigation-container.sticky {
-        top: 32px;
-    }
+  #navigation-container.sticky {
+    top: 32px;
+  }
 }
 
 // Style par défaut du thème Underscores
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	display: block;
-	width: 100%;
-    text-align: right;
+  display: block;
+  width: 100%;
+  text-align: right;
 }
 
 .main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+  left: -999em;
+  top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
+  display: block;
+  left: auto;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+  width: 200px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+  left: auto;
 }
 
 .main-navigation li {
-	position: relative;
+  position: relative;
 }
 
 .main-navigation a {
-	display: block;
-	text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+  display: block;
 }
 
 @media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
 
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
+  .main-navigation ul {
+    display: flex;
+  }
 }
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
-	margin: 0 0 1.5em;
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
 }
 
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-	display: flex;
+  display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	flex: 1 0 50%;
+  flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+  text-align: end;
+  flex: 1 0 50%;
 }
 
 /* Menu principal */
 .menu-principal-container,
 .main-navigation ul {
-    min-height: 100%;
-    display: inline-flex;
+  min-height: 100%;
+  display: inline-flex;
 }
 
 .custom-logo {
-    max-height: 80px;
-    width: auto;
+  max-height: 80px;
+  width: auto;
 }
 
 .site-branding a {
-    display: inline-block;
-    width: 160px;
+  display: inline-block;
+  width: 160px;
 }
 
 .main-navigation li {
-    padding: 0 1em;
+  padding: 0 1em;
 }
 
 .main-navigation li:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .menu-item.btn-yellow a {
-    background-color: #f7fe70;
-    color: black;
-    padding: 0 1em;
+  background-color: #f7fe70;
+  color: black;
+  padding: 0 1em;
 }
 
 /* 
@@ -189,358 +186,352 @@ body.admin-bar {
 */
 
 .mega-menu {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    background: #071f5b;
-    height: calc(100vh - 100px);
-    z-index: -1;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .2s;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  background: #071f5b;
+  height: calc(100vh - 100px);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
 
-    &.active {
-        opacity: 1;
-        visibility: visible;
-        z-index: 9999;
-        transition: all .3s;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+    transition: all 0.3s;
+  }
+
+  .mega-menu-container {
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+
+    .mega-menu-title {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 2em;
+
+      p {
+        // Repris du code d'Arnaud
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          bottom: -25px;
+          width: 12px;
+          height: 12px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
     }
 
-    .mega-menu-container {
-        width: 1170px;
-        height: 100%;
-        margin: 0 auto;
-        padding-top: 2em;
+    .mega-menu-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-grow: 1;
+
+      .mega-menu-items,
+      .mega-menu-actus {
+        width: 50%;
         display: flex;
-        flex-direction: row;
+      }
 
-        .mega-menu-title {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 2em;
+      .mega-menu-actus {
+        flex-direction: column;
+      }
 
-            p {
-                // Repris du code d'Arnaud
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 24px;
-                writing-mode: vertical-lr;
-                transform: rotate(180deg);
+      .mega-menu-footer {
+        border-top: 1px solid #d9d9d9;
+        width: 100%;
+        display: flex;
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 50%;
-                    transform: translate(-50%, 0);
-                    bottom: -25px;
-                    width: 12px;
-                    height: 12px;
-                    background-color: #fff;
-                    border-radius: 50%;
-                }
-            }
+        .mega-menu-footer-col-1,
+        .mega-menu-footer-col-2 {
+          width: 50%;
         }
 
-        .mega-menu-content {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            flex-grow: 1;
+        .mega-menu-footer-col-2 {
+          display: flex;
+          justify-content: flex-end;
 
-            .mega-menu-items,
-            .mega-menu-actus {
-                width: 50%;
-                display: flex;
-            }
-
-            .mega-menu-actus {
-                flex-direction: column;
-            }
-
-            .mega-menu-footer {
-                border-top: 1px solid #d9d9d9;
-                width: 100%;
-                display: flex;
-
-                .mega-menu-footer-col-1,
-                .mega-menu-footer-col-2 {
-                    width: 50%;
-                }
-
-                .mega-menu-footer-col-2 {
-                    display: flex;
-                    justify-content: flex-end;
-
-                    a {
-                        display: inline-block;
-                        margin-left: 0.5em;
-                    }
-                }
-            }
+          a {
+            display: inline-block;
+            margin-left: 0.5em;
+          }
         }
+      }
     }
+  }
 
-    // Si les mega menu ouverts n'ont que des sous menus,
-    // on cible les menus pour pouvoir mettre en colonne les sous menus
-    #menu-mega-menu-4,
-    #menu-mega-menu-6 {
-        display: flex;
-    }   
+  // Si les mega menu ouverts n'ont que des sous menus,
+  // on cible les menus pour pouvoir mettre en colonne les sous menus
+  #menu-mega-menu-4,
+  #menu-mega-menu-6 {
+    display: flex;
+  }
 }
 
 /* !important car l'image de fond est injectée en style en ligne */
 #headerHome {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+
+  &.no-bg {
+    background: none;
+  }
+
+  &.sub-menu-open {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .cover-details {
+    display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
     width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    background-position: center!important;
-    display: flex!important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: .2s;
-
-    &.no-bg {
-        background: none;
-    }
-
-    &.sub-menu-open {
-        opacity: 0;
-        transition: .3s;
-    }
-
-    .cover-details {
-        display: flex!important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
-        width: 100%;
-        max-width: 1160px;
-        margin: 0 auto;
-        color: #fff;
-    }
+    max-width: 1160px;
+    margin: 0 auto;
+    color: #fff;
+  }
 }
 
 /* Vidéo Home */
 #video-home {
-    width: 100%;
+  width: 100%;
 }
 
 /* Slider Home */
 .slider {
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    background-position: top!important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: top !important;
 }
 
-
 .slider-main .slider-main-item ul {
-    top: 100%;
-    z-index: -1;
+  top: 100%;
+  z-index: -1;
 }
 
 .slider-main .slider-main-item.active ul {
-    opacity: 1;
-    z-index: 2;
+  opacity: 1;
+  z-index: 2;
 }
 
 /* Agenda semaine Home */
 #agenda-semaine-home {
-    
-    .tribe-common .tribe-common-h--alt {
-        display: none;
-    }
+  .tribe-common .tribe-common-h--alt {
+    display: none;
+  }
 
-    .tribe-events-pro  {
-
-        .tribe-events-widget-events-week__view-more,
-        .tribe-events-pro-week-mobile-events__event-time-separator,
-        .tribe-events-pro-week-mobile-events__event-featured-image-link {
-            display: none;
-        }
+  .tribe-events-pro {
+    .tribe-events-widget-events-week__view-more,
+    .tribe-events-pro-week-mobile-events__event-time-separator,
+    .tribe-events-pro-week-mobile-events__event-featured-image-link {
+      display: none;
     }
+  }
 }
 
 /* Helpers */
 .container {
-    width: 100%;
-    max-width: 1320px; // A affiner pour le responsive etc
-    margin: 0 auto!important;
+  width: 100%;
+  max-width: 1320px; // A affiner pour le responsive etc
+  margin: 0 auto !important;
 }
 
 .full-img {
-    width: 100%;
+  width: 100%;
 
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .brdr-left,
 .border-menu {
-    border-left: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
 }
 
 /* Juste pour l'afficher sur mon petit laptop ^^ */
-@media(min-width: 768px){
-  
-    .bandeau{
-        display: grid;
-        justify-content: center;  
-        background-color: #D4405E!important;
-        color: #ffff;
-        padding-block: 11px;
+@media (min-width: 768px) {
+  .bandeau {
+    display: grid;
+    justify-content: center;
+    background-color: #d4405e !important;
+    color: #ffff;
+    padding-block: 11px;
 
-        .bandeau-inner{
+    .bandeau-inner {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 30px;
+      font-size: 16px;
+      line-height: 24px;
+
+      .bandeau-left {
         display: flex;
-        justify-content: space-between;
-        column-gap: 30px;
-        font-size: 16px;
-        line-height: 24px;
-        
-        .bandeau-left{
-            display: flex;
 
-            row-gap: 10px;
-            flex-wrap: wrap;
+        row-gap: 10px;
+        flex-wrap: wrap;
 
-            h4{
-            font-weight: 700;
-            }
-
-            p{
-            font-weight: 400;
-            margin-right: 16px;
-            }
+        h4 {
+          font-weight: 700;
         }
 
-        .bandeau-right{
-            display: flex;
-            align-items: center;
-            column-gap: 13px;
-
-            button{
-            font-weight: 400;
-            text-decoration: underline;
-            padding-bottom: 4px;
-            }
+        p {
+          font-weight: 400;
+          margin-right: 16px;
         }
-        }
+      }
 
+      .bandeau-right {
+        display: flex;
+        align-items: center;
+        column-gap: 13px;
+
+        button {
+          font-weight: 400;
+          text-decoration: underline;
+          padding-bottom: 4px;
+        }
+      }
     }
+  }
 }
-      
+
 #bandeau {
-    display: block;
+  display: block;
 }
 
 /* Passe par dessus le menu sticky lors du scroll */
 
 .video-saisons {
-    z-index: 0;
-    position: relative;
+  z-index: 0;
+  position: relative;
 }
 
 .vs-play {
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /* AGENDA LISTING */
 
 #agenda-list-header {
-    background-color: #071f5b;
-    padding-top: 165px !important;
-    padding-bottom: 2em;
+  background-color: #071f5b;
+  padding-top: 165px !important;
+  padding-bottom: 2em;
 
-    .cover-details{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1320px;
-        margin: 0 auto;
+  .cover-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
 
-        // Code d'Arnaud
-        .cover-title {
-            grid-area: cover-title;
-            font-size: 52px;
-            color: #f7fe70;
-            margin-bottom: 37px;
-            font-weight: 700;
-            line-height: 64px;
-            max-width: 329px;
-        }
+    // Code d'Arnaud
+    .cover-title {
+      grid-area: cover-title;
+      font-size: 52px;
+      color: #f7fe70;
+      margin-bottom: 37px;
+      font-weight: 700;
+      line-height: 64px;
+      max-width: 329px;
     }
+  }
 
-    // Juste pour le dev
-    .tribe-events-c-top-bar__datepicker {
-        display: flex;
-        align-items: center;
-        color: white;
-        padding: 0 2em;
-        border-right: 1px solid #d9d9d9;
-    }
+  // Juste pour le dev
+  .tribe-events-c-top-bar__datepicker {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 2em;
+    border-right: 1px solid #d9d9d9;
+  }
 
-    .tribe-events-c-events-bar__filter-button-container {
-        display: flex;
-        align-items: center;
-        color: white;
-    }
+  .tribe-events-c-events-bar__filter-button-container {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
 }
 
 #agenda-list {
-   
-    width: 100%;
-    max-width: 1380px!important; // Valeur juste pour le dev
-    display: flex;
-    
-    .sidebar-left-listing-events {
-        width: 25%;
+  width: 100%;
+  max-width: 1380px !important; // Valeur juste pour le dev
+  display: flex;
+
+  .sidebar-left-listing-events {
+    width: 25%;
+  }
+
+  .tribe-events-pro-photo.affiche {
+    width: 75%;
+
+    .affiche-item {
+      max-width: 400px; // Just for dev
     }
-    
-    .tribe-events-pro-photo.affiche {
-        width: 75%;
-        
-        .affiche-item {
-            max-width: 400px; // Just for dev
-        }
-    }
+  }
 }
 
 #agenda-filters {
-    .tribe-filter-bar__filters-slider-wrapper{
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
+  .tribe-filter-bar__filters-slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 
-    .tribe-filter-bar__filters-container {
-        width: 100%;
-    }
+  .tribe-filter-bar__filters-container {
+    width: 100%;
+  }
 
-    .tribe-filter-bar-c-filter {
-        display: flex;
-        flex-grow: 1;
-        width: 100%;
-    }
+  .tribe-filter-bar-c-filter {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+  }
 
-    .tribe-filter-bar__filters {
-        border: 1px solid white;
-    }
+  .tribe-filter-bar__filters {
+    border: 1px solid white;
+  }
 }
 
-#site-header.spectacles, #site-header.edito {
-
-    .site-navigation.agenda-list {
-        margin-bottom: 0;
-    }
-} 
+#site-header.spectacles,
+#site-header.edito {
+  .site-navigation.agenda-list {
+    margin-bottom: 0;
+  }
+}
 
 #navigation-container.sticky {
-    .site-navigation.agenda-list {
-        margin-bottom: 0;
-    } 
+  .site-navigation.agenda-list {
+    margin-bottom: 0;
+  }
 }
