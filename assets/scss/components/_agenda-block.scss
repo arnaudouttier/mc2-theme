@@ -9,13 +9,26 @@
 
   /* Weeks Title */
   .tribe-events-header {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    margin-bottom: 48px;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    line-height: 34px !important;
+    margin-bottom: clamp(
+      48px,
+      calc(3rem + ((1vw - 3.75px) * 2.9108)),
+      79px
+    ) !important;
+    // 375vw to 1440vw
   }
 
   /* Agenda Selector */
+  .tribe-events-pro-week-day-selector {
+    margin-bottom: clamp(
+      47px,
+      calc(2.9375rem + ((1vw - 3.75px) * 0.5634)),
+      53px
+    ) !important;
+    // 375vw to 1440vw
+  }
 
   /*   Agenda List */
 

@@ -54,57 +54,62 @@
 
     /* navigation- */
 
-    .navigation {
+    ul,
+    .primary-menu {
       display: flex;
       align-items: center;
+      column-gap: clamp(
+        30px,
+        calc(1.875rem + ((1vw - 12px) * 4.1667)),
+        40px
+      ); // 30px (1200px vw) to 40px (1440px)
+      font-weight: 400;
+      font-size: 13px;
 
-      ul {
-        display: flex;
-        align-items: center;
-        column-gap: clamp(
-          30px,
-          calc(1.875rem + ((1vw - 12px) * 4.1667)),
-          40px
-        ); // 30px (1200px vw) to 40px (1440px)
-        font-weight: 400;
-        font-size: 13px;
+      a {
+        position: relative;
 
-        a {
-          position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 100%;
+          height: 1px;
+          background-color: #ffffff;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
 
+        &:hover {
           &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-            height: 1px;
-            background-color: #ffffff;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-          }
-
-          &:hover {
-            &::after {
-              opacity: 1;
-            }
+            opacity: 1;
           }
         }
       }
 
-      .nav-separator {
-        width: 1px;
-        height: 20px;
-        background-color: #d9d9d9;
+      /* site navigation button */
+      .btn-yellow {
+        font-weight: 700;
+        font-size: 16px;
+        color: #000000;
+        background-color: #f7fe70;
+        padding: 13px 40px;
       }
+    }
 
-      .cover-search {
-        margin-left: 47px;
-      }
+    .nav-separator {
+      width: 1px;
+      height: 20px;
+      background-color: #d9d9d9;
+    }
 
-      .btn-desktop-nav {
-        margin-left: 44px;
-      }
+    .cover-search {
+      margin-left: 47px;
+    }
+
+    .btn-desktop-nav {
+      margin-left: 44px;
     }
   }
 }

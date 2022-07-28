@@ -1,37 +1,40 @@
 /* VIDEO SAISONS*/
 
 .video-saisons {
-  background-color: #071F5B;
+  background-color: #071f5b;
   color: #fff;
+  z-index: 0;
+  position: relative;
 }
 
-.video-saisons-inner{
+.video-saisons-inner {
   position: relative;
   z-index: 10;
 }
 
-.vs-thumbnail{
+.vs-thumbnail {
   width: 100%;
 }
 
 .vs-logo,
-.vs-play, .vs-date {
+.vs-play,
+.vs-date {
   position: absolute;
   z-index: 99;
 }
 
-.vs-logo{
+.vs-logo {
   top: 40px;
   left: 40px;
 }
 
-.vs-play{
+.vs-play {
   display: flex;
   column-gap: 13px;
   bottom: 44px;
   left: 42px;
 
-  p{
+  p {
     font-weight: 700;
     font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 1.1268)), 36px);
   }
@@ -42,29 +45,26 @@
   right: 30px;
   font-weight: 600;
   font-size: clamp(60px, calc(3.75rem + ((1vw - 3.75px) * 2.8169)), 90px);
-  line-height: clamp(54px, calc(3.375rem + ((1vw - 3.75px) * 2.4413)), 80px);;
+  line-height: clamp(54px, calc(3.375rem + ((1vw - 3.75px) * 2.4413)), 80px);
   text-transform: uppercase;
 }
 
-
-@media (min-width:1200px){
-
+@media (min-width: 1200px) {
   .video-saisons {
     display: grid;
     grid-template-columns: 1200px;
     justify-content: center;
     align-items: center;
     padding-block: 120px;
-  
 
-    .vs-thumbnail{
+    .vs-thumbnail {
       width: initial;
     }
 
     .vs-logo,
     .vs-date {
       z-index: -10;
-      }
+    }
 
     .vs-logo {
       width: 105px;
@@ -72,10 +72,9 @@
       top: -56px;
     }
 
-  .vs-date {
-    right: -35px;
-    bottom: -39px;
+    .vs-date {
+      right: -35px;
+      bottom: -39px;
+    }
   }
 }
-}
-
