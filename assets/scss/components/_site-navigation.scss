@@ -1,5 +1,25 @@
 /* Site navigation block */
 
+#navigation-container {
+  z-index: 1;
+  position: relative;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #071f5b;
+    z-index: 10;
+
+    .site-navigation {
+      width: 100%;
+      max-width: 1320px; // Valeur à vérifier
+      margin: 0 auto;
+    }
+  }
+}
+
 .site-navigation {
   display: flex;
   justify-content: space-between;

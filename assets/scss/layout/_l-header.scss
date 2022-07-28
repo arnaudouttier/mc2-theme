@@ -19,16 +19,6 @@
     grid-template-columns: min(90vw, 1320px);
     justify-content: center;
     align-content: space-between;
-    padding-top: clamp(
-      28px,
-      calc(1.75rem + ((1vw - 3.75px) * 3.0047)),
-      50px
-    ); // 375vw to 1440px
-    padding-bottom: clamp(
-      33px,
-      calc(2.0625rem + ((1vw - 3.75px) * 5.6338)),
-      93px
-    ); // 375vw to 1440px
   }
 
   /* Site header pages Spectacles Edito */
