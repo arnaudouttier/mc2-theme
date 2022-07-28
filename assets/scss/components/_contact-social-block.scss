@@ -1,6 +1,7 @@
 // Contact-social block
 
-.contact-social {
+.contact-social,
+#custom_html-3 {
   padding-block: 20px;
 
   h4 {
@@ -8,6 +9,7 @@
   }
 
   .contact-social-list {
+    color: lightcoral;
     display: flex;
     align-items: center;
     column-gap: 27px;

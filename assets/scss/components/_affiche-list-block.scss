@@ -57,8 +57,14 @@
     color: #fff;
     padding: 20px;
     max-width: 300px;
+    height: 500px;
     flex-shrink: 0;
     // scroll-snap-align: center;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
 
     .affiche-title,
     .affiche-date {

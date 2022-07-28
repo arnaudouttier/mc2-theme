@@ -228,6 +228,7 @@ body {
   margin-bottom: clamp(64px, 4rem + (1vw - 3.75px) * 3.7559, 104px);
 }
 .news-header .news-section-title {
+  color: lightcoral;
   font-weight: 700;
   font-size: 36px;
 }
@@ -544,23 +545,6 @@ body {
     width: min-content;
   }
 }
-.agenda {
-  display: grid;
-  grid-template-columns: min(90vw, 1320px);
-  place-content: center;
-  padding-bottom: 41px;
-  background: #f3f3f3;
-}
-.agenda .agenda-title {
-  margin-bottom: 48px;
-}
-.agenda .agenda-main {
-  color: white;
-  text-align: center;
-  padding: 50px;
-  background-color: lightgreen;
-}
-
 /* Main -> contact block */
 .contact-block > :nth-child(2) {
   padding-top: 25px !important;
@@ -974,16 +958,20 @@ body {
     padding-bottom: 4px;
   }
 }
-.contact-social {
+.contact-social,
+#custom_html-3 {
   padding-block: 20px;
 }
-.contact-social h4 {
+.contact-social h4,
+#custom_html-3 h4 {
   margin-bottom: 16px;
 }
-.contact-social .contact-social-list {
-  display: flex!important;
-  align-items: center!important;
-  column-gap: 27px!important;
+.contact-social .contact-social-list,
+#custom_html-3 .contact-social-list {
+  color: lightcoral;
+  display: flex;
+  align-items: center;
+  column-gap: 27px;
 }
 
 :is(.footer-grid) .contact-social-list img {
@@ -1044,7 +1032,7 @@ body {
     max-width: 420px;
   }
 }
-/* Affiche list Block */
+/*** Affiche list Block ***/
 .affiche {
   display: grid;
   grid-template-columns: min(90vw, 1320px);
@@ -1083,7 +1071,12 @@ body {
   color: #fff;
   padding: 20px;
   max-width: 300px;
+  height: 500px;
   flex-shrink: 0;
+}
+.affiche .affiche-item img {
+  height: 100%;
+  object-fit: cover;
 }
 .affiche .affiche-item .affiche-title,
 .affiche .affiche-item .affiche-date {
@@ -1377,6 +1370,66 @@ body {
     padding-left: 0;
   }
 }
+/* Agenda Block */
+.agenda {
+  display: grid;
+  grid-template-columns: min(90vw, 1320px);
+  place-content: center;
+  padding-bottom: 41px;
+  background: #f3f3f3;
+  /* Weeks Title */
+  /* Agenda Selector */
+  /*   Agenda List */
+}
+.agenda .tribe-events-header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  margin-bottom: 48px;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] {
+  display: flex !important;
+  column-gap: 30px;
+  overflow-x: auto;
+  /* Article separator */
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] article {
+  background-color: white;
+  color: #000000;
+  padding: 20px 23px 25px 20px;
+  flex-shrink: 0;
+  flex-basis: clamp(290px, 18.125rem + (1vw - 3.75px) * 12.6967, 411px);
+  margin: 0 !important;
+  height: fit-content;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] article .tribe-events-pro-week-mobile-events__event-details {
+  padding: 0;
+  margin: 0;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] article .event-cat-widget-week {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] article .tribe-events-pro-week-mobile-events__event-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] article .event-content-widget-week {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] .tribe-events-pro-week-mobile-events__event-time-separator,
+.agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] .tribe-events-pro-week-mobile-events__event-type-separator {
+  display: none;
+}
+
 /* Site-header */
 #site-header {
   color: #fff;
@@ -1475,34 +1528,48 @@ body {
 }
 
 /* footer address */
-.address {
+.address,
+#text-6 {
   border-top: 0;
   padding-top: 0;
+  padding-bottom: 20px;
 }
-.address .footer-title {
+.address .footer-title,
+#text-6 .footer-title {
   margin-bottom: 25px;
 }
-.address p {
+.address p,
+#text-6 p {
   max-width: 166px;
 }
 
 /* contact email phone */
-.contact-phone-email {
+.contact-phone-email,
+#custom_html-2 {
   padding-left: 0;
+  border-top: 1px solid #222;
+  padding-block: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
 }
-.contact-phone-email .footer-title:nth-child(1) {
+.contact-phone-email .footer-title:nth-child(1),
+#custom_html-2 .footer-title:nth-child(1) {
   margin-bottom: 27px;
 }
-.contact-phone-email .footer-title:nth-child(3) {
+.contact-phone-email .footer-title:nth-child(3),
+#custom_html-2 .footer-title:nth-child(3) {
   margin-bottom: 25px;
 }
-.contact-phone-email .phone-item {
+.contact-phone-email .phone-item,
+#custom_html-2 .phone-item {
   display: flex;
   column-gap: 50px;
   margin-bottom: 15px;
   text-align: left;
 }
-.contact-phone-email .phone-item > :first-child {
+.contact-phone-email .phone-item > :first-child,
+#custom_html-2 .phone-item > :first-child {
   min-width: 56px;
 }
 
@@ -1520,8 +1587,14 @@ body {
 }
 
 /* btn-programme */
-.btn-programme {
-  display: none;
+.btn-programme .btn-yellow,
+#menu-principal .btn-yellow {
+  padding: 13px 30px;
+  font-size: 14px;
+  background-color: #f7fe70;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 /* production */
@@ -1701,13 +1774,16 @@ body {
   /* pratiue */
   /* cgv */
 }
-#site-footer .grid-columns-left {
+#site-footer .grid-column-left {
   grid-area: grid-column-left;
 }
-#site-footer .grid-columns-middle {
+#site-footer .grid-column-middle {
   grid-area: grid-column-middle;
 }
-#site-footer .grid-columns-right {
+#site-footer .grid-column-middle .footer-zone-3 > :first-child {
+  padding-bottom: 20px;
+}
+#site-footer .grid-column-right {
   grid-area: grid-column-right;
 }
 #site-footer .footer-logo {

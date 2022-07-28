@@ -1,0 +1,74 @@
+/* Agenda Block */
+
+.agenda {
+  display: grid;
+  grid-template-columns: min(90vw, 1320px);
+  place-content: center;
+  padding-bottom: 41px;
+  background: #f3f3f3;
+
+  /* Weeks Title */
+  .tribe-events-header {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 48px;
+  }
+
+  /* Agenda Selector */
+
+  /*   Agenda List */
+
+  .tribe-events-pro-week-mobile-events__day[aria-hidden="false"] {
+    display: flex !important;
+    column-gap: 30px;
+    overflow-x: auto;
+
+    article {
+      background-color: #ffff;
+      color: #000000;
+      padding: 20px 23px 25px 20px;
+      flex-shrink: 0;
+      flex-basis: clamp(
+        290px,
+        calc(18.125rem + ((1vw - 3.75px) * 12.6967)),
+        411px
+      ); // 375vw to 1440vw
+      margin: 0 !important;
+      height: fit-content;
+
+      .tribe-events-pro-week-mobile-events__event-details {
+        padding: 0;
+        margin: 0;
+      }
+
+      .event-cat-widget-week {
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.5;
+        margin-bottom: 10px;
+      }
+
+      .tribe-events-pro-week-mobile-events__event-title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+
+      .event-content-widget-week {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    /* Article separator */
+    .tribe-events-pro-week-mobile-events__event-time-separator,
+    .tribe-events-pro-week-mobile-events__event-type-separator {
+      display: none;
+    }
+  }
+}

@@ -7,15 +7,21 @@
 
   /* Grid column */
 
-  .grid-columns-left {
+  .grid-column-left {
     grid-area: grid-column-left;
   }
 
-  .grid-columns-middle {
+  .grid-column-middle {
     grid-area: grid-column-middle;
+
+    .footer-zone-3 {
+      & > :first-child {
+        padding-bottom: 20px;
+      }
+    }
   }
 
-  .grid-columns-right {
+  .grid-column-right {
     grid-area: grid-column-right;
   }
 
