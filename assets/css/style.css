@@ -1086,7 +1086,7 @@ body .admin-bar #navigation-container.sticky {
   padding-bottom: clamp(59px, 3.6875rem + (1vw - 3.75px) * 5.7277, 120px);
   /* affiche header */
   /* affiche-list */
-  /* affiche-item */
+  /* affiche-item Les memes sur pages Agenda Edito utiliser comme componenent  */
 }
 .affiche .affiche-header {
   display: flex;
@@ -1175,7 +1175,7 @@ body .admin-bar #navigation-container.sticky {
   .affiche {
     /* affiche-items */
   }
-  .affiche .affiche-items {
+  .affiche .affiche-list {
     overflow-x: initial;
   }
 }
@@ -1504,6 +1504,64 @@ body .admin-bar #navigation-container.sticky {
 .agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] .tribe-events-pro-week-mobile-events__event-time-separator,
 .agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] .tribe-events-pro-week-mobile-events__event-type-separator {
   display: none;
+}
+
+/* agenda-list-header-block / Page Agenda */
+#agenda-list-header {
+  background-color: #071f5b;
+  padding-top: 165px !important;
+  padding-bottom: 2em;
+  /* Filter bar */
+}
+#agenda-list-header .cover-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+#agenda-list-header .cover-details .cover-title {
+  grid-area: cover-title;
+  font-size: 52px;
+  color: #f7fe70;
+  margin-bottom: 37px;
+  font-weight: 700;
+  line-height: 64px;
+  max-width: 329px;
+}
+#agenda-list-header .tribe-events-c-top-bar__datepicker {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 2em;
+  border-right: 1px solid #d9d9d9;
+  column-gap: 20px;
+}
+#agenda-list-header .tribe-events-c-top-bar__datepicker .tribe-events-c-top-bar__datepicker-button {
+  padding: 10px 13px;
+  border: 1px solid #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #ffffff;
+}
+#agenda-list-header .tribe-filter-bar {
+  max-width: min(90vw, 1320px);
+  margin-inline: auto;
+}
+#agenda-list-header .tribe-filter-bar .tribe-filter-bar__filters-slider-wrapper {
+  display: block !important;
+}
+#agenda-list-header .tribe-filter-bar .tribe-filter-bar__filters-container {
+  transform: translate(200%, -50%) !important;
+}
+#agenda-list-header .tribe-events-c-events-bar__filter-button-container {
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
 /* Site-header */

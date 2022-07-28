@@ -1,0 +1,68 @@
+/* agenda-list-header-block / Page Agenda */
+
+#agenda-list-header {
+  background-color: #071f5b;
+  padding-top: 165px !important;
+  padding-bottom: 2em;
+
+  .cover-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+
+    // Code d'Arnaud
+    .cover-title {
+      grid-area: cover-title;
+      font-size: 52px;
+      color: #f7fe70;
+      margin-bottom: 37px;
+      font-weight: 700;
+      line-height: 64px;
+      max-width: 329px;
+    }
+  }
+
+  // Juste pour le dev
+  .tribe-events-c-top-bar__datepicker {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 2em;
+    border-right: 1px solid #d9d9d9;
+    column-gap: 20px;
+
+    .tribe-events-c-top-bar__datepicker-button {
+      padding: 10px 13px;
+      border: 1px solid #ffffff;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background-color: transparent;
+      color: #ffffff;
+    }
+  }
+
+  /* Filter bar */
+  .tribe-filter-bar {
+    max-width: min(90vw, 1320px);
+    margin-inline: auto;
+
+    .tribe-filter-bar__filters-slider-wrapper {
+      display: block !important;
+    }
+
+    .tribe-filter-bar__filters-container {
+      transform: translate(200%, -50%) !important;
+    }
+  }
+
+  .tribe-events-c-events-bar__filter-button-container {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+}
