@@ -3,73 +3,21 @@
 * A refacto :)
 */
 
-// body {
-//     overflow-x: hidden;
-// }
-
-/* Do not show the outline on the skip link target. */
-// .skip-link {
-//     display: none;
-// }
-
-// #site-header {
-
-//     &.sub-menu-open {
-//         background-color: #071f5b;
-//     }
-
-//     &.homepage {
-//         z-index: 1;
-//         min-height: 100px!important;
-//         height: 100vh;
-//         padding-top: 1em!important;
-//         padding-bottom: 0;
-//     }
-
-// }
-
-// #navigation-container {
-//   z-index: 1;
-//   position: relative;
-
-//   &.sticky {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     background: #071f5b;
-//     z-index: 10;
-
-//     .site-navigation {
-//       width: 100%;
-//       max-width: 1320px; // Valeur à vérifier
-//       margin: 0 auto;
-//     }
-//   }
-// }
-
-// Si admin-bar => on décale de 32px pour les personnes connectées
-// body.admin-bar {
-//   #navigation-container.sticky {
-//     top: 32px;
-//   }
-// }
-
 // Style par défaut du thème Underscores
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-  display: block;
-  width: 100%;
-  text-align: right;
-}
+// .main-navigation {
+//   display: block;
+//   width: 100%;
+//   text-align: right;
+// }
 
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
+// .main-navigation ul {
+//   display: none;
+//   list-style: none;
+//   margin: 0;
+//   padding-left: 0;
+// }
 
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -100,9 +48,9 @@
   left: auto;
 }
 
-.main-navigation li {
-  position: relative;
-}
+// .main-navigation li {
+//   position: relative;
+// }
 
 .main-navigation a {
   display: block;
@@ -115,15 +63,15 @@
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
+// @media screen and (min-width: 37.5em) {
+//   .menu-toggle {
+//     display: none;
+//   }
 
-  .main-navigation ul {
-    display: flex;
-  }
-}
+//   .main-navigation ul {
+//     display: flex;
+//   }
+// }
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -151,25 +99,20 @@
 }
 
 /* Menu principal */
-.menu-principal-container,
-.main-navigation ul {
-  min-height: 100%;
-  display: inline-flex;
-}
+// .menu-principal-container,
+// .main-navigation ul {
+//   min-height: 100%;
+//   display: inline-flex;
+// }
 
-.custom-logo {
-  max-height: 80px;
-  width: auto;
-}
+// .site-branding a {
+//   display: inline-block;
+//   width: 160px;
+// }
 
-.site-branding a {
-  display: inline-block;
-  width: 160px;
-}
-
-.main-navigation li {
-  padding: 0 1em;
-}
+// .main-navigation li {
+//   padding: 0 1em;
+// }
 
 .main-navigation li:hover {
   cursor: pointer;
@@ -370,118 +313,6 @@
     width: 100%;
   }
 }
-
-.brdr-left,
-.border-menu {
-  border-left: 1px solid #d9d9d9;
-}
-
-/* Juste pour l'afficher sur mon petit laptop ^^ */
-@media (min-width: 768px) {
-  .bandeau {
-    display: grid;
-    justify-content: center;
-    background-color: #d4405e !important;
-    color: #ffff;
-    padding-block: 11px;
-
-    .bandeau-inner {
-      display: flex;
-      justify-content: space-between;
-      column-gap: 30px;
-      font-size: 16px;
-      line-height: 24px;
-
-      .bandeau-left {
-        display: flex;
-
-        row-gap: 10px;
-        flex-wrap: wrap;
-
-        h4 {
-          font-weight: 700;
-        }
-
-        p {
-          font-weight: 400;
-          margin-right: 16px;
-        }
-      }
-
-      .bandeau-right {
-        display: flex;
-        align-items: center;
-        column-gap: 13px;
-
-        button {
-          font-weight: 400;
-          text-decoration: underline;
-          padding-bottom: 4px;
-        }
-      }
-    }
-  }
-}
-
-#bandeau {
-  display: block;
-}
-
-/* Passe par dessus le menu sticky lors du scroll */
-
-.video-saisons {
-  z-index: 0;
-  position: relative;
-}
-
-.vs-play {
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-/* AGENDA LISTING */
-
-// #agenda-list-header {
-//   background-color: #071f5b;
-//   padding-top: 165px !important;
-//   padding-bottom: 2em;
-
-//   .cover-details {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     width: 100%;
-//     max-width: 1320px;
-//     margin: 0 auto;
-
-//     // Code d'Arnaud
-//     .cover-title {
-//       grid-area: cover-title;
-//       font-size: 52px;
-//       color: #f7fe70;
-//       margin-bottom: 37px;
-//       font-weight: 700;
-//       line-height: 64px;
-//       max-width: 329px;
-//     }
-//   }
-
-//   // Juste pour le dev
-//   .tribe-events-c-top-bar__datepicker {
-//     display: flex;
-//     align-items: center;
-//     color: white;
-//     padding: 0 2em;
-//     border-right: 1px solid #d9d9d9;
-//   }
-
-//   .tribe-events-c-events-bar__filter-button-container {
-//     display: flex;
-//     align-items: center;
-//     color: white;
-//   }
-// }
 
 #agenda-list {
   width: 100%;
