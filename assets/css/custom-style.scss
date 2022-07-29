@@ -52,11 +52,6 @@
 //   position: relative;
 // }
 
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -113,16 +108,6 @@
 // .main-navigation li {
 //   padding: 0 1em;
 // }
-
-.main-navigation li:hover {
-  cursor: pointer;
-}
-
-.menu-item.btn-yellow a {
-  background-color: #f7fe70;
-  color: black;
-  padding: 0 1em;
-}
 
 /* 
 * Sub Menu : base de travail à affiner

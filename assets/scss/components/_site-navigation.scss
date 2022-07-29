@@ -63,6 +63,7 @@
       display: none;
     }
 
+    /* Primary menu actif */
     .toggled {
       #primary-menu {
         display: block !important;
@@ -108,19 +109,12 @@
   margin-bottom: 0;
 }
 
-// @media (min-width: 1200px) {
-//   #navigation-container {
-//     .site-navigation {
-//     }
-//   }
-// }
-
 @media (min-width: 1200px) {
   #navigation-container {
     .site-navigation {
       /* navigation- */
 
-      /* button mmobile */
+      /* button mobile */
       button {
         &.menu-toggle {
           display: none;

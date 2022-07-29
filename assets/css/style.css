@@ -88,6 +88,7 @@ body .admin-bar #navigation-container.sticky {
   align-items: center;
   /* Site logo */
   /* button navigation maobile */
+  /* Primary menu actif */
 }
 #navigation-container .site-navigation .site-branding a {
   display: inline-block;
@@ -145,7 +146,7 @@ body .admin-bar #navigation-container.sticky {
 @media (min-width: 1200px) {
   #navigation-container .site-navigation {
     /* navigation- */
-    /* button mmobile */
+    /* button mobile */
     /* loupe recherche */
   }
   #navigation-container .site-navigation button.menu-toggle {
@@ -232,7 +233,7 @@ button,
   background-color: #071f5b;
 }
 
-:is(#site-header) .btn-primary {
+:is(#site-header) .btn-yellow {
   padding: 12px 9px;
 }
 
@@ -242,7 +243,7 @@ button,
 }
 
 @media (min-width: 1440px) {
-  :is(#site-header) .btn-primary {
+  :is(#site-header) .btn-yellow {
     padding: 13px 40px;
   }
 }

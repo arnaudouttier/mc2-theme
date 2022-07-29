@@ -34,11 +34,6 @@
   left: auto;
 }
 
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -71,16 +66,6 @@
 }
 
 /* Menu principal */
-.main-navigation li:hover {
-  cursor: pointer;
-}
-
-.menu-item.btn-yellow a {
-  background-color: #f7fe70;
-  color: black;
-  padding: 0 1em;
-}
-
 /* 
 * Sub Menu : base de travail à affiner
 */
