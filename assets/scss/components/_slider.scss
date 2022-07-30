@@ -38,17 +38,23 @@
 }
 
 .slider-main {
-  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 2;
+  padding-block: 147px;
 
   .slider-main-item {
     margin-bottom: 40px;
+    max-width: 217px;
 
     label {
       font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 2.6291)), 52px);
+      /* 24px @ 375px increasing to 52px @ 1440px */
+      min-height: 0vw; // safari fix
+      font-weight: 700;
+      line-height: 34px;
       position: relative;
       display: inline-block;
       cursor: pointer;
@@ -60,19 +66,22 @@
       display: none;
     }
 
-    // h3 {
-    //   font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 2.6291)), 52px);
-    //   position: relative;
-    //   display: inline-block;
-    //   cursor: pointer;
-    //   transition: background-color 0.3s ease;
-    //   margin-bottom: 20px;
-    // }
+    li {
+      margin-bottom: clamp(
+        15px,
+        calc(0.9375rem + ((1vw - 3.75px) * 0.4695)),
+        20px
+      );
+      /* 15px @ 375px increasing to 20px @ 1440px */
+      min-height: 0vw; // safari fix
 
-    a {
-      font-size: clamp(16px, calc(1rem + ((1vw - 3.75px) * 0.7512)), 24px);
-      line-height: 34px;
-      font-weight: 400;
+      a {
+        font-size: clamp(16px, calc(1rem + ((1vw - 3.75px) * 0.7512)), 24px);
+        /* 16px @ 375px increasing to 52px @ 24px */
+        line-height: 1.7;
+        min-height: 0vw;
+        font-weight: 400;
+      }
     }
   }
 }
@@ -85,15 +94,20 @@
     .slider-main-item {
       margin-bottom: 0;
       position: relative;
+      max-width: fit-content;
 
       ul {
-        min-width: 350px;
         opacity: 0;
         position: absolute;
         bottom: -150%;
 
+        li {
+          width: 60ch;
+        }
+
         a {
           font-weight: 700;
+          max-width: 80ch;
         }
       }
 
@@ -107,6 +121,7 @@
       label {
         opacity: 0.5;
         transition: opacity 0.3s ease;
+        line-height: 64px;
 
         &:hover {
           opacity: 1;
@@ -115,6 +130,13 @@
 
       &:first-child {
         width: min-content;
+      }
+
+      &:last-child {
+        ul {
+          right: 0;
+          text-align: right;
+        }
       }
     }
   }

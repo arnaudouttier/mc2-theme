@@ -49,7 +49,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  /* affiche-item Les memes sur pages Agenda Edito utiliser comme componenent  */
+  /* affiche-item les memes sur pages Agenda Edito utiliser comme componenent  */
 
   .affiche-item {
     position: relative;
@@ -60,6 +60,91 @@
     height: 500px;
     flex-shrink: 0;
     // scroll-snap-align: center;
+
+    a {
+      height: inherit;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .affiche-title,
+    .affiche-date {
+      position: absolute;
+    }
+
+    // affiche  item title
+
+    .affiche-title {
+      max-width: 227px;
+      left: 30px;
+      top: 30px;
+
+      h4 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 10px;
+      }
+
+      .affiche-category {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+
+      .affiche-resume {
+        max-width: 146px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+      }
+    }
+
+    // affiche item date
+
+    .affiche-date {
+      display: flex;
+      align-items: center;
+      right: 15px;
+      bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      h4 {
+        font-size: 60px;
+        line-height: 56px;
+      }
+
+      h5 {
+        transform: rotate(90deg) translate(-5px, 50%);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  /* Agenda item */
+  .tribe-events-calendar-list__event {
+    position: relative;
+    background: #ffffff;
+    color: #fff;
+    padding: 20px;
+    max-width: 300px;
+    height: 500px;
+    display: block !important;
+    margin: 0 !important;
+
+    a {
+      height: inherit;
+    }
 
     img {
       height: 100%;
