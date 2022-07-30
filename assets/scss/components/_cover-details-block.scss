@@ -1,7 +1,10 @@
-/* Site Header -> Cover details block */
+/* Site Header -> Cover details block - partie bas (date - titre piece) du site header*/
 
 /* Cover details pour la Home Page */
 :is(#site-header.homepage) .cover-details {
+  width: min(90vw, 1320px);
+  margin-inline: auto;
+
   .cover-title {
     margin-bottom: 58px;
 
@@ -184,7 +187,6 @@
   :is(#site-header.homepage) .cover-details {
     display: flex;
     justify-content: space-between;
-    max-width: 1320px !important;
 
     .cover-title {
       .cover-category {

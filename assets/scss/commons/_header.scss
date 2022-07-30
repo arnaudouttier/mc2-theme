@@ -1,12 +1,34 @@
-/* Site-header */
+/* Site-header Layout */
 
 #site-header {
   color: #fff;
   background-color: #071f5b;
+
   /* Site header de la homepage */
 
-  &.sub-menu-open {
-    background-color: #071f5b;
+  #headerHome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.2s;
+
+    &.no-bg {
+      background: none;
+    }
+
+    &.sub-menu-open {
+      opacity: 0;
+      transition: 0.3s;
+      background-color: #071f5b;
+    }
   }
 }
 

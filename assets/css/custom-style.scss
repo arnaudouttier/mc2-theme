@@ -215,37 +215,29 @@
 }
 
 /* !important car l'image de fond est injectée en style en ligne */
-#headerHome {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center !important;
-  display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: 0.2s;
+// #headerHome {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   background-repeat: no-repeat !important;
+//   background-size: cover !important;
+//   background-position: center !important;
+//   display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   transition: 0.2s;
 
-  &.no-bg {
-    background: none;
-  }
+//   &.no-bg {
+//     background: none;
+//   }
 
-  &.sub-menu-open {
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  .cover-details {
-    display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
-    width: 100%;
-    max-width: 1160px;
-    margin: 0 auto;
-    color: #fff;
-  }
-}
+//   &.sub-menu-open {
+//     opacity: 0;
+//     transition: 0.3s;
+//   }
+// }
 
 /* Vidéo Home */
 #video-home {

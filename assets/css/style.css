@@ -1215,8 +1215,12 @@ button,
     overflow-x: initial;
   }
 }
-/* Site Header -> Cover details block */
+/* Site Header -> Cover details block - partie bas (date - titre piece) du site header*/
 /* Cover details pour la Home Page */
+:is(#site-header.homepage) .cover-details {
+  width: min(90vw, 1320px);
+  margin-inline: auto;
+}
 :is(#site-header.homepage) .cover-details .cover-title {
   margin-bottom: 58px;
 }
@@ -1366,7 +1370,6 @@ button,
   :is(#site-header.homepage) .cover-details {
     display: flex;
     justify-content: space-between;
-    max-width: 1320px !important;
   }
   :is(#site-header.homepage) .cover-details .cover-title .cover-category {
     font-weight: 400;
@@ -1600,13 +1603,32 @@ button,
   color: white;
 }
 
-/* Site-header */
+/* Site-header Layout */
 #site-header {
   color: #fff;
   background-color: #071f5b;
   /* Site header de la homepage */
 }
-#site-header.sub-menu-open {
+#site-header #headerHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+#site-header #headerHome.no-bg {
+  background: none;
+}
+#site-header #headerHome.sub-menu-open {
+  opacity: 0;
+  transition: 0.3s;
   background-color: #071f5b;
 }
 
