@@ -1,12 +1,12 @@
-/* Abstacts */
+/* ABSTRACT */
 
 @use "abstracts/variables";
 
-/* Base */
+/* BASE */
 
 @use "base/global";
 
-/* Components block */
+/* COMPONENT BLOCK */
 
 @use "components/site-navigation";
 @use "components/buttons";
@@ -28,20 +28,23 @@
 @use "components/affiche-list-block";
 @use "components/cover-details-block";
 @use "components/homepage-agenda-block";
-@use "components/agenda-list-header-block";
 
-/* Commons */
+/*Components Page Agenda */
+@use "components/agenda-list-header-block";
+@use "components/agenda-calendar-item-block";
+
+/* COMMONS */
 
 @use "commons/header";
 @use "commons/footer";
 
-/* Layout */
+/* LAYOUT */
 
 @use "layout/l-header";
 @use "layout/grid";
 @use "layout/l-footer";
 
-/* Pages */
+/* PAGES */
 
 @use "pages/homepage";
 @use "pages/edito";
@@ -49,3 +52,4 @@
 @use "pages/edito-3";
 @use "pages/spectacles";
 @use "pages/page-list";
+@use "pages/agenda";

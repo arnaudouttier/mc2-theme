@@ -1,0 +1,91 @@
+/* agenda calendar item block -- dans les pages agenda */
+
+.tribe-events-calendar-list__event {
+  position: relative;
+  background: #ffffff;
+  color: #fff;
+  padding: 20px !important;
+  max-width: 300px;
+  height: 500px;
+  margin: 0 !important;
+  flex-direction: column !important;
+
+  a {
+    height: inherit;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .affiche-title,
+  .affiche-date {
+    position: absolute;
+  }
+
+  /* affiche  item title */
+
+  .affiche-title {
+    max-width: 227px;
+    left: 30px;
+    top: 30px;
+
+    h3 {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 10px;
+      a {
+        color: #ffffff !important;
+      }
+    }
+
+    .affiche-category {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .affiche-resume {
+      max-width: 146px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+
+  /* affiche item date */
+
+  .affiche-date {
+    display: flex;
+    align-items: center;
+    right: 15px;
+    bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    time {
+      display: flex;
+      flex-direction: row-reverse;
+
+      span {
+        margin: 0;
+        padding: 0;
+      }
+
+      .tribe-events-pro-photo__event-date-tag-daynum {
+        font-size: 60px;
+      }
+
+      .tribe-events-pro-photo__event-date-tag-month {
+        transform: rotate(90deg) translate(-5px, 35px);
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

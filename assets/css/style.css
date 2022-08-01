@@ -1163,7 +1163,6 @@ button,
   /* affiche header */
   /* affiche-list */
   /* affiche-item les memes sur pages Agenda Edito utiliser comme componenent  */
-  /* Agenda item */
 }
 .affiche .affiche-header {
   display: flex;
@@ -1244,71 +1243,6 @@ button,
   line-height: 56px;
 }
 .affiche .affiche-item .affiche-date h5 {
-  transform: rotate(90deg) translate(-5px, 50%);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: 1px;
-}
-.affiche .tribe-events-calendar-list__event {
-  position: relative;
-  background: #ffffff;
-  color: #fff;
-  padding: 20px;
-  max-width: 300px;
-  height: 500px;
-  display: block !important;
-  margin: 0 !important;
-}
-.affiche .tribe-events-calendar-list__event a {
-  height: inherit;
-}
-.affiche .tribe-events-calendar-list__event img {
-  height: 100%;
-  object-fit: cover;
-}
-.affiche .tribe-events-calendar-list__event .affiche-title,
-.affiche .tribe-events-calendar-list__event .affiche-date {
-  position: absolute;
-}
-.affiche .tribe-events-calendar-list__event .affiche-title {
-  max-width: 227px;
-  left: 30px;
-  top: 30px;
-}
-.affiche .tribe-events-calendar-list__event .affiche-title h4 {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  margin-bottom: 10px;
-}
-.affiche .tribe-events-calendar-list__event .affiche-title .affiche-category {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 17px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-.affiche .tribe-events-calendar-list__event .affiche-title .affiche-resume {
-  max-width: 146px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 22px;
-}
-.affiche .tribe-events-calendar-list__event .affiche-date {
-  display: flex;
-  align-items: center;
-  right: 15px;
-  bottom: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.affiche .tribe-events-calendar-list__event .affiche-date h4 {
-  font-size: 60px;
-  line-height: 56px;
-}
-.affiche .tribe-events-calendar-list__event .affiche-date h5 {
   transform: rotate(90deg) translate(-5px, 50%);
   font-weight: 700;
   font-size: 16px;
@@ -1710,6 +1644,83 @@ button,
   display: flex;
   align-items: center;
   color: white;
+}
+
+/* agenda calendar item block -- dans les pages agenda */
+.tribe-events-calendar-list__event {
+  position: relative;
+  background: #ffffff;
+  color: #fff;
+  padding: 20px !important;
+  max-width: 300px;
+  height: 500px;
+  margin: 0 !important;
+  flex-direction: column !important;
+  /* affiche  item title */
+  /* affiche item date */
+}
+.tribe-events-calendar-list__event a {
+  height: inherit;
+}
+.tribe-events-calendar-list__event img {
+  height: 100%;
+  object-fit: cover;
+}
+.tribe-events-calendar-list__event .affiche-title,
+.tribe-events-calendar-list__event .affiche-date {
+  position: absolute;
+}
+.tribe-events-calendar-list__event .affiche-title {
+  max-width: 227px;
+  left: 30px;
+  top: 30px;
+}
+.tribe-events-calendar-list__event .affiche-title h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+.tribe-events-calendar-list__event .affiche-title h3 a {
+  color: #ffffff !important;
+}
+.tribe-events-calendar-list__event .affiche-title .affiche-category {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.tribe-events-calendar-list__event .affiche-title .affiche-resume {
+  max-width: 146px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+}
+.tribe-events-calendar-list__event .affiche-date {
+  display: flex;
+  align-items: center;
+  right: 15px;
+  bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.tribe-events-calendar-list__event .affiche-date time {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.tribe-events-calendar-list__event .affiche-date time span {
+  margin: 0;
+  padding: 0;
+}
+.tribe-events-calendar-list__event .affiche-date time .tribe-events-pro-photo__event-date-tag-daynum {
+  font-size: 60px;
+}
+.tribe-events-calendar-list__event .affiche-date time .tribe-events-pro-photo__event-date-tag-month {
+  transform: rotate(90deg) translate(-5px, 35px);
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 /* Site-header Layout */
@@ -2575,11 +2586,20 @@ button,
     margin-bottom: 0;
   }
 }
-/* Abstacts */
-/* Base */
-/* Components block */
-/* Commons */
-/* Layout */
-/* Pages */
+/* Page Agenda */
+.tribe-events-calendar-list {
+  /* 30px @ 375px increasing to 64px @ 1440px */
+  padding-block: clamp(30px, 1.875rem + (1vw - 3.75px) * 3.1925, 64px) !important;
+  /* Safari resize fix */
+  min-height: 0vw;
+}
+
+/* ABSTRACT */
+/* BASE */
+/* COMPONENT BLOCK */
+/*Components Page Agenda */
+/* COMMONS */
+/* LAYOUT */
+/* PAGES */
 
 /*# sourceMappingURL=style.css.map */
