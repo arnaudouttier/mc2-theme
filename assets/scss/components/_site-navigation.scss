@@ -2,7 +2,7 @@
 
 #navigation-container {
   z-index: 1;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -62,6 +62,7 @@
         left: 0;
         top: 173px;
         width: 100vw;
+        min-height: 10000px;
 
         &::before {
           content: "";
@@ -69,8 +70,8 @@
           top: 0;
           left: 0;
           width: 100vw;
+          height: 100%;
           background-color: #000000;
-          height: calc(100vh - 113px);
           z-index: -1;
         }
       }
@@ -106,24 +107,6 @@
             }
           }
         }
-      }
-    }
-  }
-
-  &.sticky {
-    .site-navigation {
-      .menu-principal-container {
-        top: 157px;
-
-        &::before {
-          height: calc(100vh - 94px);
-        }
-      }
-
-      .custom-logo {
-        width: auto;
-        max-height: 56px;
-        max-width: 40px;
       }
     }
   }
@@ -243,6 +226,26 @@
 
       .btn-desktop-nav {
         margin-left: 44px;
+      }
+    }
+
+    &.sticky {
+      position: fixed;
+
+      .site-navigation {
+        // .menu-principal-container {
+        //   top: 157px;
+
+        //   &::before {
+        //     height: calc(100vh - 94px);
+        //   }
+        // }
+
+        .custom-logo {
+          width: auto;
+          max-height: 56px;
+          max-width: 40px;
+        }
       }
     }
   }

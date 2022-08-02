@@ -62,7 +62,7 @@ body .admin-bar #navigation-container.sticky {
 /* Site navigation block */
 #navigation-container {
   z-index: 1;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -108,6 +108,7 @@ body .admin-bar #navigation-container.sticky {
   left: 0;
   top: 173px;
   width: 100vw;
+  min-height: 10000px;
 }
 #navigation-container .site-navigation .toggled .menu-principal-container::before {
   content: "";
@@ -115,8 +116,8 @@ body .admin-bar #navigation-container.sticky {
   top: 0;
   left: 0;
   width: 100vw;
+  height: 100%;
   background-color: #000000;
-  height: calc(100vh - 113px);
   z-index: -1;
 }
 #navigation-container .site-navigation .toggled #primary-menu {
@@ -147,17 +148,6 @@ body .admin-bar #navigation-container.sticky {
 #navigation-container .site-navigation .toggled #primary-menu li.btn-yellow a {
   font-weight: 700;
   color: #000000;
-}
-#navigation-container.sticky .site-navigation .menu-principal-container {
-  top: 157px;
-}
-#navigation-container.sticky .site-navigation .menu-principal-container::before {
-  height: calc(100vh - 94px);
-}
-#navigation-container.sticky .site-navigation .custom-logo {
-  width: auto;
-  max-height: 56px;
-  max-width: 40px;
 }
 #navigation-container .navigation-mobile {
   display: flex;
@@ -250,6 +240,14 @@ body .admin-bar #navigation-container.sticky {
   }
   #navigation-container .site-navigation .btn-desktop-nav {
     margin-left: 44px;
+  }
+  #navigation-container.sticky {
+    position: fixed;
+  }
+  #navigation-container.sticky .site-navigation .custom-logo {
+    width: auto;
+    max-height: 56px;
+    max-width: 40px;
   }
 }
 /* Buttons */

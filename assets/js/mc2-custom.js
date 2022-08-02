@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeTopBar.addEventListener('click', () => {
             document.cookie = "messageFlash=off; path=/; max-age=${60 * 60 * 24 * 1};";
-            topBarFlash.style.display = 'none';
+            topBarFlash.style.height = '0';
+            topBarFlash.style.paddingBlock = '0';
         });
     }
 
