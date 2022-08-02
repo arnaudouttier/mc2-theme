@@ -62,9 +62,6 @@ body .admin-bar #navigation-container.sticky {
 /* Site navigation block */
 #navigation-container {
   z-index: 1;
-  position: relative;
-}
-#navigation-container.sticky {
   position: fixed;
   top: 0;
   left: 0;
@@ -72,17 +69,10 @@ body .admin-bar #navigation-container.sticky {
   background: #071f5b;
   z-index: 10;
 }
-#navigation-container.sticky .site-navigation {
+#navigation-container .site-navigation {
   width: min(90vw, 1320px);
   margin: 0 auto;
   padding-block: 17px;
-}
-#navigation-container.sticky .site-navigation .custom-logo {
-  width: auto;
-  max-height: 56px;
-  max-width: 40px;
-}
-#navigation-container .site-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,15 +99,40 @@ body .admin-bar #navigation-container.sticky {
 #navigation-container .site-navigation #primary-menu {
   display: none;
 }
-#navigation-container .site-navigation .toggled #primary-menu {
-  display: block !important;
+#navigation-container .site-navigation .toggled .menu-principal-container {
+  position: absolute;
+  left: 0;
+  top: 113px;
 }
-#navigation-container .site-navigation .navigation-mobile {
+#navigation-container .site-navigation .toggled .menu-principal-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: lightpink;
+  height: calc(100vh - 113px);
+}
+#navigation-container .site-navigation .toggled #primary-menu {
+  display: block;
+}
+#navigation-container.sticky .site-navigation .menu-principal-container {
+  top: 94px;
+}
+#navigation-container.sticky .site-navigation .menu-principal-container::before {
+  height: calc(100vh - 94px);
+}
+#navigation-container.sticky .site-navigation .custom-logo {
+  width: auto;
+  max-height: 56px;
+  max-width: 40px;
+}
+#navigation-container .navigation-mobile {
   display: flex;
   align-items: center;
   column-gap: 10px;
 }
-#navigation-container .site-navigation .navigation-mobile h3 {
+#navigation-container .navigation-mobile h3 {
   color: #f7fe70;
   font-size: 12px;
   font-weight: 600;
@@ -126,7 +141,7 @@ body .admin-bar #navigation-container.sticky {
   text-transform: uppercase;
   padding-top: 6px;
 }
-#navigation-container .site-navigation .navigation {
+#navigation-container .navigation {
   display: none;
 }
 

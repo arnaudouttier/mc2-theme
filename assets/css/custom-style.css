@@ -34,12 +34,6 @@
   left: auto;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {

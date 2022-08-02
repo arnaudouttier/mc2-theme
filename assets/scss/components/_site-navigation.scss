@@ -2,30 +2,18 @@
 
 #navigation-container {
   z-index: 1;
-  position: relative;
-
-  &.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #071f5b;
-    z-index: 10;
-
-    .site-navigation {
-      width: min(90vw, 1320px);
-      margin: 0 auto;
-      padding-block: 17px;
-
-      .custom-logo {
-        width: auto;
-        max-height: 56px;
-        max-width: 40px;
-      }
-    }
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #071f5b;
+  z-index: 10;
 
   .site-navigation {
+    width: min(90vw, 1320px);
+    margin: 0 auto;
+    padding-block: 17px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,30 +53,64 @@
 
     /* Primary menu actif */
     .toggled {
+      .menu-principal-container {
+        position: absolute;
+        left: 0;
+        top: 113px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          background-color: lightpink;
+          height: calc(100vh - 113px);
+        }
+      }
+
       #primary-menu {
-        display: block !important;
+        display: block;
       }
     }
+  }
 
-    .navigation-mobile {
-      display: flex;
-      align-items: center;
-      column-gap: 10px;
+  &.sticky {
+    .site-navigation {
+      .menu-principal-container {
+        top: 94px;
 
-      h3 {
-        color: #f7fe70;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 17px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding-top: 6px;
+        &::before {
+          height: calc(100vh - 94px);
+        }
+      }
+
+      .custom-logo {
+        width: auto;
+        max-height: 56px;
+        max-width: 40px;
       }
     }
+  }
 
-    .navigation {
-      display: none;
+  .navigation-mobile {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    h3 {
+      color: #f7fe70;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 17px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-top: 6px;
     }
+  }
+
+  .navigation {
+    display: none;
   }
 }
 
