@@ -13,10 +13,14 @@
     width: min(90vw, 1320px);
     margin: 0 auto;
     padding-block: 17px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* paddinnng pour la version mobile*/
+    &.toggled {
+      padding-bottom: 80px;
+    }
 
     /* Site logo */
     .site-branding {
@@ -51,12 +55,13 @@
       display: none;
     }
 
-    /* Primary menu actif */
+    /* toggled Primary menu actif */
     .toggled {
       .menu-principal-container {
         position: absolute;
         left: 0;
-        top: 113px;
+        top: 173px;
+        width: 100vw;
 
         &::before {
           content: "";
@@ -64,13 +69,43 @@
           top: 0;
           left: 0;
           width: 100vw;
-          background-color: lightpink;
+          background-color: #000000;
           height: calc(100vh - 113px);
+          z-index: -1;
         }
       }
 
       #primary-menu {
         display: block;
+        max-width: 90vw;
+        width: 90vw;
+        margin-inline: auto;
+        padding: 67px 0 30px 0;
+        position: relative;
+
+        li {
+          margin-bottom: 30px;
+          a {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #ffffff;
+          }
+
+          /* boutton billeterie nav mobile toggled */
+          &.btn-yellow {
+            position: absolute;
+            left: 0px;
+            top: 0;
+            width: 90vw;
+            transform: translate(0, -50%);
+
+            a {
+              font-weight: 700;
+              color: #000000;
+            }
+          }
+        }
       }
     }
   }
@@ -78,7 +113,7 @@
   &.sticky {
     .site-navigation {
       .menu-principal-container {
-        top: 94px;
+        top: 157px;
 
         &::before {
           height: calc(100vh - 94px);
