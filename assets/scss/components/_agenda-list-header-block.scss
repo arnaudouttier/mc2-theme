@@ -6,26 +6,123 @@
   padding-bottom: 2em;
 
   .cover-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1320px;
-    margin: 0 auto;
+    width: min(90vw, 1320px);
+    margin-inline: auto;
+  }
 
-    // Code d'Arnaud
-    .cover-title {
-      grid-area: cover-title;
-      font-size: 52px;
-      color: #f7fe70;
-      margin-bottom: 37px;
-      font-weight: 700;
-      line-height: 64px;
-      max-width: 329px;
+  // Code d'Arnaud
+  .cover-title {
+    grid-area: cover-title;
+    font-size: 52px;
+    color: #f7fe70;
+    margin-bottom: 37px;
+    font-weight: 700;
+    line-height: 64px;
+    max-width: 329px;
+  }
+
+  .tribe-events-header {
+    flex-direction: column-reverse !important;
+    align-items: initial;
+    row-gap: 12px;
+  }
+
+  .tribe-events-c-events-bar,
+  .tribe-events-header__top-bar {
+    margin: 0;
+  }
+
+  .choix-date-agenda {
+    display: none;
+  }
+
+  /* Boutton date et filtre */
+  .tribe-events-c-top-bar__datepicker-button,
+  .tribe-events-c-events-bar__filter-button-container {
+    padding: 10px 13px;
+    border: 1px solid #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #ffffff;
+    width: 100%;
+    margin: 0;
+  }
+
+  :is(.tribe-events-c-top-bar__datepicker-button--open)
+    ~ .tribe-events-c-top-bar__datepicker-container {
+    min-height: 362px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .datepicker-orient-bottom {
+    width: 100%;
+  }
+
+  .tribe-events-c-events-bar__filter-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Filter bar */
+
+  .tribe-filter-bar__selected-filters,
+  .tribe-filter-bar__actions {
+    display: none;
+  }
+
+  .tribe-filter-bar {
+    max-width: min(90vw, 1320px);
+    margin-inline: auto;
+    position: relative;
+    background-color: #071f5b;
+
+    .tribe-filter-bar__filters-slider-wrapper {
+      display: block !important;
     }
   }
 
-  // Juste pour le dev
+  .tribe-filter-bar__filters-slider-container {
+    visibility: visible;
+    display: block;
+  }
+
+  .tribe-filter-bar__filters-slider-wrapper {
+    .tribe-swiper-slide {
+      padding-block: 18px;
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+
+      button {
+        padding: 0;
+      }
+
+      & + .tribe-swiper-slide {
+        border-top: 0;
+      }
+    }
+
+    .tribe-filter-bar-c-pill__pill-label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+
+    .tribe-filter-bar-c-pill__pill-label-colon,
+    .tribe-filter-bar-c-pill__pill-selections {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
   .tribe-events-c-top-bar__datepicker {
     display: flex;
     align-items: center;
@@ -33,36 +130,5 @@
     padding: 0 2em;
     border-right: 1px solid #d9d9d9;
     column-gap: 20px;
-
-    .tribe-events-c-top-bar__datepicker-button {
-      padding: 10px 13px;
-      border: 1px solid #ffffff;
-      font-weight: 600;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background-color: transparent;
-      color: #ffffff;
-    }
-  }
-
-  /* Filter bar */
-  .tribe-filter-bar {
-    max-width: min(90vw, 1320px);
-    margin-inline: auto;
-
-    .tribe-filter-bar__filters-slider-wrapper {
-      display: block !important;
-    }
-
-    .tribe-filter-bar__filters-container {
-      transform: translate(200%, -50%) !important;
-    }
-  }
-
-  .tribe-events-c-events-bar__filter-button-container {
-    display: flex;
-    align-items: center;
-    color: white;
   }
 }

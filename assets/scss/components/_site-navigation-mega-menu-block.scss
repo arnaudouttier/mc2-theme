@@ -1,0 +1,119 @@
+/* Mego Menu block - site-header -> site-navigation */
+
+.mega-menu {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  background: #071f5b;
+  height: calc(100vh - 137px);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+    transition: all 0.3s;
+  }
+
+  .mega-menu-container {
+    width: 1320px;
+    max-width: 1320px;
+    height: 100%;
+    margin-inline: auto;
+    padding-block: 2em;
+    display: flex;
+    column-gap: 265px;
+
+    .mega-menu-title {
+      align-self: flex-end;
+      padding-bottom: 50px;
+
+      p {
+        // Repris du code d'Arnaud
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          bottom: -25px;
+          width: 12px;
+          height: 12px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .mega-menu-content {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 259px;
+
+      .mega-menu-items,
+      .mega-menu-actus {
+        max-width: 320px;
+      }
+
+      .mega-menu-items {
+        li {
+          margin-bottom: 24px;
+        }
+      }
+
+      .mega-menu-actus {
+        flex-direction: column;
+        padding-left: 26px;
+        border-left: 1px solid #d9d9d9;
+
+        /* menu actu title */
+        & > :first-child {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 46px;
+          margin-bottom: 38px;
+        }
+      }
+
+      .mega-menu-footer {
+        border-top: 1px solid #d9d9d9;
+        padding-top: 22px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-end;
+
+        .mega-menu-footer-col-2 {
+          .contact-social-list {
+            display: flex;
+            column-gap: 1.6em;
+
+            /* social menu icon en blanc */
+            a {
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Si les mega menu ouverts n'ont que des sous menus,
+  // on cible les menus pour pouvoir mettre en colonne les sous menus
+  #menu-mega-menu-4,
+  #menu-mega-menu-6 {
+    display: flex;
+  }
+}
+
+:is(#navigation-container.sticky) ~ .mega-menu {
+  height: calc(100vh - 88px);
+}

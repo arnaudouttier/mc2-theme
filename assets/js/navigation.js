@@ -5,6 +5,7 @@
  * navigation support for dropdown menus.
  */
 (function () {
+	const navigationContainer = document.querySelector('#navigation-container')
 	const siteNavigationClass = document.querySelector('.site-navigation');
 	const siteNavigation = document.getElementById('site-navigation');
 
@@ -34,6 +35,7 @@
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener('click', function () {
+
 		siteNavigation.classList.toggle('toggled');
 
 		if (button.getAttribute('aria-expanded') === 'true') {
@@ -43,7 +45,15 @@
 		}
 
 		// add toggled à la class site navigation pour ajout padding nav mobile
-		siteNavigationClass.classList.toggle('toggled')
+		if (siteNavigation.classList.contains('toggled')) {
+			siteNavigationClass.classList.add('toggled')
+			navigationContainer.classList.add('active')
+		}
+		else {
+			siteNavigationClass.classList.remove('toggled')
+			navigationContainer.classList.remove('active')
+		}
+
 
 	});
 
@@ -53,6 +63,7 @@
 
 		if (!isClickInside) {
 			siteNavigation.classList.remove('toggled');
+			siteNavigationClass.classList.remove('toggled')
 			button.setAttribute('aria-expanded', 'false');
 		}
 	});

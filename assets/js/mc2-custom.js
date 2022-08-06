@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     itemNav.forEach(el => {
         let target = el.dataset.sub;
         let subMenu = document.getElementById(target);
+        const navigationContainer = document.querySelector('#navigation-container')
 
         el.addEventListener('click', (e) => {
 
@@ -105,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.classList.contains('focus')) {
                 subMenuAll.forEach(sub => {
                     sub.classList.remove('active');
+                    navigationContainer.classList.remove('active')
                 });
                 e.target.classList.remove('focus');
                 headerHome.classList.remove('sub-menu-open');
@@ -114,10 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 subMenuAll.forEach(sub => {
                     sub.classList.remove('active');
+                    navigationContainer.classList.remove('active')
                 });
                 e.target.classList.add('focus');
                 subMenu.classList.add('active');
                 headerHome.classList.add('sub-menu-open');
+                navigationContainer.classList.add('active')
             }
         });
     });

@@ -6,8 +6,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: #071f5b;
+  background-color: transparent;
   z-index: 10;
+
+  &.active {
+    background-color: #071f5b;
+  }
 
   .site-navigation {
     width: min(90vw, 1320px);
@@ -17,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
 
-    /* paddinnng pour la version mobile*/
+    /* padding pour la version mobile*/
     &.toggled {
       padding-bottom: 80px;
     }
@@ -39,15 +43,29 @@
       }
     }
 
-    /* button navigation maobile */
-    button {
-      &.menu-toggle {
-        display: block;
-        font-weight: 700;
-        font-size: 16px;
-        color: #000000;
-        background-color: #f7fe70;
-        padding: 12px 9px;
+    /* Zone button navigation maobile */
+    .site-navigation-button {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      h2 {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #f7fe70;
+      }
+      button {
+        &.menu-toggle {
+          display: block;
+          font-weight: 700;
+          font-size: 16px;
+          color: #000000;
+          background-color: #f7fe70;
+          padding: 12px 9px;
+        }
       }
     }
 
@@ -110,26 +128,6 @@
       }
     }
   }
-
-  .navigation-mobile {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-
-    h3 {
-      color: #f7fe70;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 17px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding-top: 6px;
-    }
-  }
-
-  .navigation {
-    display: none;
-  }
 }
 
 :is(#site-header.spectacles, #site-header.edito) .site-navigation {
@@ -155,10 +153,8 @@
       /* navigation- */
 
       /* button mobile */
-      button {
-        &.menu-toggle {
-          display: none;
-        }
+      .site-navigation-button {
+        display: none;
       }
 
       #primary-menu {
@@ -229,18 +225,12 @@
       }
     }
 
+    /*navigation sticky*/
     &.sticky {
+      background-color: #071f5b;
       position: fixed;
 
       .site-navigation {
-        // .menu-principal-container {
-        //   top: 157px;
-
-        //   &::before {
-        //     height: calc(100vh - 94px);
-        //   }
-        // }
-
         .custom-logo {
           width: auto;
           max-height: 56px;

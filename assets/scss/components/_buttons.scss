@@ -92,3 +92,57 @@ button,
     text-transform: uppercase;
   }
 }
+
+/* Boutton checkbox filtre Page agenda */
+
+/* checkbox container */
+.tribe-common-form-control-checkbox {
+  margin-bottom: 32px !important;
+  column-gap: 34px;
+}
+
+/* input checkbox */
+input[type="checkbox"],
+.tribe-common-form-control-checkbox__input {
+  position: relative;
+  appearance: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #d9d9d9;
+    border-radius: 100px;
+    width: 26px;
+    height: 8px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: -5px;
+    background-color: #ffffff;
+    top: -5px;
+    transition: left 0.4s ease;
+  }
+
+  & + label {
+    color: #ffffff;
+    opacity: 0.6;
+  }
+
+  &:checked {
+    &::after {
+      left: 15px;
+      background-color: #f7fe70;
+    }
+
+    & + label {
+      opacity: 1;
+    }
+  }
+}

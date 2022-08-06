@@ -112,106 +112,106 @@
 * Sub Menu : base de travail à affiner
 */
 
-.mega-menu {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  background: #071f5b;
-  height: calc(100vh - 100px);
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s;
+// .mega-menu {
+//   width: 100%;
+//   position: fixed;
+//   left: 0;
+//   background: #071f5b;
+//   height: calc(100vh - 100px);
+//   z-index: -1;
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: all 0.2s;
 
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 9999;
-    transition: all 0.3s;
-  }
+//   &.active {
+//     opacity: 1;
+//     visibility: visible;
+//     z-index: 9999;
+//     transition: all 0.3s;
+//   }
 
-  .mega-menu-container {
-    width: 1170px;
-    height: 100%;
-    margin: 0 auto;
-    padding-top: 2em;
-    display: flex;
-    flex-direction: row;
+//   .mega-menu-container {
+//     width: 1170px;
+//     height: 100%;
+//     margin: 0 auto;
+//     padding-top: 2em;
+//     display: flex;
+//     flex-direction: row;
 
-    .mega-menu-title {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 2em;
+//     .mega-menu-title {
+//       display: flex;
+//       justify-content: center;
+//       align-items: flex-end;
+//       padding-bottom: 2em;
 
-      p {
-        // Repris du code d'Arnaud
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
+//       p {
+//         // Repris du code d'Arnaud
+//         font-weight: 700;
+//         font-size: 16px;
+//         line-height: 24px;
+//         writing-mode: vertical-lr;
+//         transform: rotate(180deg);
 
-        &::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translate(-50%, 0);
-          bottom: -25px;
-          width: 12px;
-          height: 12px;
-          background-color: #fff;
-          border-radius: 50%;
-        }
-      }
-    }
+//         &::after {
+//           content: "";
+//           position: absolute;
+//           left: 50%;
+//           transform: translate(-50%, 0);
+//           bottom: -25px;
+//           width: 12px;
+//           height: 12px;
+//           background-color: #fff;
+//           border-radius: 50%;
+//         }
+//       }
+//     }
 
-    .mega-menu-content {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      flex-grow: 1;
+//     .mega-menu-content {
+//       display: flex;
+//       flex-direction: row;
+//       flex-wrap: wrap;
+//       flex-grow: 1;
 
-      .mega-menu-items,
-      .mega-menu-actus {
-        width: 50%;
-        display: flex;
-      }
+//       .mega-menu-items,
+//       .mega-menu-actus {
+//         width: 50%;
+//         display: flex;
+//       }
 
-      .mega-menu-actus {
-        flex-direction: column;
-      }
+//       .mega-menu-actus {
+//         flex-direction: column;
+//       }
 
-      .mega-menu-footer {
-        border-top: 1px solid #d9d9d9;
-        width: 100%;
-        display: flex;
+//       .mega-menu-footer {
+//         border-top: 1px solid #d9d9d9;
+//         width: 100%;
+//         display: flex;
 
-        .mega-menu-footer-col-1,
-        .mega-menu-footer-col-2 {
-          width: 50%;
-        }
+//         .mega-menu-footer-col-1,
+//         .mega-menu-footer-col-2 {
+//           width: 50%;
+//         }
 
-        .mega-menu-footer-col-2 {
-          display: flex;
-          justify-content: flex-end;
+//         .mega-menu-footer-col-2 {
+//           display: flex;
+//           justify-content: flex-end;
 
-          a {
-            display: inline-block;
-            margin-left: 0.5em;
-          }
-        }
-      }
-    }
-  }
+//           a {
+//             display: inline-block;
+//             margin-left: 0.5em;
+//           }
+//         }
+//       }
+//     }
+//   }
 
-  // Si les mega menu ouverts n'ont que des sous menus,
-  // on cible les menus pour pouvoir mettre en colonne les sous menus
-  #menu-mega-menu-4,
-  #menu-mega-menu-6 {
-    display: flex;
-  }
-}
+//   // Si les mega menu ouverts n'ont que des sous menus,
+//   // on cible les menus pour pouvoir mettre en colonne les sous menus
+//   #menu-mega-menu-4,
+//   #menu-mega-menu-6 {
+//     display: flex;
+//   }
+// }
 
 /* !important car l'image de fond est injectée en style en ligne */
 // #headerHome {
