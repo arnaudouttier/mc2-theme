@@ -64,6 +64,21 @@
     }
   }
 
+  /* Bouton next prev seletor */
+  .tribe-events-pro-week-day-selector__prev,
+  .tribe-events-pro-week-day-selector__next {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    background-color: #071f5b;
+
+    svg {
+      path {
+        fill: #ffff;
+      }
+    }
+  }
+
   /*   Agenda List Article */
 
   .tribe-events-pro-week-mobile-events__day[aria-hidden="false"] {
@@ -116,6 +131,25 @@
     .tribe-events-pro-week-mobile-events__event-time-separator,
     .tribe-events-pro-week-mobile-events__event-type-separator {
       display: none;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .agenda {
+    /* Bouton next prev seletor */
+    .tribe-events-pro-week-day-selector__prev,
+    .tribe-events-pro-week-day-selector__next {
+      width: initial;
+      height: initial;
+      border-radius: initial;
+      background-color: initial;
+
+      svg {
+        path {
+          fill: #000000;
+        }
+      }
     }
   }
 }

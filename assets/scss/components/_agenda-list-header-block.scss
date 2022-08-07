@@ -3,7 +3,7 @@
 #agenda-list-header {
   background-color: #071f5b;
   padding-top: 165px !important;
-  padding-bottom: 2em;
+  padding-bottom: 1.6em;
 
   .cover-details {
     width: min(90vw, 1320px);
@@ -14,10 +14,10 @@
   .cover-title {
     grid-area: cover-title;
     font-size: 52px;
-    color: #f7fe70;
-    margin-bottom: 37px;
     font-weight: 700;
     line-height: 64px;
+    color: #f7fe70;
+    margin-bottom: 32px;
     max-width: 329px;
   }
 
@@ -25,6 +25,7 @@
     flex-direction: column-reverse !important;
     align-items: initial;
     row-gap: 12px;
+    padding-bottom: 0;
   }
 
   .tribe-events-c-events-bar,

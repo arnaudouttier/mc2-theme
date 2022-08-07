@@ -68,6 +68,8 @@ body .admin-bar #navigation-container.sticky {
   width: 100%;
   background-color: transparent;
   z-index: 10;
+  padding-top: clamp(28px, 1.75rem + (1vw - 3.75px) * 3.0047, 60px);
+  min-height: 0vw;
 }
 #navigation-container.active {
   background-color: #071f5b;
@@ -75,13 +77,12 @@ body .admin-bar #navigation-container.sticky {
 #navigation-container .site-navigation {
   width: min(90vw, 1320px);
   margin: 0 auto;
-  padding-block: 17px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* padding pour la version mobile*/
   /* Site logo */
-  /* Zone button navigation maobile */
+  /* Zone button navigation mobile */
   /* toggled Primary menu actif */
 }
 #navigation-container .site-navigation.toggled {
@@ -147,6 +148,7 @@ body .admin-bar #navigation-container.sticky {
 #navigation-container .site-navigation .toggled #primary-menu li {
   margin-bottom: 30px;
   /* boutton billeterie nav mobile toggled */
+  /* primary menu separateur au 3eme li */
 }
 #navigation-container .site-navigation .toggled #primary-menu li a {
   font-weight: 400;
@@ -164,6 +166,20 @@ body .admin-bar #navigation-container.sticky {
 #navigation-container .site-navigation .toggled #primary-menu li.btn-yellow a {
   font-weight: 700;
   color: #000000;
+}
+#navigation-container .site-navigation .toggled #primary-menu li:nth-child(3) {
+  position: relative;
+}
+#navigation-container .site-navigation .toggled #primary-menu li:nth-child(3)::after {
+  content: "";
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d9d9d9;
+  display: block;
+  margin-block: 30px;
 }
 
 :is(#site-header.spectacles, #site-header.edito) .site-navigation {
@@ -184,7 +200,6 @@ body .admin-bar #navigation-container.sticky {
     /*navigation sticky*/
   }
   #navigation-container .site-navigation {
-    /* navigation- */
     /* button mobile */
     /* loupe recherche */
   }
@@ -246,6 +261,7 @@ body .admin-bar #navigation-container.sticky {
   #navigation-container.sticky {
     background-color: #071f5b;
     position: fixed;
+    padding-block: 17px;
   }
   #navigation-container.sticky .site-navigation .custom-logo {
     width: auto;
@@ -1368,6 +1384,7 @@ input[type=checkbox]:checked + label,
 :is(#site-header.homepage) .cover-details {
   width: min(90vw, 1320px);
   margin-inline: auto;
+  margin-bottom: 33px;
 }
 :is(#site-header.homepage) .cover-details .cover-title {
   margin-bottom: 58px;
@@ -1611,6 +1628,7 @@ input[type=checkbox]:checked + label,
   background: #f3f3f3;
   /* Weeks Title */
   /* Agenda Selector Date */
+  /* Bouton next prev seletor */
   /*   Agenda List Article */
 }
 .agenda .tribe-events-header {
@@ -1649,6 +1667,17 @@ input[type=checkbox]:checked + label,
   font-weight: 700;
   font-size: 24px;
   line-height: 34px;
+}
+.agenda .tribe-events-pro-week-day-selector__prev,
+.agenda .tribe-events-pro-week-day-selector__next {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  background-color: #071f5b;
+}
+.agenda .tribe-events-pro-week-day-selector__prev svg path,
+.agenda .tribe-events-pro-week-day-selector__next svg path {
+  fill: white;
 }
 .agenda .tribe-events-pro-week-mobile-events__day[aria-hidden=false] {
   display: flex !important;
@@ -1693,6 +1722,22 @@ input[type=checkbox]:checked + label,
   display: none;
 }
 
+@media (min-width: 1200px) {
+  .agenda {
+    /* Bouton next prev seletor */
+  }
+  .agenda .tribe-events-pro-week-day-selector__prev,
+.agenda .tribe-events-pro-week-day-selector__next {
+    width: initial;
+    height: initial;
+    border-radius: initial;
+    background-color: initial;
+  }
+  .agenda .tribe-events-pro-week-day-selector__prev svg path,
+.agenda .tribe-events-pro-week-day-selector__next svg path {
+    fill: #000000;
+  }
+}
 /* Mego Menu block - site-header -> site-navigation */
 .mega-menu {
   width: 100vw;
@@ -1795,7 +1840,7 @@ input[type=checkbox]:checked + label,
 #agenda-list-header {
   background-color: #071f5b;
   padding-top: 165px !important;
-  padding-bottom: 2em;
+  padding-bottom: 1.6em;
   /* Boutton date et filtre */
   /* Filter bar */
 }
@@ -1806,16 +1851,17 @@ input[type=checkbox]:checked + label,
 #agenda-list-header .cover-title {
   grid-area: cover-title;
   font-size: 52px;
-  color: #f7fe70;
-  margin-bottom: 37px;
   font-weight: 700;
   line-height: 64px;
+  color: #f7fe70;
+  margin-bottom: 32px;
   max-width: 329px;
 }
 #agenda-list-header .tribe-events-header {
   flex-direction: column-reverse !important;
   align-items: initial;
   row-gap: 12px;
+  padding-bottom: 0;
 }
 #agenda-list-header .tribe-events-c-events-bar,
 #agenda-list-header .tribe-events-header__top-bar {
@@ -2255,7 +2301,6 @@ input[type=checkbox]:checked + label,
 }
 /* Header Layout */
 #site-header {
-  padding-top: clamp(28px, 1.75rem + (1vw - 3.75px) * 3.0047, 60px);
   /* Site header de la homepage */
   /* Site header pages Spectacles Edito */
 }
@@ -2263,7 +2308,6 @@ input[type=checkbox]:checked + label,
   z-index: 1;
   min-height: 100px;
   height: 100vh;
-  padding-top: 1em;
   padding-bottom: 0;
   display: grid;
   grid-template-columns: min(90vw, 1320px);

@@ -1,19 +1,13 @@
 /* Header Layout */
 
 #site-header {
-  padding-top: clamp(
-    28px,
-    calc(1.75rem + ((1vw - 3.75px) * 3.0047)),
-    60px
-  ); // 375vw to 1440px
-
   /* Site header de la homepage */
 
   &.homepage {
     z-index: 1;
     min-height: 100px;
     height: 100vh;
-    padding-top: 1em;
+    // padding-top: 1em;
     padding-bottom: 0;
     display: grid;
     grid-template-columns: min(90vw, 1320px);

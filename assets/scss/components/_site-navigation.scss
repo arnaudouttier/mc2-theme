@@ -8,6 +8,12 @@
   width: 100%;
   background-color: transparent;
   z-index: 10;
+  padding-top: clamp(
+    28px,
+    calc(1.75rem + ((1vw - 3.75px) * 3.0047)),
+    60px
+  ); // 375vw to 1440px
+  min-height: 0vw; // safari fix
 
   &.active {
     background-color: #071f5b;
@@ -16,7 +22,6 @@
   .site-navigation {
     width: min(90vw, 1320px);
     margin: 0 auto;
-    padding-block: 17px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +48,7 @@
       }
     }
 
-    /* Zone button navigation maobile */
+    /* Zone button navigation mobile */
     .site-navigation-button {
       display: flex;
       align-items: center;
@@ -124,6 +129,23 @@
               color: #000000;
             }
           }
+
+          /* primary menu separateur au 3eme li */
+          &:nth-child(3) {
+            position: relative;
+
+            &::after {
+              content: "";
+              position: relative;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #d9d9d9;
+              display: block;
+              margin-block: 30px;
+            }
+          }
         }
       }
     }
@@ -150,8 +172,6 @@
 @media (min-width: 1200px) {
   #navigation-container {
     .site-navigation {
-      /* navigation- */
-
       /* button mobile */
       .site-navigation-button {
         display: none;
@@ -229,6 +249,7 @@
     &.sticky {
       background-color: #071f5b;
       position: fixed;
+      padding-block: 17px;
 
       .site-navigation {
         .custom-logo {
