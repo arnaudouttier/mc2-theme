@@ -1,4 +1,4 @@
-/* Site Header -> Cover details block - partie bas (date - titre piece) du site header*/
+/* Site Header -> Cover details block - partie bas du site-header*/
 
 /* Cover details pour la Home Page */
 :is(#site-header.homepage) .cover-details {
@@ -72,6 +72,14 @@
 /* Cover details pour les pages edito et spectacles */
 :is(#site-header.spectacles, #site-header.edito) .cover-details {
   color: #ffffff;
+  /* 265px @ 375px increasing to 370px @ 1440px */
+  padding-top: clamp(
+    265px,
+    calc(16.5625rem + ((1vw - 3.75px) * 9.8592)),
+    370px
+  );
+  /* Safari resize fix */
+  min-height: 0vw;
 
   .cover-title,
   .cover-date-category,
@@ -175,7 +183,7 @@
 }
 
 @media (min-width: 572px) {
-  /* Cover details pour les pages edito et spectacles */
+  /* Cover detail s pour les pages edito et spectacles */
   :is(#site-header.spectacles, #site-header.edito) .cover-details {
     .cover-title {
       max-width: 80%;

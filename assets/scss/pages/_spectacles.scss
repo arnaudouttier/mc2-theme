@@ -7,7 +7,10 @@
     justify-content: center;
     color: #000000;
     overflow: hidden;
-    padding-top: 66px;
+    /* 66px @ 375px increasing to 91px @ 1440px */
+    padding-top: clamp(66px, calc(4.125rem + ((1vw - 3.75px) * 2.3474)), 91px);
+    /* Safari resize fix */
+    min-height: 0vw;
     padding-bottom: 52px;
   }
 
@@ -86,7 +89,6 @@
 @media (min-width: 1200px) {
   #main {
     &.spectacles {
-      padding-top: 0;
       padding-bottom: 70px;
 
       .grid-cl-left {

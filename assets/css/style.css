@@ -599,51 +599,62 @@ input[type=checkbox]:checked + label,
   z-index: 0;
   position: relative;
 }
-
-.video-saisons-inner {
+.video-saisons .video-saisons-inner {
   position: relative;
   z-index: 10;
 }
-
-.vs-thumbnail {
-  width: 100%;
+.video-saisons #video-home {
+  min-height: 812px;
 }
-
-.vs-logo,
-.vs-play,
-.vs-date {
+.video-saisons .vs-logo,
+.video-saisons .vs-play,
+.video-saisons .vs-date {
   position: absolute;
   z-index: 99;
 }
-
-.vs-logo {
-  top: 40px;
+.video-saisons .vs-logo {
+  width: 60px;
+  top: 41px;
   left: 40px;
 }
-
-.vs-play {
+.video-saisons .vs-play {
   display: flex;
   align-items: center;
   column-gap: 13px;
   bottom: 44px;
-  left: 42px;
+  left: 37px;
 }
-.vs-play p {
+.video-saisons .vs-play img {
+  /* 32px @ 375px increasing to 40px @ 1440px */
+  width: clamp(32px, 2rem + (1vw - 3.75px) * 0.7512, 40px);
+  /* Safari resize fix */
+  min-height: 0vw;
+}
+.video-saisons .vs-play p {
   font-weight: 700;
+  /* 24px @ 375px increasing to 36px @ 1440px */
   font-size: clamp(24px, 1.5rem + (1vw - 3.75px) * 1.1268, 36px);
+  /* 3px @ 375px increasing to 8px @ 1440px */
+  padding-top: clamp(3px, 0.1875rem + (1vw - 3.75px) * 0.4695, 8px);
+  /* Safari resize fix */
+  min-height: 0vw;
 }
-.vs-play:hover {
+.video-saisons .vs-play:hover {
   cursor: pointer;
 }
-
-.vs-date {
+.video-saisons .vs-date {
   bottom: 33px;
   right: 30px;
-  font-weight: 600;
-  font-size: clamp(60px, 3.75rem + (1vw - 3.75px) * 2.8169, 90px);
-  line-height: clamp(60px, 3.75rem + (1vw - 3.75px) * 2.8169, 90px);
   min-height: 0vw;
   text-transform: uppercase;
+}
+.video-saisons .vs-date h3 {
+  font-size: clamp(60px, 3.75rem + (1vw - 3.75px) * 2.8169, 90px);
+  font-weight: 700;
+  /* 54px @ 375px increasing to 80px @ 1440px */
+  line-height: clamp(54px, 3.375rem + (1vw - 3.75px) * 2.4413, 80px);
+  /* Safari resize fix */
+  min-height: 0vw;
 }
 
 @media (min-width: 1200px) {
@@ -654,8 +665,8 @@ input[type=checkbox]:checked + label,
     align-items: center;
     padding-block: 120px;
   }
-  .video-saisons .vs-thumbnail {
-    width: initial;
+  .video-saisons #video-home {
+    min-height: auto;
   }
   .video-saisons .vs-logo,
 .video-saisons .vs-date {
@@ -665,6 +676,10 @@ input[type=checkbox]:checked + label,
     width: 105px;
     left: -35px;
     top: -56px;
+  }
+  .video-saisons .vs-play {
+    left: 40px;
+    bottom: 40px;
   }
   .video-saisons .vs-date {
     right: -35px;
@@ -1379,7 +1394,7 @@ input[type=checkbox]:checked + label,
     overflow-x: initial;
   }
 }
-/* Site Header -> Cover details block - partie bas (date - titre piece) du site header*/
+/* Site Header -> Cover details block - partie bas du site-header*/
 /* Cover details pour la Home Page */
 :is(#site-header.homepage) .cover-details {
   width: min(90vw, 1320px);
@@ -1439,6 +1454,10 @@ input[type=checkbox]:checked + label,
 /* Cover details pour les pages edito et spectacles */
 :is(#site-header.spectacles, #site-header.edito) .cover-details {
   color: #ffffff;
+  /* 265px @ 375px increasing to 370px @ 1440px */
+  padding-top: clamp(265px, 16.5625rem + (1vw - 3.75px) * 9.8592, 370px);
+  /* Safari resize fix */
+  min-height: 0vw;
 }
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-title,
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category,
@@ -1525,7 +1544,7 @@ input[type=checkbox]:checked + label,
 }
 
 @media (min-width: 572px) {
-  /* Cover details pour les pages edito et spectacles */
+  /* Cover detail s pour les pages edito et spectacles */
   :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-title {
     max-width: 80%;
   }
@@ -1839,14 +1858,8 @@ input[type=checkbox]:checked + label,
 /* agenda-list-header-block / Page Agenda */
 #agenda-list-header {
   background-color: #071f5b;
-  padding-top: 165px !important;
-  padding-bottom: 1.6em;
   /* Boutton date et filtre */
-  /* Filter bar */
-}
-#agenda-list-header .cover-details {
-  width: min(90vw, 1320px);
-  margin-inline: auto;
+  /* bouton filtre */
 }
 #agenda-list-header .cover-title {
   grid-area: cover-title;
@@ -1885,7 +1898,7 @@ input[type=checkbox]:checked + label,
   margin: 0;
 }
 #agenda-list-header :is(.tribe-events-c-top-bar__datepicker-button--open) ~ .tribe-events-c-top-bar__datepicker-container {
-  min-height: 362px;
+  min-height: 400px;
   position: relative;
   width: 100%;
   display: inline-block;
@@ -1897,6 +1910,10 @@ input[type=checkbox]:checked + label,
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#agenda-list-header .tribe-events-c-events-bar__filter-button-container svg {
+  width: 18px;
+  height: 10px;
 }
 #agenda-list-header .tribe-filter-bar__selected-filters,
 #agenda-list-header .tribe-filter-bar__actions {
@@ -1947,16 +1964,57 @@ input[type=checkbox]:checked + label,
     column-gap: 20px;
   }
 }
-/* agenda calendar item block -- dans les pages agenda */
+/* agenda filtre calendrier */
+.datepicker.datepicker-dropdown {
+  background-color: #071f5b;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+.datepicker.datepicker-dropdown::after {
+  display: none;
+}
+.datepicker.datepicker-dropdown .datepicker-days table {
+  width: 100%;
+}
+.datepicker.datepicker-dropdown .datepicker-days table thead {
+  margin-bottom: 11px;
+}
+.datepicker.datepicker-dropdown .datepicker-days table thead th:hover {
+  background: transparent;
+}
+.datepicker.datepicker-dropdown .datepicker-days table tbody td {
+  padding: 18px 15px 15px 15px;
+  border: 1px solid #ffffff;
+  flex-grow: 1;
+  border-radius: 0;
+  height: auto;
+}
+.datepicker.datepicker-dropdown .datepicker-days table tbody td.day.past {
+  opacity: 0.2;
+}
+.datepicker.datepicker-dropdown .datepicker-days table tbody td.active, .datepicker.datepicker-dropdown .datepicker-days table tbody td:hover {
+  color: #071f5b;
+  background: #ffffff;
+}
+
+/* agenda calendar list item block -- dans les pages agenda */
 .tribe-events-calendar-list__event {
   position: relative;
   background: #ffffff;
   color: #fff;
   padding: 20px !important;
-  max-width: 300px;
+  max-width: 334px;
   height: 500px;
   margin: 0 !important;
   flex-direction: column !important;
+  margin-bottom: 20px !important;
   /* affiche  item title */
   /* affiche item date */
 }
@@ -2063,7 +2121,7 @@ input[type=checkbox]:checked + label,
     position: absolute;
     left: 0;
     right: 0;
-    height: 120px;
+    height: 34px;
     background-color: white;
     bottom: 0px;
     z-index: 1;
@@ -2302,7 +2360,6 @@ input[type=checkbox]:checked + label,
 /* Header Layout */
 #site-header {
   /* Site header de la homepage */
-  /* Site header pages Spectacles Edito */
 }
 #site-header.homepage {
   z-index: 1;
@@ -2313,9 +2370,6 @@ input[type=checkbox]:checked + label,
   grid-template-columns: min(90vw, 1320px);
   justify-content: center;
   align-content: space-between;
-}
-#site-header.spectacle {
-  min-height: 1380px;
 }
 
 @media (min-width: 1024px) {
@@ -2372,6 +2426,29 @@ input[type=checkbox]:checked + label,
     padding-top: 40px;
   }
 }
+/* Layout Page Agenda */
+/* agenda-list-header */
+#agenda-list-header {
+  /* 265px @ 375px increasing to 370px @ 1440px */
+  padding-top: clamp(265px, 16.5625rem + (1vw - 3.75px) * 9.8592, 370px);
+  /* Safari resize fix */
+  min-height: 0vw;
+  padding-bottom: 1.6em;
+}
+#agenda-list-header .cover-details {
+  width: min(90vw, 1320px);
+  margin-inline: auto;
+}
+
+/* calendrier article  */
+.tribe-events-calendar-list.affiche {
+  place-content: center;
+  /* 30px @ 375px increasing to 64px @ 1440px */
+  padding-block: clamp(30px, 1.875rem + (1vw - 3.75px) * 3.1925, 64px) !important;
+  /* Safari resize fix */
+  min-height: 0vw;
+}
+
 /* Footer Layout */
 #site-footer {
   display: grid;
@@ -2575,7 +2652,10 @@ input[type=checkbox]:checked + label,
   justify-content: center;
   color: #000000;
   overflow: hidden;
-  padding-top: 66px;
+  /* 66px @ 375px increasing to 91px @ 1440px */
+  padding-top: clamp(66px, 4.125rem + (1vw - 3.75px) * 2.3474, 91px);
+  /* Safari resize fix */
+  min-height: 0vw;
   padding-bottom: 52px;
 }
 #main .grid-cl-left .contact-social {
@@ -2631,7 +2711,6 @@ input[type=checkbox]:checked + label,
 
 @media (min-width: 1200px) {
   #main.spectacles {
-    padding-top: 0;
     padding-bottom: 70px;
   }
   #main.spectacles .grid-cl-left .contact-social {
@@ -2886,11 +2965,12 @@ input[type=checkbox]:checked + label,
   }
 }
 /* Page Agenda */
-.tribe-events-calendar-list {
-  /* 30px @ 375px increasing to 64px @ 1440px */
-  padding-block: clamp(30px, 1.875rem + (1vw - 3.75px) * 3.1925, 64px) !important;
-  /* Safari resize fix */
-  min-height: 0vw;
+/* separateur article h2 */
+.tribe-events-calendar-list__month-separator {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 64px;
+  margin-bottom: 42px !important;
 }
 
 /* ABSTRACT */

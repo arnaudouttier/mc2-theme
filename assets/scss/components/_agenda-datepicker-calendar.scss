@@ -1,0 +1,56 @@
+/* agenda filtre calendrier */
+
+.datepicker {
+  &.datepicker-dropdown {
+    background-color: #071f5b;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+
+    &::after {
+      display: none;
+    }
+
+    .datepicker-days {
+      table {
+        width: 100%;
+
+        thead {
+          margin-bottom: 11px;
+
+          th {
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+
+        tbody {
+          td {
+            padding: 18px 15px 15px 15px;
+            border: 1px solid #ffffff;
+            flex-grow: 1;
+            border-radius: 0;
+            height: auto;
+
+            &.day.past {
+              opacity: 0.2;
+            }
+
+            &.active,
+            &:hover {
+              color: #071f5b;
+              background: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -32,7 +32,8 @@
 
 /*Components Page Agenda */
 @use "components/agenda-list-header-block";
-@use "components/agenda-calendar-item-block";
+@use "components/agenda-datepicker-calendar";
+@use "components/agenda-calendar-list-item-block";
 
 /* COMMONS */
 
@@ -43,6 +44,7 @@
 
 @use "layout/l-header";
 @use "layout/grid";
+@use "layout/l-agenda";
 @use "layout/l-footer";
 
 /* PAGES */

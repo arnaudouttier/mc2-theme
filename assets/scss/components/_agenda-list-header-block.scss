@@ -2,13 +2,6 @@
 
 #agenda-list-header {
   background-color: #071f5b;
-  padding-top: 165px !important;
-  padding-bottom: 1.6em;
-
-  .cover-details {
-    width: min(90vw, 1320px);
-    margin-inline: auto;
-  }
 
   // Code d'Arnaud
   .cover-title {
@@ -55,7 +48,7 @@
 
   :is(.tribe-events-c-top-bar__datepicker-button--open)
     ~ .tribe-events-c-top-bar__datepicker-container {
-    min-height: 362px;
+    min-height: 400px;
     position: relative;
     width: 100%;
     display: inline-block;
@@ -65,13 +58,17 @@
     width: 100%;
   }
 
+  /* bouton filtre */
   .tribe-events-c-events-bar__filter-button-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  /* Filter bar */
+    svg {
+      width: 18px;
+      height: 10px;
+    }
+  }
 
   .tribe-filter-bar__selected-filters,
   .tribe-filter-bar__actions {

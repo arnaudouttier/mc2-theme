@@ -1,12 +1,9 @@
 /* Page Agenda */
 
-.tribe-events-calendar-list {
-  /* 30px @ 375px increasing to 64px @ 1440px */
-  padding-block: clamp(
-    30px,
-    calc(1.875rem + ((1vw - 3.75px) * 3.1925)),
-    64px
-  ) !important;
-  /* Safari resize fix */
-  min-height: 0vw;
+/* separateur article h2 */
+.tribe-events-calendar-list__month-separator {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 64px;
+  margin-bottom: 42px !important;
 }
