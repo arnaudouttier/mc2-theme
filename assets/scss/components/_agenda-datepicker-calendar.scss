@@ -53,4 +53,27 @@
       }
     }
   }
+
+  &.dropdown-menu {
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tribe-events-c-top-bar__datepicker-container {
+    position: absolute !important;
+    left: 132px !important;
+    top: 31px !important;
+    width: auto !important;
+  }
+
+  .datepicker {
+    &.datepicker-dropdown,
+    &.dropdown-menu {
+      left: 0 !important;
+      top: 0 !important;
+      background-color: #ffffff;
+      color: initial;
+    }
+  }
 }

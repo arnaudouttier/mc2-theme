@@ -48,6 +48,7 @@
   .slider-main-item {
     margin-bottom: 40px;
     max-width: 217px;
+    z-index: 0;
 
     label {
       font-size: clamp(24px, calc(1.5rem + ((1vw - 3.75px) * 2.6291)), 52px);

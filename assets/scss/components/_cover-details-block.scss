@@ -91,7 +91,14 @@
     grid-area: cover-title;
     font-size: 52px;
     color: #f7fe70;
-    margin-bottom: 37px;
+    /* 2.3125rem(37px) @ 23.4375rem(375px) increasing to 2.8125rem(45px) @ 90rem(1440px) */
+    margin-bottom: clamp(
+      2.3125rem,
+      calc(2.3125rem + ((1vw - 0.234375rem) * 0.7512)),
+      2.8125rem
+    );
+    /* Safari resize fix */
+    min-height: 0vw;
     font-weight: 700;
     line-height: 64px;
     max-width: 329px;
@@ -104,7 +111,7 @@
     margin-bottom: 45px;
 
     h2 {
-      transform: rotate(-90deg);
+      transform: rotate(-90deg) translateY(-20px);
       font-weight: 700;
       font-size: 24px;
       line-height: 34px;
@@ -276,10 +283,13 @@
 
     .cover-title {
       max-width: initial;
-      margin-bottom: 68px;
     }
 
     .cover-date-category {
+      h2 {
+        transform: rotate(-90deg) translateY(0);
+      }
+
       .cover-date {
         padding: 0;
       }

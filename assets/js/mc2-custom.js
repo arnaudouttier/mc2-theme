@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let topBarFlash = document.getElementById('bandeau');
         let closeTopBar = document.getElementById('closeTopBar');
+        const navigationContainer = document.querySelector('#navigation-container')
 
         closeTopBar.addEventListener('click', () => {
             document.cookie = "messageFlash=off; path=/; max-age=${60 * 60 * 24 * 1};";
             topBarFlash.style.height = '0';
             topBarFlash.style.paddingBlock = '0';
+            navigationContainer.classList.remove('active')
         });
     }
 
@@ -161,9 +163,75 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    // Page Agenda Bouton filtrer en jaune quand actif
+    const agendaFilterButtonContainer = document.querySelector('.tribe-events-c-events-bar__filter-button-container')
+    let agendaFilterButton = document.querySelector('.tribe-events-c-events-bar__filter-button')
+
+    agendaFilterButton.addEventListener('click', () => {
+        agendaFilterButtonContainer.classList.toggle('active')
+    })
+
+
+    /* Page Agenda Filtre bar bouton associé aux filtres */
+    let agendaFilterButtons = document.querySelectorAll('button.tribe-filter-bar-c-pill__pill')
+    let filterBarContainerItems = document.querySelectorAll('.tribe-filter-bar-c-filter__container')
+
+    agendaFilterButtons[0].classList.add('button-filter-programme')
+    agendaFilterButtons[1].classList.add('button-filter-evenements')
+    agendaFilterButtons[2].classList.add('button-filter-rdv-public')
+
+    const moveFilterBarToFilterButton = (first, second) => {
+        var FirstParent = first;
+        var SecondParent = second;
+
+        if (SecondParent.hasChildNodes()) {
+            FirstParent.insertAdjacentElement("afterend", SecondParent);
+        }
+    }
+
+    // bouton programme  
+    moveFilterBarToFilterButton(agendaFilterButtons[0], filterBarContainerItems[0]);
+
+    // bouton evenement
+    moveFilterBarToFilterButton(agendaFilterButtons[1], filterBarContainerItems[1]);
+
+    // bouton rdv public
+    moveFilterBarToFilterButton(agendaFilterButtons[2], filterBarContainerItems[2]);
+
+
+    /* Agenda event List en grid*/
+    // const agendaEventList = document.querySelector('.tribe-events-calendar-list')
+
+    // function insertAfter(newNode, existingNode) {
+    //     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+    // }
+
+    // D'abord vérifier que l'élément a des noeuds enfants
+    // if (agendaEventList.hasChildNodes()) {
+    //     var children = agendaEventList.childNodes;
+
+    //     console.log(children);
+
+    //     for (var i = 0; i < children.length; i++) {
+    //         // faire quelque chose avec chaque enfant[i]
+    //         // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste
+
+
+    //         console.log(children[0]);
+    //         let li = document.createElement('li');
+    //         li.textContent = 'Services';
+    //         insertAfter(li, children[0])
+
+    //         if (children[i].nodeName === "h2") {
+    //             let hhh = children[i].nodeName === "h2"
+    //             console.log(typeof hhh);
+    //             hhh.insertAdjacentHTML("afterend", `<h1>OUI</h1>`)
+    //         }
+
+    //     }
+    // }
+
 });
-
-
 
 jQuery(document).ready(function ($) {
 

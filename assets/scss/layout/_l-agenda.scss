@@ -11,11 +11,24 @@
   );
   /* Safari resize fix */
   min-height: 0vw;
-  padding-bottom: 1.6em;
+  /* 1.5625rem(25px) @ 23.4375rem(375px) increasing to 2.875rem(46px) @ 90rem(1440px) */
+  padding-bottom: clamp(
+    1.5625rem,
+    calc(1.5625rem + ((1vw - 0.234375rem) * 1.9718)),
+    2.875rem
+  );
+  /* Safari resize fix */
+  min-height: 0vw;
 
   .cover-details {
     width: min(90vw, 1320px);
     margin-inline: auto;
+  }
+
+  .tribe-filter-bar {
+    max-width: min(90vw, 1320px);
+    margin-inline: auto;
+    position: relative;
   }
 }
 
@@ -31,5 +44,14 @@
     ) !important;
     /* Safari resize fix */
     min-height: 0vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  #agenda-list-header {
+    .tribe-filter-bar {
+      margin-top: 75px;
+      margin-bottom: 0;
+    }
   }
 }

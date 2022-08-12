@@ -1,4 +1,4 @@
-/* agenda-list-header-block / Page Agenda */
+/* #agenda-list-header-block / Page Agenda */
 
 #agenda-list-header {
   background-color: #071f5b;
@@ -46,6 +46,11 @@
     margin: 0;
   }
 
+  :is(.tribe-events-c-top-bar__datepicker-button--open) {
+    border: 1px solid #f7fe70;
+    color: #f7fe70;
+  }
+
   :is(.tribe-events-c-top-bar__datepicker-button--open)
     ~ .tribe-events-c-top-bar__datepicker-container {
     min-height: 400px;
@@ -70,25 +75,65 @@
     }
   }
 
-  .tribe-filter-bar__selected-filters,
-  .tribe-filter-bar__actions {
+  :is(.tribe-events-c-events-bar__filter-button-container.active) {
+    border: 1px solid #f7fe70;
+    color: #f7fe70;
+
+    svg {
+      path {
+        fill: #f7fe70;
+      }
+    }
+  }
+
+  .tribe-filter-bar__filters-container {
     display: none;
   }
 
   .tribe-filter-bar {
-    max-width: min(90vw, 1320px);
-    margin-inline: auto;
-    position: relative;
     background-color: #071f5b;
+
+    &.tribe-filter-bar.tribe-filter-bar--horizontal {
+      padding: 0;
+    }
+
+    .tribe-filter-bar__selected-filters,
+    .tribe-filter-bar__actions {
+      display: none;
+    }
 
     .tribe-filter-bar__filters-slider-wrapper {
       display: block !important;
+    }
+
+    .tribe-filter-bar-c-pill {
+      width: 100%;
+    }
+
+    /* Zone filtre  */
+    .tribe-filter-bar-c-filter__container {
+      background-color: transparent;
+      width: auto;
+      z-index: 1 !important;
+      padding-top: 31px;
+      border-top: 1px solid #ffffff;
+      margin: 0;
+      padding-bottom: 0;
+
+      .tribe-filter-bar-c-filter__filter-fields {
+        padding-left: 8px;
+      }
+    }
+
+    .tribe-filter-bar-c-filter__container[aria-hidden="false"] {
+      visibility: visible;
     }
   }
 
   .tribe-filter-bar__filters-slider-container {
     visibility: visible;
     display: block;
+    padding-top: 32px;
   }
 
   .tribe-filter-bar__filters-slider-wrapper {
@@ -101,7 +146,11 @@
         padding: 0;
       }
 
-      & + .tribe-swiper-slide {
+      button[aria-expanded="true"] {
+        padding-bottom: 22px;
+      }
+
+      + .tribe-swiper-slide {
         border-top: 0;
       }
     }
@@ -120,13 +169,120 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .tribe-events-c-top-bar__datepicker {
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 0 2em;
-    border-right: 1px solid #d9d9d9;
-    column-gap: 20px;
+@media (min-width: 1024px) {
+  #agenda-list-header {
+    .cover-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-title {
+      margin-bottom: 0;
+    }
+
+    .tribe-events-header {
+      flex-direction: row-reverse !important;
+      column-gap: 80px;
+      min-width: 510px;
+      position: relative;
+    }
+
+    /* bouton filtre */
+    .tribe-events-c-events-bar__filter-button-container {
+      border: 0;
+    }
+
+    :is(.tribe-events-c-events-bar__filter-button-container.active) {
+      border: 0;
+      color: #f7fe70;
+    }
+
+    .tribe-filter-bar__filters-slider-wrapper {
+      .tribe-swiper-slide {
+        border-top: 1px solid #ffffff10;
+        border-bottom: 1px solid #ffffff10;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .tribe-filter-bar-c-pill {
+      display: flex;
+      column-gap: 35px;
+
+      button {
+        padding-right: 32px !important;
+        border-right: 1px solid #d9d9d910;
+        min-width: 231px;
+        justify-content: flex-start;
+      }
+    }
+
+    /* Zone filtre Desktop */
+    .tribe-filter-bar .tribe-filter-bar__form {
+      display: block;
+    }
+
+    .tribe-filter-bar-c-filter__container {
+      display: block;
+      visibility: visible;
+      border: 0;
+      padding: 0 !important;
+      border: 0 !important;
+      display: grid;
+      align-items: center;
+
+      .tribe-filter-bar-c-filter__filters-legend,
+      .tribe-filter-bar-c-filter__filters-close {
+        display: none;
+      }
+
+      .tribe-filter-bar-c-filter__filter-fields {
+        display: flex;
+        column-gap: 32px;
+        align-items: center;
+
+        .tribe-common-form-control-checkbox {
+          margin: 0 !important;
+        }
+      }
+    }
+
+    /* bouton calendrier */
+    .tribe-events-c-top-bar__datepicker {
+      position: relative;
+      padding: 0;
+      min-width: 492px;
+      height: 40px;
+
+      p {
+        display: block;
+        position: absolute;
+        left: 0;
+        margin-right: 20px;
+        top: 13px;
+        color: #ffffff;
+      }
+
+      .tribe-events-c-top-bar__datepicker-button {
+        right: 0;
+        top: 0;
+        position: absolute;
+        min-width: 328px;
+        width: auto;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -40px;
+        width: 2px;
+        height: 38px;
+        background-color: #d9d9d9;
+      }
+    }
   }
 }

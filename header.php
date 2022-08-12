@@ -110,7 +110,7 @@
 	?>
 
 		<!-- Page Title -->
-		<?php if(!is_home() || !is_front_page()) : ?>
+		<!-- <?php if(!is_home() || !is_front_page()) : ?>
 
 			<?php if(!is_post_type_archive('tribe_events')) : ?>
 
@@ -125,6 +125,6 @@
 					</h1>
 				</div>
 
-		<?php endif; endif;?>
+	<?php endif; endif;?> -->
 		
 	</header><!-- #masthead -->
