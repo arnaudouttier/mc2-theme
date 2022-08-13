@@ -80,6 +80,7 @@
 			<nav id="site-navigation" class="main-navigation">
 				<div class="site-navigation-button">
 					<h2>Menu & Billetterie</h2>
+					<h2>Fermer</h2>
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><?php esc_html_e( '', 'mc2-theme' ); ?></span></button>
 				</div>
 				<?php

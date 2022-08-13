@@ -90,7 +90,14 @@ body .admin-bar #navigation-container.sticky {
   /* Zone button navigation mobile */
 }
 #navigation-container .site-navigation.toggled .site-navigation-button h2 {
-  color: #f7fe70;
+  /* label Billeterie & menu */
+  /* label Fermer */
+}
+#navigation-container .site-navigation.toggled .site-navigation-button h2:first-child {
+  display: none;
+}
+#navigation-container .site-navigation.toggled .site-navigation-button h2:nth-child(2) {
+  display: block;
 }
 #navigation-container .site-navigation.toggled .site-navigation-button button.menu-toggle span {
   height: 0;
@@ -124,6 +131,10 @@ body .admin-bar #navigation-container.sticky {
   text-transform: uppercase;
   color: #f7fe70;
   padding-top: 8px;
+  /* label Fermer */
+}
+#navigation-container .site-navigation .site-navigation-button h2:nth-child(2) {
+  display: none;
 }
 #navigation-container .site-navigation .site-navigation-button button.menu-toggle {
   background-color: #f7fe70;

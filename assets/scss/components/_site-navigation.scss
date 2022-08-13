@@ -33,7 +33,14 @@
       /* Zone button navigation mobile */
       .site-navigation-button {
         h2 {
-          color: #f7fe70;
+          /* label Billeterie & menu */
+          &:first-child {
+            display: none;
+          }
+          /* label Fermer */
+          &:nth-child(2) {
+            display: block;
+          }
         }
         button {
           &.menu-toggle {
@@ -86,6 +93,11 @@
         text-transform: uppercase;
         color: #f7fe70;
         padding-top: 8px;
+
+        /* label Fermer */
+        &:nth-child(2) {
+          display: none;
+        }
       }
       button {
         &.menu-toggle {
