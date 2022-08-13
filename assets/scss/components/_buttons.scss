@@ -99,18 +99,29 @@ button,
 .tribe-common-form-control-checkbox {
   margin-bottom: 32px !important;
   column-gap: 34px;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  .tribe-common-form-control-checkbox {
+    margin: 0 !important;
+  }
 }
 
 /* input checkbox */
 input[type="checkbox"],
-.tribe-common-form-control-checkbox__input {
+.tribe-common-form-control-checkbox__input,
+.tribe-swiper-slide button {
   position: relative;
   appearance: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-bottom: 0;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
     left: 0;
     background-color: #d9d9d9;
     border-radius: 100px;
@@ -126,7 +137,6 @@ input[type="checkbox"],
     border-radius: 50%;
     left: -5px;
     background-color: #ffffff;
-    top: -5px;
     transition: left 0.4s ease;
   }
 
@@ -135,7 +145,8 @@ input[type="checkbox"],
     opacity: 0.6;
   }
 
-  &:checked {
+  &:checked,
+  &[aria-expanded="true"] {
     &::after {
       left: 15px;
       background-color: #f7fe70;

@@ -128,6 +128,10 @@
     .tribe-filter-bar-c-filter__container[aria-hidden="false"] {
       visibility: visible;
     }
+
+    .tribe-filter-bar__filters-slider-nav {
+      display: none;
+    }
   }
 
   .tribe-filter-bar__filters-slider-container {
@@ -144,6 +148,10 @@
 
       button {
         padding: 0;
+
+        span {
+          margin-left: 40px;
+        }
       }
 
       button[aria-expanded="true"] {
@@ -203,6 +211,10 @@
         border-top: 1px solid #ffffff10;
         border-bottom: 1px solid #ffffff10;
 
+        button {
+          margin-bottom: 0;
+        }
+
         &:last-child {
           border-bottom: 0;
         }
@@ -217,8 +229,11 @@
         padding-right: 32px !important;
         border-right: 1px solid #d9d9d910;
         min-width: 231px;
-        justify-content: flex-start;
       }
+    }
+
+    .tribe-filter-bar__filters-slider-container {
+      padding-left: 10px;
     }
 
     /* Zone filtre Desktop */
@@ -243,11 +258,7 @@
       .tribe-filter-bar-c-filter__filter-fields {
         display: flex;
         column-gap: 32px;
-        align-items: center;
-
-        .tribe-common-form-control-checkbox {
-          margin: 0 !important;
-        }
+        align-items: center !important;
       }
     }
 

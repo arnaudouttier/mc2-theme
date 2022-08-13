@@ -29,6 +29,7 @@ if ( ! empty( $event->featured ) ) {
 	$classes[] = 'tribe-events-pro-photo__event--featured';
 }
 ?>
+
 <article <?php tribe_classes( $classes ) ?>>
 
     <!-- Event Thumbnail -->

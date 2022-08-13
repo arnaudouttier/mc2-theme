@@ -54,4 +54,22 @@
       margin-bottom: 0;
     }
   }
+
+  .tribe-events-calendar-list {
+    &.affiche {
+      .tribe-event-calendar-list-group {
+        display: flex;
+        column-gap: 183px;
+        align-items: flex-start;
+
+        h2 {
+          flex: 1;
+        }
+
+        .tribe-event-calendar-list-group-main {
+          flex: 2;
+        }
+      }
+    }
+  }
 }

@@ -29,6 +29,30 @@
     /* padding pour la version mobile*/
     &.toggled {
       padding-bottom: 80px;
+
+      /* Zone button navigation mobile */
+      .site-navigation-button {
+        h2 {
+          color: #f7fe70;
+        }
+        button {
+          &.menu-toggle {
+            span {
+              height: 0;
+
+              &::before {
+                transform: translateY(6px) rotate(45deg);
+                top: -6px;
+              }
+
+              &::after {
+                transform: translateY(-6px) rotate(-45deg);
+                top: 6px;
+              }
+            }
+          }
+        }
+      }
     }
 
     /* Site logo */
@@ -61,15 +85,38 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         color: #f7fe70;
+        padding-top: 8px;
       }
       button {
         &.menu-toggle {
-          display: block;
-          font-weight: 700;
-          font-size: 16px;
-          color: #000000;
           background-color: #f7fe70;
-          padding: 12px 9px;
+          padding: 18px 10px;
+
+          span {
+            width: 18px;
+            height: 2px;
+            background-color: #071f5b;
+            position: relative;
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              width: 18px;
+              height: 2px;
+              background-color: #071f5b;
+              transition: transform 0.4s ease;
+            }
+
+            &::before {
+              top: -6px;
+            }
+
+            &::after {
+              top: 6px;
+            }
+          }
         }
       }
     }
