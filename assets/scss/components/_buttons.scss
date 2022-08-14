@@ -108,10 +108,9 @@ button,
   }
 }
 
-/* input checkbox */
+/* input checkbox  -  */
 input[type="checkbox"],
-.tribe-common-form-control-checkbox__input,
-.tribe-swiper-slide button {
+.tribe-common-form-control-checkbox__input {
   position: relative;
   appearance: none;
   display: flex;
@@ -154,6 +153,98 @@ input[type="checkbox"],
 
     & + label {
       opacity: 1;
+    }
+  }
+}
+
+.tribe-filter-bar__filters-slider-wrapper {
+  .tribe-swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding-bottom: 0;
+    padding-block: 18px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+
+    .tribe-filter-bar-c-pill__pill {
+      padding: 0;
+
+      &::before {
+        content: "+";
+        position: relative;
+        left: 0;
+        font-size: 1.5rem;
+        color: #ffffff;
+      }
+
+      span {
+        margin-left: 40px;
+      }
+    }
+
+    .tribe-filter-bar-c-pill__pill[aria-expanded="true"] {
+      padding-bottom: 22px;
+
+      &::before {
+        content: "−";
+      }
+    }
+
+    + .tribe-swiper-slide {
+      border-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tribe-filter-bar__filters-slider-wrapper {
+    .tribe-swiper-slide {
+      .tribe-filter-bar-c-pill__pill {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "" !important;
+          position: absolute;
+          left: 0;
+          background-color: #d9d9d9;
+          border-radius: 100px;
+          width: 26px;
+          height: 8px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          left: -5px;
+          background-color: #ffffff;
+          transition: left 0.4s ease;
+        }
+
+        .tribe-filter-bar-c-pill__pill-label {
+          opacity: 0.6;
+        }
+
+        &[aria-expanded="true"] {
+          padding-bottom: 0;
+
+          &::after {
+            left: 15px;
+            background-color: #f7fe70;
+          }
+
+          .tribe-filter-bar-c-pill__pill-label {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }

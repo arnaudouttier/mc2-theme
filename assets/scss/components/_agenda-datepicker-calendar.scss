@@ -17,7 +17,11 @@
       display: none;
     }
 
-    .datepicker-days {
+    .datepicker-days,
+    .datepicker-months,
+    .datepicker-years,
+    .datepicker-decades,
+    .datepicker-centuries {
       table {
         width: 100%;
 
@@ -30,32 +34,66 @@
             }
           }
         }
+      }
+    }
 
-        tbody {
-          td {
-            padding: 18px 15px 15px 15px;
-            border: 1px solid #ffffff;
-            flex-grow: 1;
-            border-radius: 0;
-            height: auto;
+    .datepicker-days {
+      tbody {
+        td {
+          padding: 18px 15px 15px 15px;
+          border: 1px solid #ffffff;
+          flex-grow: 1;
+          border-radius: 0;
+          height: auto;
+          background-color: transparent !important;
 
-            &.day.past {
+          &.day.past {
+            opacity: 0.2;
+          }
+
+          &.active,
+          &:hover {
+            color: #071f5b;
+            background-color: #ffffff;
+          }
+        }
+      }
+
+      &.dropdown-menu {
+        box-shadow: none;
+      }
+    }
+
+    .datepicker-months,
+    .datepicker-years,
+    .datepicker-decades,
+    .datepicker-centuries {
+      tbody {
+        span {
+          padding: 18px 15px 15px 15px;
+          border: 1px solid #ffffff;
+          flex-grow: 1;
+          border-radius: 0;
+          height: auto;
+          background-color: transparent !important;
+
+          &.months,
+          &.years,
+          &.decades,
+          &.centuries {
+            &.past {
               opacity: 0.2;
             }
+          }
 
-            &.active,
-            &:hover {
-              color: #071f5b;
-              background: #ffffff;
-            }
+          &.active,
+          &:hover {
+            color: #071f5b;
+            background: #ffffff !important;
           }
         }
       }
     }
-  }
-
-  &.dropdown-menu {
-    box-shadow: none;
   }
 }
 

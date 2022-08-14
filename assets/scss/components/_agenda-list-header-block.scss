@@ -103,7 +103,7 @@
     }
 
     .tribe-filter-bar__filters-slider-wrapper {
-      display: block !important;
+      display: block;
     }
 
     .tribe-filter-bar-c-pill {
@@ -125,6 +125,10 @@
       }
     }
 
+    .tribe-filter-bar__form {
+      display: block;
+    }
+
     .tribe-filter-bar-c-filter__container[aria-hidden="false"] {
       visibility: visible;
     }
@@ -141,28 +145,6 @@
   }
 
   .tribe-filter-bar__filters-slider-wrapper {
-    .tribe-swiper-slide {
-      padding-block: 18px;
-      border-top: 1px solid #ffffff;
-      border-bottom: 1px solid #ffffff;
-
-      button {
-        padding: 0;
-
-        span {
-          margin-left: 40px;
-        }
-      }
-
-      button[aria-expanded="true"] {
-        padding-bottom: 22px;
-      }
-
-      + .tribe-swiper-slide {
-        border-top: 0;
-      }
-    }
-
     .tribe-filter-bar-c-pill__pill-label {
       font-weight: 400;
       font-size: 16px;
@@ -236,18 +218,13 @@
       padding-left: 10px;
     }
 
-    /* Zone filtre Desktop */
-    .tribe-filter-bar .tribe-filter-bar__form {
-      display: block;
-    }
-
     .tribe-filter-bar-c-filter__container {
       display: block;
       visibility: visible;
       border: 0;
       padding: 0 !important;
       border: 0 !important;
-      display: grid;
+      display: grid !important;
       align-items: center;
 
       .tribe-filter-bar-c-filter__filters-legend,
