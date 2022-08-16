@@ -7,22 +7,74 @@
   &.homepage {
     z-index: 1;
     min-height: 100px;
-    height: 100vh;
-    // padding-top: 1em;
+    height: 90vh;
+    padding-top: 1em;
     padding-bottom: 0;
     display: grid;
     grid-template-columns: min(90vw, 1320px);
     justify-content: center;
     align-content: space-between;
   }
+
+  /* Site header de la homepage */
+
+  #headerHome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 1024px) {
   #site-header {
-    /* Site header pages Spectacles */
+    &.homepage,
+    #headerHome {
+      height: 95vh;
+    }
 
+    /* Site header de la page spectacles */
     &.spectacles {
       min-height: 1080px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background-color: #ffff;
+        bottom: 0px;
+        z-index: 1;
+      }
+    }
+
+    // Site header des pages edito
+    &.edito {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background-color: #ffff;
+        bottom: 0px;
+        z-index: 1;
+      }
+
+      .cover-thumbnail {
+        z-index: 10;
+      }
+
+      &.page-list {
+        &::after {
+          display: none;
+        }
+      }
     }
   }
 }

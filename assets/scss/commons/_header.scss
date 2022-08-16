@@ -7,18 +7,9 @@
   /* Site header de la homepage */
 
   #headerHome {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
-    display: flex !important; // USE OF IMPORTANT : à conserver car sinon le plugin de vidéo le cache
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: 0.2s;
 
     &.no-bg {
       background: none;
@@ -34,20 +25,8 @@
 
 @media (min-width: 1024px) {
   #site-header {
-    position: relative;
     /* Site header de la page spectacles */
     &.spectacles {
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 34px;
-        background-color: #ffff;
-        bottom: 0px;
-        z-index: 1;
-      }
-
       .cover-piece-date-prix,
       .cover-thumbnail {
         z-index: 10;
@@ -56,25 +35,8 @@
 
     // Site header des pages edito
     &.edito {
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 120px;
-        background-color: #ffff;
-        bottom: 0px;
-        z-index: 1;
-      }
-
       .cover-thumbnail {
         z-index: 10;
-      }
-
-      &.page-list {
-        &::after {
-          display: none;
-        }
       }
     }
   }

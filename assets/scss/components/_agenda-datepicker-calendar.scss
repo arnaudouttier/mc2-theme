@@ -12,6 +12,7 @@
     color: #ffffff;
     padding: 0;
     margin: 0;
+    box-shadow: unset;
 
     &::after {
       display: none;
@@ -54,7 +55,7 @@
           &.active,
           &:hover {
             color: #071f5b;
-            background-color: #ffffff;
+            background: #ffffff !important;
           }
         }
       }

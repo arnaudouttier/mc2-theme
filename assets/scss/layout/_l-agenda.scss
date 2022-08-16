@@ -36,8 +36,15 @@
 .tribe-events-calendar-list {
   &.affiche {
     place-content: center;
+    /* 0.0625rem(1px) @ 23.4375rem(375px) increasing to 4rem(64px) @ 90rem(1440px) */
+    padding-top: clamp(
+      0.0625rem,
+      calc(0.0625rem + ((1vw - 0.234375rem) * 5.9155)),
+      4rem
+    );
+
     /* 30px @ 375px increasing to 64px @ 1440px */
-    padding-block: clamp(
+    padding-bottom: clamp(
       30px,
       calc(1.875rem + ((1vw - 3.75px) * 3.1925)),
       64px

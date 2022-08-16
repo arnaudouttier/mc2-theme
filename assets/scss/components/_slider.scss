@@ -27,7 +27,7 @@
       content: "";
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-40%, 0);
       top: -25px;
       width: 12px;
       height: 12px;
@@ -122,28 +122,28 @@
           max-width: 80ch;
         }
       }
-
-      input:checked {
-        & ~ ul {
-          opacity: 1;
-        }
-
-        &:first-child {
-          width: min-content;
-        }
-
-        &:last-child {
-          ul {
-            right: 0;
-            text-align: right;
-          }
-        }
-      }
     }
 
     :is(.slider-main-item.active) {
+      &:first-child {
+        width: min-content;
+      }
+
+      &:last-child {
+        ul {
+          right: 0;
+          text-align: right;
+        }
+      }
+
       label {
         opacity: 1;
+      }
+
+      input {
+        & ~ ul {
+          opacity: 1;
+        }
       }
     }
   }

@@ -30,30 +30,39 @@ button,
   }
 }
 
+/* Button site navigation Menu & billeterie */
 :is(#site-header) .btn-yellow {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 9px;
+  padding: 13px 40px;
+  line-height: 24px;
   color: #000000;
   background-color: #f7fe70;
+  font-weight: 700;
+  font-size: 16px;
+
+  a {
+    &::after {
+      display: none;
+    }
+  }
 }
 
+/* Bouton Telecharger le programme */
 :is(#site-footer) .btn-primary {
   padding: 13px 30px;
   font-size: 14px;
-}
-
-@media (min-width: 1440px) {
-  :is(#site-header) .btn-yellow {
-    padding: 13px 40px;
-  }
 }
 
 /* btn-news-show-all articles */
 .btn-news-show-all {
   width: 100%;
   font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* To top btn */
@@ -100,6 +109,10 @@ button,
   margin-bottom: 32px !important;
   column-gap: 34px;
   align-items: center !important;
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -142,6 +155,7 @@ input[type="checkbox"],
   & + label {
     color: #ffffff;
     opacity: 0.6;
+    padding-top: 2px;
   }
 
   &:checked,
@@ -170,7 +184,7 @@ input[type="checkbox"],
     position: relative;
 
     .tribe-filter-bar-c-pill__pill {
-      padding: 0;
+      padding: 0 !important;
 
       &::before {
         content: "+";
@@ -181,12 +195,12 @@ input[type="checkbox"],
       }
 
       span {
-        margin-left: 40px;
+        margin-left: 22px;
       }
     }
 
     .tribe-filter-bar-c-pill__pill[aria-expanded="true"] {
-      padding-bottom: 22px;
+      padding-bottom: 22px !important;
 
       &::before {
         content: "−";

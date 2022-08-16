@@ -1,9 +1,14 @@
 /* Page Agenda */
 
-/* separateur article h2 */
 .tribe-events-calendar-list__month-separator {
   font-weight: 700;
   font-size: 52px;
   line-height: 64px;
-  margin-bottom: 42px !important;
+  margin: 27px 0 49px 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .tribe-events-calendar-list__month-separator {
+    margin: 0 !important;
+  }
 }
