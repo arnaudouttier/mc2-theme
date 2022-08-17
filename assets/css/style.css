@@ -2220,14 +2220,19 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 20px;
 }
 #agenda-list-header .tribe-events-c-events-bar__filter-button-container svg {
   width: 18px;
   height: 10px;
+  transform: rotateY(-1);
 }
 #agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) {
   border: 1px solid #f7fe70;
   color: #f7fe70;
+}
+#agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) svg {
+  transform: rotateY(1);
 }
 #agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) svg path {
   fill: #f7fe70;

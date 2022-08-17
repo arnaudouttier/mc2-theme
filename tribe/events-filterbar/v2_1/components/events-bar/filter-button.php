@@ -35,9 +35,12 @@ if ( empty( $filterbar_state ) || 'closed' === $filterbar_state ) {
 		aria-expanded="<?php echo esc_attr( $aria_expanded ); ?>"
 		data-js="tribe-events-filter-button"
 	>
+		<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M11 0L7 0V2L11 2L11 0ZM18 12V10L0 10V12L18 12ZM15 5L3 5V7L15 7V5Z" fill="#ffffff"/>
+		</svg>
 		<?php 
         // TO DO : icone à changer par celle de Simon
-        $this->template( 'components/icons/filter', [ 'classes' => [ 'tribe-events-c-events-bar__filter-button-icon' ] ] ); ?>
+        $this->template( 'components/icons/icon-filtre', [ 'classes' => [ 'tribe-events-c-events-bar__filter-button-icon' ] ] ); ?>
 		<span class="tribe-events-c-events-bar__filter-button-text tribe-common-b2 tribe-common-a11y-visual-hide">
 			<?php echo esc_html( $button_text ); ?>
 		</span>
