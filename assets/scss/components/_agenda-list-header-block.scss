@@ -73,7 +73,6 @@
     svg {
       width: 18px;
       height: 10px;
-      transform: rotateY(-1);
     }
   }
 
@@ -82,7 +81,7 @@
     color: #f7fe70;
 
     svg {
-      transform: rotateY(0);
+      transform: scaleY(-1);
 
       path {
         fill: #f7fe70;
