@@ -3,6 +3,8 @@ console.log('Hello la MC2');
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
+
     // Message Flash Top Bar
     if (document.getElementById('closeTopBar')) {
 
@@ -48,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('scroll', () => {
             let scrollAmount = window.scrollY;
-            if (scrollAmount > navHeight) {
+            let viewportWidth = window.innerWidth;
+
+            if (scrollAmount > navHeight && viewportWidth > 1200) {
                 nav.classList.add('sticky')
             } else {
                 nav.classList.remove('sticky');
@@ -78,9 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sub.style.top = totalHeight - 1 + 'px';
     });
 
+    let viewportWidth = window.innerWidth;
+
     // If scroll => reposition
     document.addEventListener('scroll', () => {
-        if (document.getElementById('navigation-container').classList.contains('sticky')) {
+
+        if (document.getElementById('navigation-container').classList.contains('sticky') && viewportWidth > 1200) {
             totalHeightScroll = document.getElementById('navigation-container').offsetHeight;
 
             subMenuAll.forEach(sub => {

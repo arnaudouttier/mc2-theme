@@ -10,6 +10,7 @@
   visibility: hidden;
   position: absolute;
   display: none;
+  background-color: #000000;
 
   &.active {
     height: 10000px;
@@ -17,20 +18,19 @@
     visibility: visible;
     z-index: 9999;
     display: block;
-    top: 200px !important;
-    background-color: #000000;
+    margin-top: 100px;
   }
 
   .mega-menu-container {
-    width: min(90vw);
+    width: min(90vw, 1320px);
     margin-inline: auto;
     height: 100%;
     padding-block: 2.5em;
 
     .mega-menu-title {
       padding-block: 28px;
-      border-top: 1px solid #d9d9d9;
-      border-bottom: 1px solid #d9d9d9;
+      border-top: 1px solid #d9d9d920;
+      border-bottom: 1px solid #d9d9d920;
 
       p {
         // Repris du code d'Arnaud
@@ -42,21 +42,69 @@
 
     .mega-menu-content {
       .mega-menu-items,
-      .mega-menu-actus,
-      .mega-menu-footer {
+      .mega-menu-actus {
         padding-block: 30px;
       }
 
       .mega-menu-items {
-        border-bottom: 1px solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d920;
 
-        li {
+        li:not(:last-child) {
           margin-bottom: 24px;
         }
       }
 
       .mega-menu-actus {
-        border-bottom: 1px solid #d9d9d9;
+        /* menu actu title */
+        & > :first-child {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 46px;
+          margin-bottom: 26px;
+        }
+
+        .news-text-type-item {
+          margin-bottom: 0;
+        }
+      }
+
+      /* mega menu Territoire et action et vous etes*/
+      :is(.mega-menu-content
+          #menu-menu-territoire-et-actions, .mega-menu-content
+          #menu-menu-vous-etes) {
+        .menu-item-object-custom {
+          > a {
+            display: block;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      /* mega menu footer social link */
+      .mega-menu-footer {
+        .mega-menu-footer-col-1,
+        .mega-menu-footer-col-2 {
+          padding-block: 20px;
+        }
+
+        .mega-menu-footer-col-2 {
+          border-top: 1px solid #d9d9d920;
+
+          .contact-social-list {
+            display: flex;
+            column-gap: 1.6em;
+
+            /* social menu icon en blanc */
+            a {
+              filter: invert(1);
+            }
+          }
+        }
       }
     }
   }
@@ -64,22 +112,32 @@
 
 /* Desktop Version */
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .mega-menu {
     position: fixed;
     left: 0;
+    background-color: #071f5b;
 
     &.active {
       height: calc(100vh - 163px);
+      margin-top: 0;
     }
 
     .mega-menu-container {
       display: flex;
-      column-gap: 226px;
+      /* 7.1875rem(115px) @ 75rem(1200px) increasing to 14.6875rem(235px) @ 90rem(1440px) */
+      column-gap: clamp(
+        7.1875rem,
+        calc(7.1875rem + ((1vw - 0.75rem) * 50)),
+        14.6875rem
+      );
+
+      /* Safari resize fix */
+      min-height: 0vw;
 
       .mega-menu-title {
         align-self: flex-end;
-        padding-bottom: 41px;
+        padding-bottom: 61px;
         border: 0;
 
         p {
@@ -107,6 +165,13 @@
         column-gap: 259px;
         width: 100%;
 
+        .mega-menu-items,
+        .mega-menu-actus,
+        .mega-menu-footer {
+          padding-block: 0;
+          border: 0;
+        }
+
         .mega-menu-items .megamenu-menu .menu,
         .mega-menu-actus {
           max-width: 320px;
@@ -115,7 +180,7 @@
         .mega-menu-actus {
           flex-direction: column;
           padding-left: 26px;
-          border-left: 1px solid #d9d9d9;
+          border-left: 1px solid #d9d9d920;
 
           /* menu actu title */
           & > :first-child {
@@ -137,16 +202,6 @@
           .menu-item-object-custom {
             flex-shrink: 0;
 
-            > a {
-              display: block;
-              font-weight: 600;
-              font-size: 12px;
-              line-height: 17px;
-              letter-spacing: 2px;
-              text-transform: uppercase;
-              margin-bottom: 30px;
-            }
-
             &:not(:first-child) {
               padding-left: 29px;
               border-left: 1px solid #fff;
@@ -156,23 +211,14 @@
 
         /* mega menu footer social link */
         .mega-menu-footer {
-          border-top: 1px solid #d9d9d9;
-          padding-top: 22px;
-          width: 100%;
           display: flex;
           justify-content: space-between;
           align-self: flex-end;
+          width: 100%;
+          border-top: 1px solid #d9d9d9;
 
           .mega-menu-footer-col-2 {
-            .contact-social-list {
-              display: flex;
-              column-gap: 1.6em;
-
-              /* social menu icon en blanc */
-              a {
-                filter: invert(1);
-              }
-            }
+            border: 0;
           }
         }
       }

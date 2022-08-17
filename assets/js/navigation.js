@@ -8,6 +8,8 @@
 	const navigationContainer = document.querySelector('#navigation-container')
 	const siteNavigationClass = document.querySelector('.site-navigation');
 	const siteNavigation = document.getElementById('site-navigation');
+	let subMenuAll = document.querySelectorAll('.mega-menu');
+
 
 	// Return early if the navigation doesn't exist.
 	if (!siteNavigation) {
@@ -54,7 +56,11 @@
 			navigationContainer.classList.remove('active')
 		}
 
-
+		subMenuAll.forEach(subMenuItem => {
+			if (subMenuItem.classList.contains('active')) {
+				subMenuItem.classList.remove('active')
+			}
+		})
 	});
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.

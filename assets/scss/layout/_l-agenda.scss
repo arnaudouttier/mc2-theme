@@ -35,7 +35,7 @@
 /* calendrier article  */
 .tribe-events-calendar-list {
   &.affiche {
-    place-content: center;
+    place-items: center;
     /* 0.0625rem(1px) @ 23.4375rem(375px) increasing to 4rem(64px) @ 90rem(1440px) */
     padding-top: clamp(
       0.0625rem,
@@ -51,6 +51,15 @@
     ) !important;
     /* Safari resize fix */
     min-height: 0vw;
+  }
+}
+
+@media (min-width: 640px) {
+  /* calendrier article  */
+  .tribe-events-calendar-list {
+    &.affiche {
+      place-items: unset;
+    }
   }
 }
 
