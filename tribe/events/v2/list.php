@@ -81,23 +81,29 @@ if ( empty( $disable_event_search ) ) {
     <!-- Listing Events -->
     <div class="tribe-events-calendar-list affiche">
 
+                    <div class="tribe-event-calendar-list-group-header">
+
         <?php foreach ( $events as $event ) : ?>
 
-            <div class="tribe-event-calendar-list-group">
 
                 <?php $this->setup_postdata( $event ); ?>
-                    
-                <?php $this->template( 'list/month-separator', [ 'event' => $event ] ); ?>
+                                
+                    <?php $this->template( 'list/month-separator', [ 'event' => $event ] ); ?>
 
+
+        <?php endforeach; ?>
+                </div>
                 <div class="tribe-event-calendar-list-group-main">
+
+                <?php foreach ( $events as $event ) : ?>
+
 
                     <?php $this->template( 'list/event', [ 'event' => $event ] ); ?>
 
-                </div>
 
-            </div>
 
         <?php endforeach; ?>
+                </div>
 
     </div>
 

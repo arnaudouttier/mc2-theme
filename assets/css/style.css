@@ -533,6 +533,95 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
     opacity: 1;
   }
 }
+/* Props global - Bouton selection date (datepicker) et filtre  - Page Agenda  */
+.tribe-events-c-top-bar__datepicker-button,
+.tribe-events-c-events-bar__filter-button {
+  padding: 12px 10px !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #ffffff;
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Bouton selection date datepicker */
+.tribe-events-c-top-bar__datepicker-button {
+  justify-content: space-between;
+  flex: auto !important;
+  column-gap: 20px;
+}
+.tribe-events-c-top-bar__datepicker-button svg {
+  display: block !important;
+  /* calendar icon */
+}
+.tribe-events-c-top-bar__datepicker-button svg:first-child {
+  width: 20px;
+}
+.tribe-events-c-top-bar__datepicker-button svg:last-child {
+  max-width: 8px;
+}
+.tribe-events-c-top-bar__datepicker-button .datepicker-date-time {
+  display: flex;
+  align-items: center;
+}
+.tribe-events-c-top-bar__datepicker-button .datepicker-date-time time {
+  flex: 1;
+}
+
+:is(.tribe-events-c-top-bar__datepicker-button--open) {
+  border: 1px solid #f7fe70 !important;
+  color: #f7fe70;
+}
+:is(.tribe-events-c-top-bar__datepicker-button--open) ~ .tribe-events-c-top-bar__datepicker-container {
+  min-height: 400px;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+:is(.tribe-events-c-top-bar__datepicker-button--open) svg path {
+  fill: #f7fe70;
+}
+
+.datepicker-orient-bottom {
+  width: 100%;
+}
+
+/* Bouton filtre - page Agenda */
+.tribe-events-c-events-bar__filter-button {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+}
+.tribe-events-c-events-bar__filter-button svg {
+  width: 18px;
+  height: 10px;
+}
+
+:is(.tribe-events-c-events-bar__filter-button--active) {
+  border: 1px solid #f7fe70 !important;
+  color: #f7fe70;
+}
+:is(.tribe-events-c-events-bar__filter-button--active) svg {
+  transform: scaleY(-1);
+}
+:is(.tribe-events-c-events-bar__filter-button--active) svg path {
+  fill: #f7fe70;
+}
+
+@media (min-width: 1024px) {
+  .tribe-events-c-top-bar__datepicker-button .datepicker-date-time time {
+    flex: none;
+  }
+  .tribe-events-c-events-bar__filter-button {
+    border: 0 !important;
+  }
+}
 /* NEWS */
 .news {
   display: grid;
@@ -2164,8 +2253,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 /* #agenda-list-header-block / Page Agenda */
 #agenda-list-header {
   background-color: #071f5b;
-  /* Boutton date et filtre */
-  /* bouton filtre */
+  /* Container bouton filtre */
 }
 #agenda-list-header .cover-title {
   grid-area: cover-title;
@@ -2189,55 +2277,13 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 #agenda-list-header .choix-date-agenda {
   display: none;
 }
-#agenda-list-header .tribe-events-c-top-bar__datepicker-button,
-#agenda-list-header .tribe-events-c-events-bar__filter-button-container {
-  padding: 12px 10px;
-  border: 1px solid #ffffff;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 17px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background-color: transparent;
-  color: #ffffff;
-  width: 100%;
-  margin: 0;
-}
-#agenda-list-header :is(.tribe-events-c-top-bar__datepicker-button--open) {
-  border: 1px solid #f7fe70;
-  color: #f7fe70;
-}
-#agenda-list-header :is(.tribe-events-c-top-bar__datepicker-button--open) ~ .tribe-events-c-top-bar__datepicker-container {
-  min-height: 400px;
-  position: relative;
-  width: 100%;
-  display: inline-block;
-}
-#agenda-list-header .datepicker-orient-bottom {
-  width: 100%;
-}
-#agenda-list-header .tribe-events-c-events-bar__filter-button-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 20px;
-}
-#agenda-list-header .tribe-events-c-events-bar__filter-button-container svg {
-  width: 18px;
-  height: 10px;
-}
-#agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) {
-  border: 1px solid #f7fe70;
-  color: #f7fe70;
-}
-#agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) svg {
-  transform: scaleY(-1);
-}
-#agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) svg path {
-  fill: #f7fe70;
-}
 #agenda-list-header .tribe-filter-bar__filters-container {
   display: none;
+}
+#agenda-list-header .tribe-events-c-events-bar__filter-button-container {
+  border: 0;
+  width: 100%;
+  margin: 0 !important;
 }
 #agenda-list-header .tribe-filter-bar {
   background-color: #071f5b;
@@ -2295,8 +2341,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 
 @media (min-width: 1024px) {
   #agenda-list-header {
-    /* bouton filtre */
-    /* bouton calendrier */
+    /* Container bouton calendrier */
   }
   #agenda-list-header .cover-details {
     display: flex;
@@ -2311,13 +2356,6 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
     column-gap: 80px;
     min-width: 510px;
     position: relative;
-  }
-  #agenda-list-header .tribe-events-c-events-bar__filter-button-container {
-    border: 0;
-  }
-  #agenda-list-header :is(.tribe-events-c-events-bar__filter-button-container.active) {
-    border: 0;
-    color: #f7fe70;
   }
   #agenda-list-header .tribe-filter-bar__filters-slider-wrapper .tribe-swiper-slide {
     border-top: 1px solid rgba(255, 255, 255, 0.062745098);
@@ -2360,30 +2398,20 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
     align-items: center !important;
   }
   #agenda-list-header .tribe-events-c-top-bar__datepicker {
-    position: relative;
     padding: 0;
-    min-width: 509px;
-    height: 40px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
   }
   #agenda-list-header .tribe-events-c-top-bar__datepicker .choix-date-agenda {
     display: block;
-    position: absolute;
-    left: 0;
-    margin-right: 20px;
-    top: 13px;
     color: #ffffff;
     font-weight: 600;
     font-size: 12px;
     line-height: 17px;
     letter-spacing: 2px;
     text-transform: uppercase;
-  }
-  #agenda-list-header .tribe-events-c-top-bar__datepicker .tribe-events-c-top-bar__datepicker-button {
-    right: 0;
-    top: 0;
-    position: absolute;
-    min-width: 328px;
-    width: auto;
+    flex-shrink: 0;
   }
   #agenda-list-header .tribe-events-c-top-bar__datepicker::after {
     content: "";
@@ -2490,7 +2518,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 @media (min-width: 1024px) {
   .tribe-events-c-top-bar__datepicker-container {
     position: absolute !important;
-    left: 132px !important;
+    left: 100px !important;
     top: 31px !important;
     width: auto !important;
   }

@@ -30,67 +30,15 @@
     display: none;
   }
 
-  /* Boutton date et filtre */
-  .tribe-events-c-top-bar__datepicker-button,
-  .tribe-events-c-events-bar__filter-button-container {
-    padding: 12px 10px;
-    border: 1px solid #ffffff;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 17px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color: transparent;
-    color: #ffffff;
-    width: 100%;
-    margin: 0;
-  }
-
-  :is(.tribe-events-c-top-bar__datepicker-button--open) {
-    border: 1px solid #f7fe70;
-    color: #f7fe70;
-  }
-
-  :is(.tribe-events-c-top-bar__datepicker-button--open)
-    ~ .tribe-events-c-top-bar__datepicker-container {
-    min-height: 400px;
-    position: relative;
-    width: 100%;
-    display: inline-block;
-  }
-
-  .datepicker-orient-bottom {
-    width: 100%;
-  }
-
-  /* bouton filtre */
-  .tribe-events-c-events-bar__filter-button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 20px;
-
-    svg {
-      width: 18px;
-      height: 10px;
-    }
-  }
-
-  :is(.tribe-events-c-events-bar__filter-button-container.active) {
-    border: 1px solid #f7fe70;
-    color: #f7fe70;
-
-    svg {
-      transform: scaleY(-1);
-
-      path {
-        fill: #f7fe70;
-      }
-    }
-  }
-
   .tribe-filter-bar__filters-container {
     display: none;
+  }
+
+  /* Container bouton filtre */
+  .tribe-events-c-events-bar__filter-button-container {
+    border: 0;
+    width: 100%;
+    margin: 0 !important;
   }
 
   .tribe-filter-bar {
@@ -181,16 +129,6 @@
       position: relative;
     }
 
-    /* bouton filtre */
-    .tribe-events-c-events-bar__filter-button-container {
-      border: 0;
-    }
-
-    :is(.tribe-events-c-events-bar__filter-button-container.active) {
-      border: 0;
-      color: #f7fe70;
-    }
-
     .tribe-filter-bar__filters-slider-wrapper {
       .tribe-swiper-slide {
         border-top: 1px solid #ffffff10;
@@ -242,33 +180,22 @@
       }
     }
 
-    /* bouton calendrier */
+    /* Container bouton calendrier */
     .tribe-events-c-top-bar__datepicker {
-      position: relative;
       padding: 0;
-      min-width: 509px;
-      height: 40px;
+      display: flex;
+      column-gap: 20px;
+      align-items: center;
 
       .choix-date-agenda {
         display: block;
-        position: absolute;
-        left: 0;
-        margin-right: 20px;
-        top: 13px;
         color: #ffffff;
         font-weight: 600;
         font-size: 12px;
         line-height: 17px;
         letter-spacing: 2px;
         text-transform: uppercase;
-      }
-
-      .tribe-events-c-top-bar__datepicker-button {
-        right: 0;
-        top: 0;
-        position: absolute;
-        min-width: 328px;
-        width: auto;
+        flex-shrink: 0;
       }
 
       &::after {

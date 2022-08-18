@@ -109,23 +109,5 @@
 			get_template_part('template-parts/header-home');
 		endif;
 	?>
-
-		<!-- Page Title -->
-		<!-- <?php if(!is_home() || !is_front_page()) : ?>
-
-			<?php if(!is_post_type_archive('tribe_events')) : ?>
-
-				<div class="cover-details">
-					<h1 class="cover-title">
-						<?php 
-						if(is_archive()){
-							post_type_archive_title();
-						} else {
-							the_title(); 
-						} ?>
-					</h1>
-				</div>
-
-	<?php endif; endif;?> -->
-		
+	
 	</header><!-- #masthead -->

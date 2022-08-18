@@ -35,43 +35,49 @@
 		aria-label="<?php esc_attr_e( 'Click to toggle datepicker', 'tribe-events-calendar-pro' ); ?>"
 		title="<?php esc_attr_e( 'Click to toggle datepicker', 'tribe-events-calendar-pro' ); ?>"
 	>
-		<time
-			datetime="<?php echo esc_attr( $selected_start_datetime ); ?>"
-			class="tribe-events-c-top-bar__datepicker-time"
-		>
-			<?php if ( $show_now ) : 
-				?>
-				<span class="tribe-events-c-top-bar__datepicker-mobile">
-					À partir du <?php echo esc_html( $now_label_mobile ); ?>
-				</span>
-				<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
-					À partir du <?php echo esc_html( $now_label ); ?>
-				</span>
-			<?php else : ?>
-				<span class="tribe-events-c-top-bar__datepicker-mobile">
-					<?php echo esc_html( $selected_start_date_mobile ); ?>
-				</span>
-				<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
-					<?php echo esc_html( $selected_start_date_label ); ?>
-				</span>
-			<?php endif; ?>
-		</time>
-		<?php if ( $show_end ) : ?>
-			<span class="tribe-events-c-top-bar__datepicker-separator"> - </span>
+		<svg class="datepicker-button-icon-calendar" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M18 3H16V0H14V3H6V0H4V3H2C0.897 3 0 3.898 0 5V18C0 19.103 0.897 20 2 20H18C19.103 20 20 19.103 20 18V5C20 3.898 19.103 3 18 3ZM2 8V5H18V8H2Z" fill="white"/>
+		</svg>
+		<div class="datepicker-date-time">
 			<time
-				datetime="<?php echo esc_attr( $selected_end_datetime ); ?>"
+				datetime="<?php echo esc_attr( $selected_start_datetime ); ?>"
 				class="tribe-events-c-top-bar__datepicker-time"
 			>
-				<span class="tribe-events-c-top-bar__datepicker-mobile">
-					<?php echo esc_html( $selected_end_date_mobile ); ?>
-				</span>
-				<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
-					<?php echo esc_html( $selected_end_date_label ); ?>
-				</span>
+				<?php if ( $show_now ) : 
+					?>
+					<span class="tribe-events-c-top-bar__datepicker-mobile">
+						À partir du <?php echo esc_html( $now_label_mobile ); ?>
+					</span>
+					<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
+						À partir du <?php echo esc_html( $now_label ); ?>
+					</span>
+				<?php else : ?>
+					<span class="tribe-events-c-top-bar__datepicker-mobile">
+						A partir du <?php echo esc_html( $selected_start_date_mobile ); ?>
+					</span>
+					<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
+						A partir du<?php echo esc_html( $selected_start_date_label ); ?>
+					</span>
+				<?php endif; ?>
 			</time>
-		<?php endif; ?>
+			<!-- <?php if ( $show_end ) : ?>
+				<span class="tribe-events-c-top-bar__datepicker-separator"> - </span>
+				<time
+					datetime="<?php echo esc_attr( $selected_end_datetime ); ?>"
+					class="tribe-events-c-top-bar__datepicker-time"
+				>
+					<span class="tribe-events-c-top-bar__datepicker-mobile">
+						<?php echo esc_html( $selected_end_date_mobile ); ?>
+					</span>
+					<span class="tribe-events-c-top-bar__datepicker-desktop tribe-common-a11y-hidden">
+						<?php echo esc_html( $selected_end_date_label ); ?>
+					</span>
+				</time>
+			<?php endif; ?> -->
+		</div>
 		<?php $this->template( 'components/icons/caret-down', [ 'classes' => [ 'tribe-events-c-top-bar__datepicker-button-icon-svg' ] ] ); ?>
 	</button>
+	
 	<label
 		class="tribe-events-c-top-bar__datepicker-label tribe-common-a11y-visual-hide"
 		for="tribe-events-top-bar-date"

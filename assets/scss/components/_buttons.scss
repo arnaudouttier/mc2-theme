@@ -262,3 +262,110 @@ input[type="checkbox"],
     }
   }
 }
+
+/* Props global - Bouton selection date (datepicker) et filtre  - Page Agenda  */
+.tribe-events-c-top-bar__datepicker-button,
+.tribe-events-c-events-bar__filter-button {
+  padding: 12px 10px !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #ffffff;
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Bouton selection date datepicker */
+.tribe-events-c-top-bar__datepicker-button {
+  justify-content: space-between;
+  flex: auto !important;
+  column-gap: 20px;
+
+  svg {
+    display: block !important;
+
+    /* calendar icon */
+    &:first-child {
+      width: 20px;
+    }
+
+    &:last-child {
+      max-width: 8px;
+    }
+  }
+
+  .datepicker-date-time {
+    display: flex;
+    align-items: center;
+
+    time {
+      flex: 1;
+    }
+  }
+}
+
+:is(.tribe-events-c-top-bar__datepicker-button--open) {
+  border: 1px solid #f7fe70 !important;
+  color: #f7fe70;
+
+  ~ .tribe-events-c-top-bar__datepicker-container {
+    min-height: 400px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+  }
+
+  svg {
+    path {
+      fill: #f7fe70;
+    }
+  }
+}
+
+.datepicker-orient-bottom {
+  width: 100%;
+}
+
+/* Bouton filtre - page Agenda */
+.tribe-events-c-events-bar__filter-button {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+
+  svg {
+    width: 18px;
+    height: 10px;
+  }
+}
+
+:is(.tribe-events-c-events-bar__filter-button--active) {
+  border: 1px solid #f7fe70 !important;
+  color: #f7fe70;
+
+  svg {
+    transform: scaleY(-1);
+
+    path {
+      fill: #f7fe70;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tribe-events-c-top-bar__datepicker-button {
+    .datepicker-date-time {
+      time {
+        flex: none;
+      }
+    }
+  }
+
+  .tribe-events-c-events-bar__filter-button {
+    border: 0 !important;
+  }
+}
