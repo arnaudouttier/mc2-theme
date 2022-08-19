@@ -6,7 +6,6 @@
  *
  * @package MC2-theme
  */
-
 get_header();
 ?>
 

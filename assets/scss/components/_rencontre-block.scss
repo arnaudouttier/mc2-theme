@@ -17,10 +17,11 @@
     display: flex;
     align-items: center;
     column-gap: 16px;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
 
     img {
       border-radius: 50%;
+      max-width: 60px;
     }
 
     .author-date {
@@ -31,8 +32,8 @@
       }
       h4 {
         font-weight: 400;
-        font-size: 12px;
-        line-height: 22px;
+        font-size: 13px;
+        line-height: 28px;
       }
     }
   }
@@ -49,5 +50,13 @@
     font-size: 12px;
     line-height: 22px;
     text-decoration-line: underline;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rencontre-block {
+    .rencontre-block-paragraph {
+      margin-bottom: 9px;
+    }
   }
 }

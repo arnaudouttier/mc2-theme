@@ -22,18 +22,24 @@
   }
 
   .grid-cl-middle {
-    h2 {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 34px;
-      margin-bottom: 35px;
-    }
+    .spectacle-content {
+      h4 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 35px;
 
-    .grid-cl-middle-content {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 35px;
+        &:first-child {
+          display: none;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 35px;
+      }
     }
 
     .info-techniques-block {

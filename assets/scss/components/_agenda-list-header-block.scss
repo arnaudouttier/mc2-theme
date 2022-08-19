@@ -17,7 +17,6 @@
   .tribe-events-header {
     flex-direction: column-reverse !important;
     align-items: initial;
-    row-gap: 12px;
     padding-bottom: 0;
   }
 
@@ -196,6 +195,7 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         flex-shrink: 0;
+        padding-top: 6px;
       }
 
       &::after {

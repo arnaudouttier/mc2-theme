@@ -42,7 +42,6 @@
       calc(0.0625rem + ((1vw - 0.234375rem) * 5.9155)),
       4rem
     );
-
     /* 30px @ 375px increasing to 64px @ 1440px */
     padding-bottom: clamp(
       30px,
@@ -73,6 +72,12 @@
 
   .tribe-events-calendar-list {
     &.affiche {
+      h2 {
+        ~ article {
+          background-color: lightpink;
+        }
+      }
+
       .tribe-event-calendar-list-group {
         display: flex;
         // column-gap: 183px;

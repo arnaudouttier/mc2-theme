@@ -28,20 +28,15 @@ if ( empty( $disable_event_search ) ) {
 }
 
 ?>
-<div
-	<?php tribe_classes( $container_classes ); ?>
-	data-js="tribe-events-view"
-	data-view-rest-nonce="<?php echo esc_attr( $rest_nonce ); ?>"
-	data-view-rest-url="<?php echo esc_url( $rest_url ); ?>"
-	data-view-rest-method="<?php echo esc_attr( $rest_method ); ?>"
-	data-view-manage-url="<?php echo esc_attr( $should_manage_url ); ?>"
-	<?php foreach ( $container_data as $key => $value ) : ?>
-		data-view-<?php echo esc_attr( $key ) ?>="<?php echo esc_attr( $value ) ?>"
-	<?php endforeach; ?>
-	<?php if ( ! empty( $breakpoint_pointer ) ) : ?>
-		data-view-breakpoint-pointer="<?php echo esc_attr( $breakpoint_pointer ); ?>"
-	<?php endif; ?>
->
+<div <?php tribe_classes( $container_classes ); ?> data-js="tribe-events-view"
+    data-view-rest-nonce="<?php echo esc_attr( $rest_nonce ); ?>"
+    data-view-rest-url="<?php echo esc_url( $rest_url ); ?>"
+    data-view-rest-method="<?php echo esc_attr( $rest_method ); ?>"
+    data-view-manage-url="<?php echo esc_attr( $should_manage_url ); ?>"
+    <?php foreach ( $container_data as $key => $value ) : ?>
+    data-view-<?php echo esc_attr( $key ) ?>="<?php echo esc_attr( $value ) ?>" <?php endforeach; ?>
+    <?php if ( ! empty( $breakpoint_pointer ) ) : ?>
+    data-view-breakpoint-pointer="<?php echo esc_attr( $breakpoint_pointer ); ?>" <?php endif; ?>>
     <?php $this->template( 'components/loader', [ 'text' => __( 'Loading...', 'the-events-calendar' ) ] ); ?>
 
     <?php $this->template( 'components/json-ld-data' ); ?>
@@ -61,9 +56,9 @@ if ( empty( $disable_event_search ) ) {
 
             <header <?php tribe_classes( $header_classes ); ?>>
                 <?php $this->template( 'components/messages' ); ?>
-                
+
                 <?php //$this->template( 'components/breadcrumbs' ); ?>
-                
+
                 <?php 
                 // Boutons pour filtrer les vues : photo ou liste
                 $this->template( 'components/events-bar' ); ?>
@@ -81,29 +76,19 @@ if ( empty( $disable_event_search ) ) {
     <!-- Listing Events -->
     <div class="tribe-events-calendar-list affiche">
 
-                    <div class="tribe-event-calendar-list-group-header">
-
         <?php foreach ( $events as $event ) : ?>
 
+        <div class="tribe-event-calendar-list-group">
 
-                <?php $this->setup_postdata( $event ); ?>
-                                
-                    <?php $this->template( 'list/month-separator', [ 'event' => $event ] ); ?>
+            <?php $this->setup_postdata( $event ); ?>
 
+            <?php $this->template( 'list/month-separator', [ 'event' => $event ] ); ?>
 
-        <?php endforeach; ?>
-                </div>
-                <div class="tribe-event-calendar-list-group-main">
+            <?php $this->template( 'list/event', [ 'event' => $event ] ); ?>
 
-                <?php foreach ( $events as $event ) : ?>
-
-
-                    <?php $this->template( 'list/event', [ 'event' => $event ] ); ?>
-
-
+        </div>
 
         <?php endforeach; ?>
-                </div>
 
     </div>
 

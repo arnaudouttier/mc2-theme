@@ -266,7 +266,7 @@ input[type="checkbox"],
 /* Props global - Bouton selection date (datepicker) et filtre  - Page Agenda  */
 .tribe-events-c-top-bar__datepicker-button,
 .tribe-events-c-events-bar__filter-button {
-  padding: 12px 10px !important;
+  padding: 12px 13px !important;
   border: 1px solid #ffffff !important;
   font-weight: 600;
   font-size: 12px;
@@ -367,5 +367,55 @@ input[type="checkbox"],
 
   .tribe-events-c-events-bar__filter-button {
     border: 0 !important;
+  }
+}
+
+/* Bouton next prev Agenda seletor - Homepage block Agenda */
+.tribe-events-pro-week-day-selector__prev,
+.tribe-events-pro-week-day-selector__next {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.tribe-events-pro-week-day-selector__prev {
+  &::before {
+    content: url("../img/icons/icon-arrow-left.svg");
+  }
+}
+
+.tribe-events-pro-week-day-selector__next {
+  background-color: #071f5b !important;
+
+  &::before {
+    content: url("../img/icons/icon-arrow-right.svg");
+    filter: invert(1);
+  }
+}
+
+@media (min-width: 1200px) {
+  .tribe-events-pro-week-day-selector__prev,
+  .tribe-events-pro-week-day-selector__next {
+    width: initial;
+    height: initial;
+    border-radius: initial;
+    background-color: initial !important;
+  }
+
+  .tribe-events-pro-week-day-selector__next {
+    &::before {
+      filter: invert(0);
+    }
   }
 }

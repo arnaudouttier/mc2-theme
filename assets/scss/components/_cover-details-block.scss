@@ -146,6 +146,11 @@
   .cover-thumbnail {
     grid-area: cover-thumbnail;
     margin-bottom: 45px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .cover-piece-date-prix {
