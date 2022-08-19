@@ -1,0 +1,28 @@
+.event-listing-month {
+  display: flex;
+  flex-direction: row;
+
+  .event-listing-col-month {
+    flex-basis: 25%;
+  }
+
+  .event-listing-col-events {
+    flex-basis: 75%;
+  }
+}
+
+// Générique
+.info-techniques-block .block-list-item .block-list-content {
+  flex-wrap: wrap !important;
+}
+
+// .block-list-content ul.closed {
+//     height: 140px;
+//     overflow: hidden;
+//     transition: all 2s;
+
+//     &.open {
+//         height: auto;
+//         transition: all 2s;
+//     }
+// }

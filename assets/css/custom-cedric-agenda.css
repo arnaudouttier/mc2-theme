@@ -18,7 +18,21 @@
   flex-basis: 75%;
 }
 
-/*# sourceMappingURL=custom-cedric-agenda.css.map */
-/*# sourceMappingURL=custom-cedric-agenda.css.map */
+.info-techniques-block .block-list-item .block-list-content {
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
 
+/* .block-list-content ul.closed {
+  height: 140px;
+  overflow: hidden;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.block-list-content ul.closed.open {
+  height: auto;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+} */
 /*# sourceMappingURL=custom-cedric-agenda.css.map */
