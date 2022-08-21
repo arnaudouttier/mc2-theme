@@ -90,16 +90,12 @@
       }
 
       .tribe-events-c-subscribe-dropdown__list {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: 1fr;
-        grid-auto-rows: 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 10px;
-        padding-block: 29px;
+        padding: 15px 0 20px 0;
         padding-left: 0;
+        border-top: 1px solid #d9d9d9;
 
         a {
+          line-height: 28px;
           text-align: left;
           padding: 0;
         }
@@ -161,109 +157,91 @@
           }
         }
 
-        .block-list {
-          .block-list-item {
-            padding-block: 53px;
-            border-top: 1px solid #d9d9d9;
-            border-bottom: 1px solid #d9d9d9;
+        .block-list-item {
+          padding-block: 53px;
+          border-top: 1px solid #d9d9d9;
+          border-bottom: 1px solid #d9d9d9;
+          display: flex;
+
+          & + .block-list-item {
+            border-top: 0;
+          }
+
+          .block-list-title {
+            flex: 1;
+          }
+
+          .block-list-content {
+            flex: 3;
+            display: flex;
+            border: 0;
+          }
+
+          &.programme {
             display: flex;
 
-            & + .block-list-item {
-              border-top: 0;
-            }
-
-            .block-list-title {
-              flex: 1;
-            }
-
             .block-list-content {
-              flex: 3;
-              display: flex;
-              border: 0;
+              display: block;
+
+              h6 {
+                margin-bottom: 18px;
+              }
+
+              p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 22px;
+              }
             }
+          }
 
-            &.programme {
-              display: flex;
+          &.distributions {
+            .block-list-content {
+              column-gap: 223px;
 
-              .block-list-content {
-                display: block;
+              & > :last-child {
+                display: none;
+              }
+            }
+          }
 
-                h6 {
-                  margin-bottom: 18px;
+          &.mentions {
+            padding-bottom: 0;
+            border-bottom: 0;
+
+            .block-list-content-items {
+              flex-direction: column;
+              width: 100%;
+
+              li {
+                display: flex;
+                column-gap: 10px;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #d9d9d9;
+
+                &:last-child {
+                  .block-list-image {
+                    display: none;
+                  }
+                }
+
+                .block-list-image {
+                  margin-bottom: 0;
+                }
+
+                h5 {
+                  display: block;
+                  padding: 0;
                 }
 
                 p {
-                  font-weight: 400;
-                  font-size: 12px;
-                  line-height: 22px;
-                }
-              }
-            }
-
-            &.distributions {
-              .block-list-content {
-                column-gap: 223px;
-
-                & > :last-child {
-                  display: none;
-                }
-              }
-            }
-
-            &.generique {
-              .block-list-content-items {
-                width: 100%;
-
-                li {
-                  display: flex;
-                  column-gap: 125px;
-                  margin-bottom: 0;
-
-                  h6 {
-                    flex-basis: 233px;
-                  }
-                }
-              }
-            }
-
-            &.mentions {
-              padding-bottom: 0;
-              border-bottom: 0;
-
-              .block-list-content-items {
-                flex-direction: column;
-                width: 100%;
-
-                li {
-                  display: flex;
-                  column-gap: 10px;
-                  padding-bottom: 20px;
-                  margin-bottom: 20px;
-                  border-bottom: 1px solid #d9d9d9;
-
-                  &:last-child {
-                    .block-list-image {
-                      display: none;
-                    }
+                  &.bl-content-mobile {
+                    display: none;
                   }
 
-                  .block-list-image {
-                    margin-bottom: 0;
-                  }
-
-                  h5 {
+                  &.bl-content-desktop {
                     display: block;
-                    padding: 0;
-                  }
-
-                  p {
-                    &.bl-content-mobile {
-                      display: none;
-                    }
-
-                    &.bl-content-desktop {
-                      display: block;
-                    }
                   }
                 }
               }

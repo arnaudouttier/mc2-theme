@@ -634,7 +634,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -43%);
 }
 .tribe-events-pro-week-day-selector__prev svg,
 .tribe-events-pro-week-day-selector__next svg {
@@ -1238,7 +1238,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   padding-bottom: 0;
 }
 .info-techniques-block .block-list-item.generique .block-list-content-items.closed {
-  max-height: 325px;
+  max-height: 313px;
   overflow: hidden;
   -webkit-transition: max-height 0.5s ease;
   transition: max-height 0.5s ease;
@@ -1320,7 +1320,8 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
     flex: 1;
     padding-block: 0;
   }
-  .info-techniques-block .block-list-item .block-list-content {
+  .info-techniques-block .block-list-item .block-list-content,
+.info-techniques-block .block-list-item .block-list-content-distribution {
     flex: 3;
     display: flex;
     border: 0;
@@ -1331,26 +1332,32 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   }
   .info-techniques-block .block-list-item.programme .block-list-content {
     display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
   }
-  .info-techniques-block .block-list-item.programme .block-list-content h6 {
-    margin-bottom: 18px;
+  .info-techniques-block .block-list-item.programme .block-list-content :nth-child(1),
+.info-techniques-block .block-list-item.programme .block-list-content :nth-child(5) {
+    font-size: 16px !important;
+    line-height: 24px !important;
   }
-  .info-techniques-block .block-list-item.distributions .block-list-content {
-    column-gap: 223px;
-  }
-  .info-techniques-block .block-list-item.distributions .block-list-content > :last-child {
-    display: none;
+  .info-techniques-block .block-list-item.distributions .block-list-content-distribution {
+    flex-direction: row !important;
+    column-gap: 195px;
   }
   .info-techniques-block .block-list-item.generique .block-list-content-items {
     width: 100%;
   }
   .info-techniques-block .block-list-item.generique .block-list-content-items li {
     display: flex;
-    column-gap: 125px;
+    column-gap: 98px;
     margin-bottom: 0;
   }
   .info-techniques-block .block-list-item.generique .block-list-content-items li h6 {
     flex-basis: 233px;
+  }
+  .info-techniques-block .block-list-item.mentions .block-list-content-items li .block-list-image {
+    min-width: 120px;
   }
 }
 /* Informations pratiques block */
@@ -1444,6 +1451,14 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   column-gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.gallery-list::-webkit-scrollbar {
+  display: none;
+}
+.gallery-list:nth-child(3) {
+  display: none;
 }
 .gallery-list .gallery-item {
   flex-shrink: 0;
@@ -1468,10 +1483,22 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   font-size: 13px;
   line-height: 28px;
 }
+.gallery-list figure {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+.gallery-list figure figcaption {
+  margin-top: 11px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 28px;
+}
 
 @media (min-width: 1200px) {
   .gallery-list {
     overflow-x: initial;
+    padding-block: 0;
   }
 }
 /* BANDEAU Top bar */
@@ -1707,6 +1734,13 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   letter-spacing: 1px;
 }
 
+:is(.single) .affiche {
+  padding-top: 100px;
+}
+:is(.single) .affiche .affiche-header {
+  margin-bottom: 100px;
+}
+
 @media (min-width: 1440px) {
   .affiche {
     /* affiche-items */
@@ -1822,13 +1856,13 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   border-radius: 50px;
   margin-bottom: 16px;
 }
-:is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category .cover-date h3 {
+:is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category .cover-date .cover-day-month-box {
   font-weight: 700;
   font-size: 24px;
-  line-height: 34px;
 }
-:is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category .cover-date h3 span {
-  display: block;
+:is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category .cover-date .cover-day-month-box span {
+  display: inline-block;
+  padding-left: 10px;
 }
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-thumbnail {
   grid-area: cover-thumbnail;
@@ -1837,6 +1871,9 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-thumbnail img {
   height: 100%;
   object-fit: cover;
+}
+:is(#site-header.spectacles, #site-header.edito) .cover-details .cover-thumbnail-custom-legend {
+  display: none;
 }
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-piece-date-prix {
   grid-area: cover-piece-date-prix;
@@ -1923,7 +1960,6 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
     column-gap: 60px;
     grid-template-areas: "cover-title cover-title" "cover-date-category cover-thumbnail" "cover-piece-date-prix cover-thumbnail" "btn-reservation cover-thumbnail";
     padding-left: 60px;
-    overflow: hidden;
   }
   :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-title,
 :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category,
@@ -1941,6 +1977,9 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   }
   :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-date-category .cover-date h3 {
     font-size: 20px;
+  }
+  :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-thumbnail {
+    height: 103%;
   }
   :is(#site-header.spectacles, #site-header.edito) .cover-details .cover-piece-date-prix ul {
     margin-bottom: 21px;
@@ -2304,6 +2343,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   flex-direction: column-reverse !important;
   align-items: initial;
   padding-bottom: 0;
+  row-gap: 12px;
 }
 #agenda-list-header .tribe-events-c-events-bar,
 #agenda-list-header .tribe-events-header__top-bar {
@@ -2571,7 +2611,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   background: #ffffff;
   color: #fff;
   padding: 20px !important;
-  max-width: 334px;
+  max-width: 334px !important;
   height: 540px;
   margin: 0 !important;
   flex-direction: column !important;
@@ -3323,16 +3363,12 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   padding: 13px;
 }
 #main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  padding-block: 29px;
+  padding: 15px 0 20px 0;
   padding-left: 0;
+  border-top: 1px solid #d9d9d9;
 }
 #main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__list a {
+  line-height: 28px;
   text-align: left;
   padding: 0;
 }
@@ -3376,83 +3412,72 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   #main.spectacles .grid-cl-middle .grid-cl-middle-content .info-techniques-block h4 {
     display: block;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item {
+  #main.spectacles .grid-cl-middle .block-list-item {
     padding-block: 53px;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
     display: flex;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item + .block-list-item {
+  #main.spectacles .grid-cl-middle .block-list-item + .block-list-item {
     border-top: 0;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item .block-list-title {
+  #main.spectacles .grid-cl-middle .block-list-item .block-list-title {
     flex: 1;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item .block-list-content {
+  #main.spectacles .grid-cl-middle .block-list-item .block-list-content {
     flex: 3;
     display: flex;
     border: 0;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.programme {
+  #main.spectacles .grid-cl-middle .block-list-item.programme {
     display: flex;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.programme .block-list-content {
+  #main.spectacles .grid-cl-middle .block-list-item.programme .block-list-content {
     display: block;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.programme .block-list-content h6 {
+  #main.spectacles .grid-cl-middle .block-list-item.programme .block-list-content h6 {
     margin-bottom: 18px;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.programme .block-list-content p {
+  #main.spectacles .grid-cl-middle .block-list-item.programme .block-list-content p {
     font-weight: 400;
     font-size: 12px;
     line-height: 22px;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.distributions .block-list-content {
+  #main.spectacles .grid-cl-middle .block-list-item.distributions .block-list-content {
     column-gap: 223px;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.distributions .block-list-content > :last-child {
+  #main.spectacles .grid-cl-middle .block-list-item.distributions .block-list-content > :last-child {
     display: none;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.generique .block-list-content-items {
-    width: 100%;
-  }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.generique .block-list-content-items li {
-    display: flex;
-    column-gap: 125px;
-    margin-bottom: 0;
-  }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.generique .block-list-content-items li h6 {
-    flex-basis: 233px;
-  }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions {
     padding-bottom: 0;
     border-bottom: 0;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items {
     flex-direction: column;
     width: 100%;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li {
     display: flex;
     column-gap: 10px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #d9d9d9;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li:last-child .block-list-image {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li:last-child .block-list-image {
     display: none;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li .block-list-image {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li .block-list-image {
     margin-bottom: 0;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li h5 {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li h5 {
     display: block;
     padding: 0;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li p.bl-content-mobile {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li p.bl-content-mobile {
     display: none;
   }
-  #main.spectacles .grid-cl-middle .block-list .block-list-item.mentions .block-list-content-items li p.bl-content-desktop {
+  #main.spectacles .grid-cl-middle .block-list-item.mentions .block-list-content-items li p.bl-content-desktop {
     display: block;
   }
   #main.spectacles .grid-cl-right .contact-social {

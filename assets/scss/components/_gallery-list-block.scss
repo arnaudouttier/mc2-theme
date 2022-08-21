@@ -5,6 +5,16 @@
   column-gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:nth-child(3) {
+    display: none;
+  }
 
   .gallery-item {
     flex-shrink: 0;
@@ -32,10 +42,24 @@
       line-height: 28px;
     }
   }
+
+  figure {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+
+    figcaption {
+      margin-top: 11px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 28px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
   .gallery-list {
     overflow-x: initial;
+    padding-block: 0;
   }
 }

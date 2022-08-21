@@ -132,7 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 headerHome.classList.add('sub-menu-open');
                 navigationContainer.classList.add('active')
             }
+
+            let viewportWidth = window.innerWidth;
+            // add position fixed sur ecran desktop a site navigation
+            if(navigationContainer.classList.contains('active') && viewportWidth > 1200 ){
+                navigationContainer.style.position = 'fixed';
+            }
         });
+
+        
     });
 
     // Slider Item 3 col on Home Page

@@ -61,6 +61,7 @@
 				subMenuItem.classList.remove('active')
 			}
 		})
+
 	});
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.

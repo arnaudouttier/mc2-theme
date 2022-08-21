@@ -151,6 +151,14 @@
   }
 }
 
+:is(.single) .affiche {
+  padding-top: 100px;
+
+  .affiche-header {
+    margin-bottom: 100px;
+  }
+}
+
 @media (min-width: 1440px) {
   .affiche {
     /* affiche-items */
