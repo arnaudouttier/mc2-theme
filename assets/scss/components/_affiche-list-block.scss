@@ -61,6 +61,14 @@
     background: #ffffff;
     color: #fff;
     padding: 20px;
+<<<<<<< HEAD
+=======
+    /* 280px @ 375px increasing to 300px @ 1440px */
+    max-width: clamp(280px, calc(17.5rem + ((1vw - 3.75px) * 1.8779)), 300px);
+    /* Safari resize fix */
+    min-height: 0vw;
+
+>>>>>>> d0382bf (nn)
     height: 540px;
     flex-shrink: 0;
     /* 280px @ 375px increasing to 300px @ 1440px */
@@ -139,7 +147,11 @@
 
 :is(.archive) .affiche {
   .affiche-item {
+<<<<<<< HEAD
     max-width: initial;
+=======
+    max-width: 334px;
+>>>>>>> d0382bf (nn)
   }
 }
 

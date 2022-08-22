@@ -1658,24 +1658,23 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 .affiche .affiche-list::-webkit-scrollbar {
   display: none;
 }
+@media (min-width: 640px) {
+  .affiche .affiche-list {
+    -ms-overflow-style: auto; /* IE and Edge */
+    scrollbar-width: auto; /* Firefox */
+  }
+  .affiche .affiche-list::-webkit-scrollbar {
+    display: block;
+  }
+}
 .affiche .affiche-item {
   position: relative;
   background: #ffffff;
   color: #fff;
   padding: 20px;
-<<<<<<< HEAD
-=======
-  /* 280px @ 375px increasing to 300px @ 1440px */
-  max-width: clamp(280px, 17.5rem + (1vw - 3.75px) * 1.8779, 300px);
-  /* Safari resize fix */
-  min-height: 0vw;
->>>>>>> d0382bf (nn)
+  max-width: 300px;
   height: 540px;
   flex-shrink: 0;
-  /* 280px @ 375px increasing to 300px @ 1440px */
-  max-width: clamp(280px, 17.5rem + (1vw - 3.75px) * 1.8779, 300px);
-  /* Safari resize fix */
-  min-height: 0vw;
 }
 .affiche .affiche-item a {
   height: inherit;
@@ -1722,20 +1721,13 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
 }
 .affiche .affiche-item .affiche-date h4 {
   font-size: 60px;
+  line-height: 56px;
 }
 .affiche .affiche-item .affiche-date h5 {
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 1px;
   writing-mode: vertical-rl;
-}
-
-:is(.archive) .affiche .affiche-item {
-<<<<<<< HEAD
-  max-width: initial;
-=======
-  max-width: 334px;
->>>>>>> d0382bf (nn)
 }
 
 :is(.single) .affiche {
@@ -1745,15 +1737,13 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   margin-bottom: 100px;
 }
 
-@media (min-width: 640px) {
-  .affiche-list {
-    -ms-overflow-style: auto; /* IE and Edge */
-    scrollbar-width: auto; /* Firefox */
-  }
-  .affiche-list::-webkit-scrollbar {
-    display: block;
-  }
+:is(.home) .affiche .affiche-item {
+  /* 280px @ 375px increasing to 300px @ 1440px */
+  max-width: clamp(280px, 17.5rem + (1vw - 3.75px) * 1.8779, 300px);
+  /* Safari resize fix */
+  min-height: 0vw;
 }
+
 @media (min-width: 1440px) {
   .affiche {
     /* affiche-items */
@@ -1807,6 +1797,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   position: relative;
   font-weight: 700;
   font-size: clamp(50px, 3.125rem + (1vw - 3.75px) * 2.8169, 80px);
+  line-height: 76px;
 }
 :is(#site-header.homepage) .cover-details .cover-date-month .cover-date h5 {
   font-weight: 700;
@@ -1815,8 +1806,6 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   letter-spacing: 1px;
   text-transform: uppercase;
   writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
 }
 
 /* Cover details pour les pages edito et spectacles */
@@ -2627,6 +2616,7 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   height: 540px;
   margin: 0 !important;
   flex-direction: column !important;
+  margin-bottom: 20px !important;
   /* affiche  item title */
   /* affiche item date */
 }
@@ -2692,9 +2682,9 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   font-size: 60px;
 }
 .tribe-events-calendar-list article .affiche-date time .tribe-events-pro-photo__event-date-tag-month {
+  transform: rotate(90deg) translate(-5px, 35px);
   font-size: 16px;
   letter-spacing: 1px;
-  writing-mode: vertical-rl;
 }
 
 /* Site-header Layout */
@@ -3085,25 +3075,8 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   /* Safari resize fix */
   min-height: 0vw;
 }
-.tribe-events-calendar-list .tribe-event-calendar-list-group {
-  display: flex;
-  column-gap: 20px;
-  flex-wrap: wrap;
-}
-.tribe-events-calendar-list .tribe-event-calendar-list-group .tribe-event-calendar-list-group-header {
-  flex: 1;
-}
 .tribe-events-calendar-list .tribe-event-calendar-list-group .tribe-event-calendar-list-group-header > :not(:first-child) {
   display: none;
-}
-.tribe-events-calendar-list .tribe-event-calendar-list-group .tribe-event-calendar-list-group-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  flex: 4;
-  /* 20px @ 375px increasing to 60px @ 1440px */
-  gap: clamp(20px, 1.25rem + (1vw - 3.75px) * 3.7559, 60px);
-  /* Safari resize fix */
-  min-height: 0vw;
 }
 
 @media (min-width: 640px) {
@@ -3111,14 +3084,30 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   .tribe-events-calendar-list.affiche {
     place-items: unset;
   }
-  .tribe-events-calendar-list.affiche .tribe-event-calendar-list-group-main {
-    justify-content: flex-end;
+  .tribe-events-calendar-list.affiche .tribe-event-calendar-list-group {
+    display: flex;
+    align-items: flex-start;
+  }
+  .tribe-events-calendar-list.affiche .tribe-event-calendar-list-group .tribe-event-calendar-list-group-header {
+    flex: 1;
+  }
+  .tribe-events-calendar-list.affiche .tribe-event-calendar-list-group .tribe-event-calendar-list-group-main {
+    flex: 4;
   }
 }
 @media (min-width: 1024px) {
   #agenda-list-header .tribe-filter-bar {
     margin-top: 75px;
     margin-bottom: 0;
+  }
+  .tribe-events-calendar-list.affiche .tribe-event-calendar-list-group .tribe-event-calendar-list-group-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+@media (min-width: 1440px) {
+  .tribe-event-calendar-list-group-main {
+    gap: 60px;
   }
 }
 /* Footer Layout */
