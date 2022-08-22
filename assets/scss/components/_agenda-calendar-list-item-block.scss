@@ -9,7 +9,6 @@
     height: 540px;
     margin: 0 !important;
     flex-direction: column !important;
-    margin-bottom: 20px !important;
 
     .tribe-events-pro-photo__event-featured-image-wrapper {
       height: 100%;
@@ -87,9 +86,9 @@
         }
 
         .tribe-events-pro-photo__event-date-tag-month {
-          transform: rotate(90deg) translate(-5px, 35px);
           font-size: 16px;
           letter-spacing: 1px;
+          writing-mode: vertical-rl;
         }
       }
     }
