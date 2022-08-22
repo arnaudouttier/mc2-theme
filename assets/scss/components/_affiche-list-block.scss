@@ -72,10 +72,7 @@
     background: #ffffff;
     color: #fff;
     padding: 20px;
-    /* 280px @ 375px increasing to 300px @ 1440px */
-    max-width: clamp(280px, calc(17.5rem + ((1vw - 3.75px) * 1.8779)), 300px);
-    /* Safari resize fix */
-    min-height: 0vw;
+    max-width: 300px;
     height: 540px;
     flex-shrink: 0;
     // scroll-snap-align: center;
@@ -129,8 +126,7 @@
 
     .affiche-date {
       display: flex;
-      align-items: center;
-      right: 15px;
+      right: 30px;
       bottom: 30px;
       font-weight: 700;
       text-transform: uppercase;
@@ -141,13 +137,21 @@
       }
 
       h5 {
-        transform: rotate(90deg) translate(-5px, 50%);
         font-weight: 700;
         font-size: 16px;
-        line-height: 22px;
         letter-spacing: 1px;
+        writing-mode: vertical-rl;
       }
     }
+  }
+}
+
+:is(.home) .affiche {
+  .affiche-item {
+    /* 280px @ 375px increasing to 300px @ 1440px */
+    max-width: clamp(280px, calc(17.5rem + ((1vw - 3.75px) * 1.8779)), 300px);
+    /* Safari resize fix */
+    min-height: 0vw;
   }
 }
 

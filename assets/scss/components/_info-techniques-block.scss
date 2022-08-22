@@ -60,11 +60,12 @@
       }
 
       .block-list-content-items {
+        -webkit-transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease;
+
         &.closed {
           max-height: 313px;
           overflow: hidden;
-          -webkit-transition: max-height 0.5s ease;
-          transition: max-height 0.5s ease;
         }
 
         &.open {

@@ -44,7 +44,6 @@
 
     .cover-date {
       display: flex;
-      align-items: center;
 
       h3 {
         position: relative;
@@ -63,7 +62,7 @@
         line-height: 22px;
         letter-spacing: 1px;
         text-transform: uppercase;
-        transform: rotate(90deg) translate(-5px, 50%);
+        writing-mode: vertical-rl;
       }
     }
   }

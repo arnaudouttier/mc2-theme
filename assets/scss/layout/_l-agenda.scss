@@ -32,7 +32,7 @@
   }
 }
 
-/* calendrier article  */
+/* calendrier list event article  */
 .tribe-events-calendar-list {
   &.affiche {
     place-items: center;
@@ -51,6 +51,14 @@
     /* Safari resize fix */
     min-height: 0vw;
   }
+
+  .tribe-event-calendar-list-group {
+    .tribe-event-calendar-list-group-header {
+      > :not(:first-child) {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (min-width: 640px) {
@@ -58,6 +66,20 @@
   .tribe-events-calendar-list {
     &.affiche {
       place-items: unset;
+
+      .tribe-event-calendar-list-group {
+        display: flex;
+        // column-gap: 183px;
+        align-items: flex-start;
+
+        .tribe-event-calendar-list-group-header {
+          flex: 1;
+        }
+
+        .tribe-event-calendar-list-group-main {
+          flex: 4;
+        }
+      }
     }
   }
 }
@@ -72,25 +94,18 @@
 
   .tribe-events-calendar-list {
     &.affiche {
-      h2 {
-        ~ article {
-          background-color: lightpink;
-        }
-      }
-
       .tribe-event-calendar-list-group {
-        display: flex;
-        // column-gap: 183px;
-        align-items: flex-start;
-
-        h2 {
-          flex: 1;
-        }
-
         .tribe-event-calendar-list-group-main {
-          flex: 2;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
       }
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .tribe-event-calendar-list-group-main {
+    gap: 60px;
   }
 }

@@ -3,8 +3,6 @@ console.log('Hello la MC2');
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
-
     // Message Flash Top Bar
     if (document.getElementById('closeTopBar')) {
 
@@ -38,19 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // }
 
+
+ 
+
     // Sticky menu on scroll + mega menu position
     if (document.getElementById('navigation-container')) {
         let nav = document.getElementById('navigation-container');
-        let navHeight;
-        if (document.body.classList.contains('home')) {
-            navHeight = nav.offsetHeight;
-        } else {
-            navHeight = document.getElementById('site-header').offsetHeight;
-        }
+        let  navHeight = nav.offsetHeight;
+
+        // if (document.body.classList.contains('home')) {
+        //     navHeight = nav.offsetHeight;
+        // } else {
+        //     navHeight = document.getElementById('site-header').offsetHeight;
+        // }
 
         document.addEventListener('scroll', () => {
             let scrollAmount = window.scrollY;
             let viewportWidth = window.innerWidth;
+
 
             if (scrollAmount > navHeight && viewportWidth > 1200) {
                 nav.classList.add('sticky')
@@ -179,14 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Page Agenda Bouton filtrer en jaune quand actif
-    const agendaFilterButtonContainer = document.querySelector('.tribe-events-c-events-bar__filter-button-container')
-    let agendaFilterButton = document.querySelector('.tribe-events-c-events-bar__filter-button')
+    if(document.querySelector('.tribe-events-c-events-bar__filter-button')){
+        const agendaFilterButtonContainer = document.querySelector('.tribe-events-c-events-bar__filter-button-container')
+        let agendaFilterButton = document.querySelector('.tribe-events-c-events-bar__filter-button')
 
-    agendaFilterButton.addEventListener('click', () => {
-        agendaFilterButtonContainer.classList.toggle('active')
-    })
+        agendaFilterButton.addEventListener('click', () => {
+            agendaFilterButtonContainer.classList.toggle('active')
+        })
+    }
 
-
+  if(document.body.classList.contains('archive')){
     /* Page Agenda Filtre bar bouton associé aux filtres */
     let agendaFilterButtons = document.querySelectorAll('button.tribe-filter-bar-c-pill__pill')
     let filterBarContainerItems = document.querySelectorAll('.tribe-filter-bar-c-filter__container')
@@ -212,6 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // bouton rdv public
     moveFilterBarToFilterButton(agendaFilterButtons[2], filterBarContainerItems[2]);
+
+  }
+
+    // Bouton afficher plus section generique  add class open pour animation sur max-height
+    if(document.body.classList.contains('single')){
+        const blockListContentItems = document.querySelector('.block-list-content-items')
+        const btnShowMoreGenerique = document.querySelector('#btn-show-more-generique')
+
+        btnShowMoreGenerique.addEventListener('click' , () =>{
+            if(blockListContentItems.classList.contains('closed')){
+                blockListContentItems.classList.remove('closed')
+                blockListContentItems.classList.add('open')
+            }
+            else{
+                blockListContentItems.classList.remove('open')
+                blockListContentItems.classList.add('closed')
+            }
+    } )
+}
+
+
 
 
     /* Agenda event List en grid*/
@@ -245,6 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //     }
     // }
+
+  
 
 });
 
