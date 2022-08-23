@@ -76,15 +76,27 @@
         align-items: center;
         column-gap: 10px;
         padding: 0;
+        position: relative;
+
+        &::before {
+          content: url(../img/icons/icon-calendar-2.svg);
+          position: absolute;
+          top: 30%;
+          left: 13px;
+        }
 
         svg {
           &:first-child {
             width: 40px;
             height: 40px;
-            background: rgba(217, 217, 217, 0.301);
             display: flex;
             place-content: center;
             padding: 13px;
+            background-color: rgba(217, 217, 217, 0.301);
+
+            path {
+              visibility: hidden;
+            }
           }
         }
       }

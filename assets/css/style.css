@@ -3074,11 +3074,6 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   /* Safari resize fix */
   min-height: 0vw;
 }
-.tribe-events-calendar-list .tribe-event-calendar-list-group {
-  display: flex;
-  column-gap: 20px;
-  flex-wrap: wrap;
-}
 .tribe-events-calendar-list .tribe-event-calendar-list-group .tribe-event-calendar-list-group-header {
   flex: 1;
 }
@@ -3363,14 +3358,24 @@ input[type=checkbox]:checked + label, input[type=checkbox][aria-expanded=true] +
   align-items: center;
   column-gap: 10px;
   padding: 0;
+  position: relative;
+}
+#main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__button::before {
+  content: url(../img/icons/icon-calendar-2.svg);
+  position: absolute;
+  top: 30%;
+  left: 13px;
 }
 #main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__button svg:first-child {
   width: 40px;
   height: 40px;
-  background: rgba(217, 217, 217, 0.301);
   display: flex;
   place-content: center;
   padding: 13px;
+  background-color: rgba(217, 217, 217, 0.301);
+}
+#main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__button svg:first-child path {
+  visibility: hidden;
 }
 #main .grid-cl-right #calendars .tribe-events-c-subscribe-dropdown__list {
   padding: 15px 0 20px 0;
